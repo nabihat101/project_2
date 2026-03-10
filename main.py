@@ -2,7 +2,10 @@ import pandas as pd
 
 def load_data(data_file: str) -> None:
     """
-    creates a datamap using pandas library to clean and filter data based on conditions
+    Creates a datamap using pandas library to clean and filter data based on conditions
+
+    preconditions:
+    - data_file refers to a csv containing species data and locations to be used in analysis
     """
 
     df = pd.read_csv(data_file)
