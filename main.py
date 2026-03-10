@@ -1,1 +1,7 @@
-# Testing 1, 2, 3
+import 
+
+def load_data (data_file: csv) -> list:
+
+  """
+  
+  """
