@@ -1,12 +1,14 @@
 class Vertex:
     species: str
-    neighbours: dict[str, int]
-    
+    neighbours_weight: dict[str, int]
+
     def __init__(self, species: str) -> None:
         self.species = species
         self.neighbours = {}  # neighbour_species -> weight
 
 class Graph:
+    _vertices: dict[str, Vertex]
+    
     def __init__(self) -> None:
         self._vertices = {}  # species -> Vertex
     
