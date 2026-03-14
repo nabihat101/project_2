@@ -19,7 +19,8 @@ class Observation:
 
     Instance Attributes:
         - species: the name of the species observed
-        - season_to_loc: a mapping from season to a list of locations (latitude, longitude) where the species was observed in that season
+        - season_to_loc: a mapping from season to a list of locations (latitude, longitude)
+          where the species was observed in that season
     Representation Invariants:
         - season_to_loc only contains keys from 1 to 4, representing the four seasons
         - each location is a tuple of (latitude, longitude)
@@ -66,8 +67,10 @@ def data_handle(file: str) -> list[Observation]:
                 season = 2
             elif month in (6, 7, 8):
                 season = 3
-            else:
+            elif month in (9, 10, 11):
                 season = 4
+            else:
+                season = 0  # This should never happen, but we can ignore the observataion if it does
 
             if season not in obs.season_to_loc:
                 obs.season_to_loc[season] = []
@@ -80,14 +83,19 @@ def data_handle(file: str) -> list[Observation]:
 
 
 def observations_to_graph(observations: list[Observation]) -> Graph:
-    """Builds a graph from a list of Observation objects: calls the graph buildiing method.
-    See Graph.build_from_observations for more details.
-    
+    """Builds 4 graphs from a list of Observation objects (one for each season), by 
+    calling the graph buildiing method. See Graph.build_from_observations for more details.
+
     Preconditions:
         - each Observation in the list has a valid species name and season_to_loc mapping
         - the list of observations is not empty
     """
-    
-    graph = Graph()
-    graph.build_from_observations(observations)
-    return graph
+    summer = Graph()
+    spring = Graph()
+    fall = Graph()
+    winter = Graph()
+    summer.build_from_observations(observations, 3)
+    spring.build_from_observations(observations, 2)
+    fall.build_from_observations(observations, 4)
+    winter.build_from_observations(observations, 1)
+    return summer, spring, fall, winter
