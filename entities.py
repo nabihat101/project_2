@@ -1,4 +1,41 @@
+"""
+This file contains all the classes used to represent the data and the graph structure for our analysis.
+The main classes are:
+- Observation: represents a species and the locations it was observed in different seasons
+- Vertex: represents a vertex in the graph, which corresponds to a species in this case
+- Graph: represents the graph structure 
+"""
+
+class Observation:
+    """
+    Takes each observation and stores it in an object to make it easier to manipulate and build the graph.
+
+    Instance Attributes:
+        - species: the name of the species observed
+        - season_to_loc: a mapping from season to a list of locations (latitude, longitude)
+          where the species was observed in that season
+    Representation Invariants:
+        - season_to_loc only contains keys from 1 to 4, representing the four seasons
+        - each location is a tuple of (latitude, longitude)
+    """
+    species: str
+    season_to_loc: dict[int, list[tuple[float, float]]]
+
+    def __init__(self, species: str) -> None:
+        self.species = species
+        self.season_to_loc = {}
+
 class Vertex:
+    """Represents a vertex in the graph, which corresponds to a species in this case.
+    
+    Instance Attributes:
+         - species: the name of the species represented by this vertex
+         - neighbours: a mapping from neighbouring species to the weight of the edge between them
+    Representation Invariants:
+         - species is a non-empty string
+         - neighbours only contains keys that are valid species names (non-empty strings)
+         - weights in neighbours are positive integers
+    """
     species: str
     neighbours: dict[str, int]
 
@@ -20,7 +57,7 @@ class Graph:
 
     def add_vertex(self, species: str) -> None:
         """Adds a vertex to the graph. Neighbours are added separately through add_edge.
-        
+
         Preconditions:
             - species is a non-empty string representing the name of the species
         """
@@ -49,7 +86,6 @@ class Graph:
             v2.neighbours[s1] += 1
         else:
             v2.neighbours[s1] = 1
-
 
     def build_from_observations(self, observations: list, season: int) -> None:
         """Builds a seasonal graph from observations.
