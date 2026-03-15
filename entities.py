@@ -118,9 +118,3 @@ class Graph:
 
     def __repr__(self) -> str:
         return f"Graph(vertices={list(self._vertices.keys())})"
-
-    def describe(self) -> str:
-        lines = [f"Graph with {len(self._vertices)} vertices"]
-        for vertex in self._vertices.values():
-            lines.append(f"  {vertex.species} -> {vertex.neighbours}")
-        return "\n".join(lines)
