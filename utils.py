@@ -18,3 +18,22 @@ def calculate_interaction_likelihood(co_occurrences: int, obs_a: int, obs_b: int
         total_unique_observations = (obs_a + obs_b) - co_occurrences
         likelihood = co_occurrences / total_unique_observations
         return likelihood
+
+
+# def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) -> float:
+#     """Calculates distance in kilometers between two (lat, lon) points using the Haversine formula."""
+#     import math
+
+#     lat1, lon1 = loc1
+#     lat2, lon2 = loc2
+
+#     radius_km = 6371.0
+#     phi1 = math.radians(lat1)
+#     phi2 = math.radians(lat2)
+#     d_phi = math.radians(lat2 - lat1)
+#     d_lambda = math.radians(lon2 - lon1)
+
+#     a = math.sin(d_phi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(d_lambda / 2) ** 2
+#     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+#     return radius_km * c
