@@ -19,16 +19,15 @@ This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, R
 
 def calculate_interaction_likelihood(co_occurrences: int, obs_a: int, obs_b: int) -> float:
     """
-    Calculates the likelihood of interaction between two species using the Jaccard Index.
+    Calculates the likelihood of interaction between two species using the Jaccard Index. Returns a float between 0.0 (never interact) and 1.0 (always interact).
 
-    Args:
+    We say that two species are more likely to interact when they are closer to each other.
+    
+    Special notes on implementation:
         co_occurrences: The number of times the two species were observed
                         within your proximity/time thresholds.
         obs_a: Total number of observations for Species A in that season.
-        obs_b: Total number of observations for Species B in that season.
-
-    Returns:
-        A float between 0.0 (never interact) and 1.0 (always interact).
+        obs_b: Total number of observations for Species B in that season.  
     """
     if obs_a == 0 and obs_b == 0:
         return 0.0
