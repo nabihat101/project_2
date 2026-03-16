@@ -20,20 +20,29 @@ def calculate_interaction_likelihood(co_occurrences: int, obs_a: int, obs_b: int
         return likelihood
 
 
-# def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) -> float:
-#     """Calculates distance in kilometers between two (lat, lon) points using the Haversine formula."""
-#     import math
+def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) -> float:
+    """Calculates distance in kilometers between two (lat, lon) points using the Haversine formula."""
+    import math
 
-#     lat1, lon1 = loc1
-#     lat2, lon2 = loc2
+    # create latitude and longtidue coordinates from the tuples
+    lat1, lon1 = loc1
+    lat2, lon2 = loc2
 
-#     radius_km = 6371.0
-#     phi1 = math.radians(lat1)
-#     phi2 = math.radians(lat2)
-#     d_phi = math.radians(lat2 - lat1)
-#     d_lambda = math.radians(lon2 - lon1)
+    # account for earth's curvature 
+    radius_km = 6371.0
 
-#     a = math.sin(d_phi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(d_lambda / 2) ** 2
-#     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    # convert into radians 
+    phi1 = math.radians(lat1)
+    phi2 = math.radians(lat2)
 
-#     return radius_km * c
+    # difference in latitudes
+    d_phi = math.radians(lat2 - lat1)
+
+    # difference in longitudes 
+    d_lambda = math.radians(lon2 - lon1)
+
+    # apply haversine formula
+    a = math.sin(d_phi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(d_lambda / 2) ** 2
+    c = 2 * math.asin(math.sqrt(a))
+
+    return radius_km * c
