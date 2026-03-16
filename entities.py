@@ -66,7 +66,12 @@ class Graph:
 
     def add_edge(self, s1: str, s2: str) -> None:
         """Adds an edge between two species in the graph, incrementing 
-        the weight if the edge already exists."""
+        the weight if the edge already exists.
+        
+        Preconditions:  
+            - s1 and s2 are non-empty strings representing valid species names
+            - s1 and s2 are not the same species (no self-loops)
+        """
         if s1 == s2:
             return
 
