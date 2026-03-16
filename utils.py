@@ -64,3 +64,10 @@ def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) 
     c = 2 * math.asin(math.sqrt(a))
 
     return radius_km * c
+
+# import python_ta
+   # python_ta.check_all(config={
+    #'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules
+    #'allowed-io': [],     # the names (strs) of functions that call print/open/input
+    #'max-line-length': 120
+#})
