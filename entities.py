@@ -19,6 +19,8 @@ please consult our Course Syllabus.
 
 This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, Ruoshui Deng
 """
+import netwrokx as nx
+import matplotlib.pyplot as plt
 
 class Observation:
     """
