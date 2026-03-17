@@ -84,8 +84,8 @@ class Runner():
         species_graph.add_node(self._species)
         species = self._graph.get_vertex(self._species)
         for neighbour in self._graph.get_neighbours(self._species):
-            species.add_node(neighbour)
-            species.add_edge(self._species, neighbour, weight=species.get_weight(neighbour))
+            species_graph.add_node(neighbour)
+            species_graph.add_edge(self._species, neighbour, weight=species.get_weight(neighbour))
         return species_graph
             
         
@@ -98,7 +98,6 @@ class Runner():
         self._observations = data_manipulation.data_handle("new_file.csv")
         self._summer, self._spring, self._fall, self._winter = data_manipulation.observations_to_graph(
             self._observations)
-        print(self._summer)
         self._ask_species()
         species_graph = self.create_species_graph()
         

@@ -71,7 +71,7 @@ class Vertex:
 
     def get_weight(self, species2: str) -> int:
         """Return the edge weight between the two vertices"""
-        return self._neighbours[species2]
+        return self.neighbours[species2]
 
     
 class Graph:
@@ -87,7 +87,7 @@ class Graph:
             - species is a non-empty string representing the name of the species
         """
         if species not in self._vertices:
-            self._vertices[species] = Vertex(species, {})
+            self._vertices[species] = Vertex(species)
 
     def add_edge(self, s1: str, s2: str) -> None:
         """Adds an edge between two species in the graph, incrementing 
@@ -146,9 +146,6 @@ class Graph:
                 if source_species != target_species:
                     self.add_edge(source_species, target_species)
 
-    def __repr__(self) -> str:
-        return f"Graph(vertices={list(self._vertices.keys())})"
-
     def is_vertex(self, species) -> bool:
         return species in self._vertices
 
@@ -157,7 +154,7 @@ class Graph:
 
     def get_neighbours(self, species) -> list:
         """Return a list of neighbours of the given vertex"""
-        return list(self.vertices[species].neighbours.keys())
+        return list(self._vertices[species].neighbours.keys())
 
 
 class Popup():
