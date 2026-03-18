@@ -78,7 +78,7 @@ class Graph:
             - species is a non-empty string representing the name of the species
         """
         if species not in self._vertices:
-            self._vertices[species] = Vertex(species, {})
+            self._vertices[species] = Vertex(species)
 
     def add_edge(self, s1: str, s2: str) -> None:
         """Adds an edge between two species in the graph, incrementing 
@@ -122,7 +122,7 @@ class Graph:
             - season is between 1 and 4 inclusive.
             - observations is a list of objects with `species` and `season_to_loc`.
         """
-        species_seen_in_season: list[str] = []
+        species_seen_in_season = []
 
         for observation in observations:
             if season in observation.season_to_loc:
