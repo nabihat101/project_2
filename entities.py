@@ -20,7 +20,7 @@ please consult our Course Syllabus.
 This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, Ruoshui Deng
 """
 
-from utils import harversine_distance_km
+from utils import haversine_distance_km
 
 class Observation:
     """
@@ -134,7 +134,7 @@ class Graph:
             source_species = species_seen_in_season[i]
             for j in range(i + 1, len(species_seen_in_season)):
                 target_species = species_seen_in_season[j]
-                if source_species != target_species and harversine_distance_km(target_species, source_species) < 0.5:  
+                if source_species != target_species and haversine_distance_km(target_species, source_species) < 0.5:  
                     # Assuming a proximity threshold of 0.5 km for co-occurrence
                     self.add_edge(source_species, target_species)
 
