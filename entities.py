@@ -134,7 +134,7 @@ class Graph:
             source_species = species_seen_in_season[i]
             for j in range(i + 1, len(species_seen_in_season)):
                 target_species = species_seen_in_season[j]
-                if source_species != target_species and haversine_distance_km(observation.season_to_loc[season][i], observation.season_to_loc[season][j]) <= 0.5:
+                if source_species != target_species:
                     # Assuming a proximity threshold of 0.5 km for co-occurrence
                     self.add_edge(source_species, target_species)
 
