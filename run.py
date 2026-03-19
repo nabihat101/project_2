@@ -1,11 +1,13 @@
-
-import data_manipulation, entities
+import data_manipulation
+from entities import Vertex, Graph, Observation, Popup
 import os
 import networkx as nx
+import matplotlib.pyplot as plt
 
-class Runner():
+
+class Runner:
     """Class with methods for running the visualization
-    
+
     Instance Attributes:
        - data_file: File where the original data is stored in a csv
 
@@ -17,28 +19,29 @@ class Runner():
     def __init__(self, data_file):
         self.data_file = data_file
 
-    def _ask_species(self) -> entities.Graph:
+    def _ask_species(self) -> Graph:
         """ Ask the user which species and season, only returning when the
         values are valid inputs
         """
-        species_popup = entities.Popup(title = "Choose a species",
-                             label = "Which species would you like to look at?")
+        species_popup = Popup(title="Choose a species",
+                                       label="Which species would you like to look at?")
         species_popup.display()
         species = species_popup.text
-        
-        season_popup = entities.Popup(title = "Choose a season",
-                                    label = "Which season would you like to look at? (summer, spring, fall, winter)")
+
+        season_popup = (
+            Popup(title="Choose a season",
+                                      label="Which season would you like to look at? (summer, spring, fall, winter)"))
         season_popup.display()
         season = season_popup.text
         season = season.lower()
 
         while season not in {"spring", "summer", "fall", "winter"}:
-            season_popup = entities.Popup(title = "Choose a season",
-                                label = "Not a valid season name! (summer, spring, fall, winter)")
+            season_popup = Popup(title="Choose a season",
+                                          label="Not a valid season name! (summer, spring, fall, winter)")
             season_popup.display()
             season = season_popup.text
             season = season.lower()
-            
+
         if season == "summer":
             graph = self._summer
         elif season == "spring":
@@ -47,27 +50,27 @@ class Runner():
             graph = self._fall
         elif season == "winter":
             graph = self._winter
-                        
+
         while not graph.is_vertex(species) and species != "baby":
-            
-            species_popup = entities.Popup(title = "Choose a species",
-                                     label = "That species doesn't have data for this season. Choose a species.")
+
+            species_popup = Popup(title="Choose a species",
+                                           label="That species doesn't have data for this season. Choose a species.")
             species_popup.display()
             species = species_popup.text
-            season_popup = entities.Popup(title = "Choose a season",
-                                    label = "Which season would you like to look at? (summer, spring, fall, winter)")
+            season_popup = Popup(title="Choose a season",
+                                          label="Which season would you like to look at? (summer, spring, fall, winter)")
             season_popup.display()
             season = season_popup.text
-            
+
             season = season.lower()
 
             while season not in {"spring", "summer", "fall", "winter"}:
-                    season_popup = entities.Popup(title = "Choose a season",
-                                            label = "Not a valid season name! (summer, spring, fall, winter)")
-                    season_popup.display()
-                    season = season_popup.text
-                    season = season.lower()
-            
+                season_popup = Popup(title="Choose a season",
+                                              label="Not a valid season name! (summer, spring, fall, winter)")
+                season_popup.display()
+                season = season_popup.text
+                season = season.lower()
+
             if season == "summer":
                 graph = self._summer
             elif season == "spring":
@@ -78,17 +81,16 @@ class Runner():
                 graph = self._winter
         self._species = species
         self._graph = graph
-        
+
     def create_species_graph(self):
         species_graph = nx.Graph()
         species_graph.add_node(self._species)
         species = self._graph.get_vertex(self._species)
         for neighbour in self._graph.get_neighbours(self._species):
-            species.add_node(neighbour)
-            species.add_edge(self._species, neighbour, weight=species.get_weight(neighbour))
+            species_graph.add_node(neighbour)
+            species_graph.add_edge(self._species, neighbour, weight=species.get_weight(neighbour))
         return species_graph
-            
-        
+
     def run(self):
         """
         Run and create a graph based on user input
@@ -101,7 +103,9 @@ class Runner():
         print(self._summer)
         self._ask_species()
         species_graph = self.create_species_graph()
-        
+        nx.draw(species_graph, with_labels=True, node_color='skyblue', node_size=1500, edge_color='black', font_size=12)
 
-        
-        
+        plt.show()
+
+
+
