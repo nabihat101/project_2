@@ -48,31 +48,26 @@ def data_handle(file: str) -> list[Observation]:
 
         dates = list(group["observed_on"])
         lats = list(group["latitude"])
-        longs = list(group["longitude"])
+        long = list(group["longitude"])
 
         for x in range(len(dates)):
-            curr = dates[x].split("/")[0]
+            curr = dates[x].split("-")[1]
 
-            try:
-                month = int(curr)
-            except ValueError:
-                continue
-
-            if month in (12, 1, 2):
+            season = 0
+            # Winter is first season
+            if int(curr) in [12, 1, 2]:
                 season = 1
-            elif month in (3, 4, 5):
+            elif int(curr) in [3, 4, 5]:
                 season = 2
-            elif month in (6, 7, 8):
+            elif int(curr) in [6, 7, 8]:
                 season = 3
-            elif month in (9, 10, 11):
-                season = 4
             else:
-                season = 0  # This should never happen, but we can ignore the observataion if it does
+                season = 4
 
             if season not in obs.season_to_loc:
                 obs.season_to_loc[season] = []
 
-            obs.season_to_loc[season].append((lats[x], longs[x]))
+            obs.season_to_loc[season].append((lats[x], long[x]))
 
         observations.append(obs)
 
