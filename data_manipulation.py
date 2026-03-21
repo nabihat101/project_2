@@ -95,7 +95,7 @@ def observations_to_graph(observations: list[Observation]) -> Graph:
 
 def run_simulation(data_file: str, species_a: str, species_b: str) -> dict[str, float]:
     """Runs the data pipeline and computes seasonal proximity between two species."""
-    clean_data(data_file)
+    clean_data("data.csv")
     observations = data_handle("new_file.csv")
     summer, spring, fall, winter = observations_to_graph(observations)
 
