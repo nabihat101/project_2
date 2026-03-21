@@ -170,9 +170,9 @@ class Graph:
 
                 # flatten the nested lists
                 l1 = [l for x in locs1 for l in x]
-                # i1 = [l for x in im1 for l in x]
+                i1 = [l for x in im1 for l in x]
                 l2 = [l for x in locs2 for l in x]
-                # i2 = [l for x in im2 for l in x]
+                i2 = [l for x in im2 for l in x]
 
                 if not l1 or not l2:
                     continue
