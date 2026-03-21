@@ -33,6 +33,7 @@ class Observation:
         - species: the name of the species observed
         - season_to_loc: a mapping from season to a list of locations (latitude, longitude)
           where the species was observed in that season
+        - image: the image of the species observed
     Representation Invariants:
         - season_to_loc only contains keys from 1 to 4, representing the four seasons
         - each location is a tuple of (latitude, longitude)
@@ -140,7 +141,7 @@ class Graph:
 
         Preconditions:
             - season is between 1 and 4 inclusive.
-            - observations is a list of objects with `species` and `season_to_loc`.
+            - observations is a list of objects with `species` and `season_to_loc`
         """
         species_season_to_loc = {}
 
