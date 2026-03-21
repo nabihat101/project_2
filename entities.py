@@ -40,9 +40,9 @@ class Observation:
     """
     species: str
     season_to_loc: dict[int, list[tuple[float, float]]]
-    image: str
+    image: Optional[str]
 
-    def __init__(self, species: str, image: str) -> None:
+    def __init__(self, species: str, image: Optional[str] = None) -> None:
         self.species = species
         self.season_to_loc = {}
         self.image = image
