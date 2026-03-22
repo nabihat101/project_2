@@ -3,6 +3,8 @@ from entities import Vertex, Graph, Observation, Popup
 import os
 import networkx as nx
 import matplotlib.pyplot as plt
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+import matplotlib.image as mpimg
 
 
 class Runner:
@@ -84,11 +86,16 @@ class Runner:
 
     def create_species_graph(self):
         species_graph = nx.Graph()
+
+        main_vertex = self._graph.get_vertex(self._species)
+        species_graph.add_node(main_vertex)
+
         species_graph.add_node(self._species)
         species = self._graph.get_vertex(self._species)
         for neighbour in self._graph.get_neighbours(self._species):
-            species_graph.add_node(neighbour)
-            species_graph.add_edge(self._species, neighbour, weight=species.get_weight(neighbour))
+            neighbour_vertex = self._graph.get_vertex(neighbour)
+
+            species_graph.add_edge(self._species, neighbour_vertex, weight=species.get_weight(neighbour)*2)
         return species_graph
 
     def run(self):
@@ -103,7 +110,8 @@ class Runner:
         print(self._summer)
         self._ask_species()
         species_graph = self.create_species_graph()
-        nx.draw(species_graph, with_labels=True, node_color='skyblue', node_size=1500, edge_color='black', font_size=12)
+        pos = nx.spring_layout(species_graph)
+
 
         plt.show()
 
