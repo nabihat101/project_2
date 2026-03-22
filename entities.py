@@ -33,16 +33,15 @@ class Observation:
         - species: the name of the species observed
         - season_to_loc: a mapping from season to a list of locations (latitude, longitude)
           where the species was observed in that season
-        - image: the image of the species observed
     Representation Invariants:
         - season_to_loc only contains keys from 1 to 4, representing the four seasons
         - each location is a tuple of (latitude, longitude)
     """
     species: str
     season_to_loc: dict[int, list[tuple[float, float]]]
-    image: Optional[str]
+    image: str
 
-    def __init__(self, species: str, image: Optional[str] = None) -> None:
+    def __init__(self, species: str, image: str) -> None:
         self.species = species
         self.season_to_loc = {}
         self.image = image
@@ -62,9 +61,10 @@ class Vertex:
     species: str
     neighbours: dict[str, int]
 
-    def __init__(self, species: str) -> None:
+    def __init__(self, species: str, image: str) -> None:
         self.species = species
         self.neighbours = {}  # neighbour_species -> weight
+        self.image = image
 
     def get_weight(self, n: str) -> int:
         return self.neighbours[n]
@@ -99,7 +99,7 @@ class Graph:
             - species is a non-empty string representing the name of the species
         """
         if species not in self._vertices:
-            self._vertices[species] = Vertex(species)
+            self._vertices[species] = Vertex(species, image)
 
     def add_edge(self, s1: str, s2: str, im1: str, im2: str) -> None:
         """Adds an edge between two species in the graph, incrementing
@@ -141,7 +141,7 @@ class Graph:
 
         Preconditions:
             - season is between 1 and 4 inclusive.
-            - observations is a list of objects with `species` and `season_to_loc`
+            - observations is a list of objects with `species` and `season_to_loc`.
         """
         species_season_to_loc = {}
 
