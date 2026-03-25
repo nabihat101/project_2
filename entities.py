@@ -23,6 +23,7 @@ This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, R
 import tkinter as tk
 from typing import Optional
 from utils import haversine_distance_km
+from tkinter import ttk
 
 
 class Observation:
@@ -160,6 +161,32 @@ class Graph:
         return list(self._vertices[species].neighbours.keys())
 
 
+class Textbox():
+    """Class for user input in the tkinter GUI
+    
+    Instance Attributes:
+        - text: User inputted text, or None if the text has not been submitted yet
+        - row: The row of the textbox
+        - col: the column of the textbox
+        - frame: the tkinter frame the textbox is in
+        - obj: the ttk.Entry object of the textbox
+    """
+    text: Optional[str]
+    row: int
+    col: int
+    frame: ttk.Frame
+    obj: ttk.Entry
+
+    def __init__(self, frame: ttk.Frame, col: int, row: int):
+        self.row = row
+        self.col = col
+        self.frame = frame
+        self.text = None
+
+        self.obj = ttk.Entry(frame)
+        self.obj.grid(column=col, row=row)   
+        
+
 class Popup():
     """Class for creating popup windows, essentially a GUI version of the
     input() command                                     
@@ -178,6 +205,7 @@ class Popup():
         self.text = None
         self.label = label
         self.title = title
+        self.display()
 
     def display(self):
         """                                                                     
@@ -202,6 +230,7 @@ class Popup():
         
         self.text = self._entry.get()
         self._popup.destroy()
+
 
         
 # import python_ta
