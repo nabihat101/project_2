@@ -22,9 +22,9 @@ This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, R
 
 import tkinter as tk
 from typing import Optional
-from utils import haversine_distance_km
-from tkinter import ttk
 
+from utils import haversine_distance_km, get_interaction_parameters, calculate_interaction_likelihood
+from tkinter import ttk
 
 class Observation:
     """
@@ -39,7 +39,7 @@ class Observation:
         - each location is a tuple of (latitude, longitude)
     """
     species: str
-    season_to_loc: dict[int, list[tuple[float, float]]]
+    season_to_loc: dict[int, list[tuple[str, float, float]]]
     image: str
 
     def __init__(self, species: str, image: str) -> None:
@@ -47,25 +47,35 @@ class Observation:
         self.season_to_loc = {}
         self.image = image
 
+def get_observation(observations: list[Observation], target: str) -> Observation|None:
+    for obs in observations:
+        if obs.species == target:
+            return obs
+
 class Vertex:
     """Represents a vertex in the graph, which corresponds to a species in this case.
 
     Instance Attributes:
          - species: the name of the species represented by this vertex
          - neighbours: a mapping from neighbouring species to the weight of the edge between them
+         - image: a url for the images of the species
+         - neighbours_probability: a mapping from neighbouring species to the probability of the two species interacting
+         based on functions in utils.py
     Representation Invariants:
          - species is a non-empty string
          - neighbours only contains keys that are valid species names (non-empty strings)
          - weights in neighbours are positive integers
     """
     species: str
-    neighbours: dict[str, int]
+    neighbours: dict[str, float]
     image: str
+    neighbours_probability: dict[str, float]
 
     def __init__(self, species: str, image: str) -> None:
         self.species = species
         self.neighbours = {}  # neighbour_species -> weight
         self.image = image
+        self.neighbours_probability = {}
 
     # FOR DEBUGGING PURPOSES
     def __repr__(self) -> str:
@@ -79,6 +89,10 @@ class Vertex:
     def get_weight(self, species2: str) -> int:
         """Return the edge weight between the two vertices"""
         return self.neighbours[species2]
+
+    def get_prob(self, species2: str) -> float:
+        """Return the probability of interaction between the two vertices"""
+        return self.neighbours_probability[species2]
 
 
 class Graph:
@@ -123,6 +137,7 @@ class Graph:
             v2.neighbours[s1] += 1
         else:
             v2.neighbours[s1] = 1
+
 
     def build_from_observations(self, observations: list, season: int) -> None:
         """Builds a seasonal graph from observations.
@@ -176,8 +191,26 @@ class Graph:
                 else:
                     for k in range(len(l1)):
                         for l in range(len(l2)):
-                            if haversine_distance_km(l1[k], l2[l]) <= 0.5:
+
+                            # extract the latitude and longitude from the (x,y,z) tuple
+                            loc1 = (l1[k][1], l1[k][2])
+                            loc2 = (l2[l][1], l2[l][2])
+
+                            if haversine_distance_km(loc1, loc2) <= 0.5:
+                                # updating the probabilities and the self.neighbours_probability attribute
+
+                                co_occurrences, obs_a_count, obs_b_count = get_interaction_parameters(l1, l2, 0.5)
+                                prob = calculate_interaction_likelihood(co_occurrences, obs_a_count, obs_b_count)
+
+                                # add edge
                                 self.add_edge(source_species, target_species, i1[k], i2[l])
+
+                                # update prob dict.
+                                v1 = self._vertices[source_species]
+                                v2 = self._vertices[target_species]
+
+                                v1.neighbours_probability[target_species] = prob
+                                v2.neighbours_probability[source_species] = prob
 
 
     def is_vertex(self, species) -> bool:
