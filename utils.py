@@ -38,7 +38,13 @@ def calculate_interaction_likelihood(co_occurrences: int, obs_a: int, obs_b: int
 
 
 def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) -> float:
-    """Calculates distance in kilometers between two (lat, lon) points using the Haversine formula."""
+    """Calculates distance in kilometers between two (lat, lon) points using the Haversine formula.
+     >>> haversine_distance_km((40.7, -70.8), (51.3, 0.18))
+    5386.3
+
+    >>> haversine_distance_km((40.7128, -74.0060), (34.0522, -118.2437))
+    3935.7
+    """
     import math
 
     # create latitude and longtidue coordinates from the tuples

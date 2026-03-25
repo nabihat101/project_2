@@ -22,6 +22,8 @@ This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, R
 
 import tkinter as tk
 from typing import Optional
+from utils import haversine_distance_km
+
 
 class Observation:
     """
@@ -131,7 +133,7 @@ class Graph:
             - season is between 1 and 4 inclusive.
             - observations is a list of objects with `species` and `season_to_loc`.
         """
-        species_seen_in_season: list[str] = []
+        species_seen_in_season = []
 
         for observation in observations:
             if season in observation.season_to_loc:
@@ -144,6 +146,7 @@ class Graph:
             for j in range(i + 1, len(species_seen_in_season)):
                 target_species = species_seen_in_season[j]
                 if source_species != target_species:
+                    # Assuming a proximity threshold of 0.5 km for co-occurrence
                     self.add_edge(source_species, target_species)
 
     def is_vertex(self, species) -> bool:
