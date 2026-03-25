@@ -1,21 +1,3 @@
-""" CSC111 Project 2
-
-Module Description
-==================
-This file contains the methods to run and create the graph visualization along with user input
-
-Copyright and Usage Information
-===============================
-
-This file is provided solely for the personal and private use of students
-taking CSC111 at the University of Toronto St. George campus. All forms of
-distribution of this code, whether as given or with any changes, are
-expressly prohibited. For more information on copyright for CSC111 materials,
-please consult our Course Syllabus.
-
-This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, Ruoshui Deng
-"""
-
 import data_manipulation, entities
 from utils import make_circular
 import os
@@ -29,6 +11,7 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 
+from utils import get_interaction_parameters, calculate_interaction_likelihood
 
 class Runner():
     """Class with methods for running the visualization
@@ -113,7 +96,7 @@ class Runner():
         for neighbour in self._graph.get_neighbours(self._species):
             neighbour_v = self._graph.get_vertex(neighbour)
             species_graph.add_node(neighbour, image=neighbour_v.image)
-            species_graph.add_edge(self._species, neighbour, weight=species.get_weight(neighbour)*3)
+            species_graph.add_edge(self._species, neighbour, weight=species.get_weight(neighbour), label=species.get_prob(neighbour))
         return species_graph
 
     def display_window(self):
@@ -161,7 +144,7 @@ class Runner():
 
         species_graph = self.create_species_graph()
         # creates corrdinates for each node on graph
-        pos = nx.spring_layout(species_graph)
+        pos = nx.spring_layout(species_graph, k=1.5)
 
         # creates the graph space: fig is the whole canvas and ax is the place where graph is drawn
         fig, ax = plt.subplots()
@@ -170,7 +153,7 @@ class Runner():
         nx.draw_networkx_edges(species_graph, pos, ax=ax)
 
         # get the weight for the edges so we can draw it on
-        edge_labels = nx.get_edge_attributes(species_graph, 'weight')
+        edge_labels = nx.get_edge_attributes(species_graph, 'label')
 
         # draw labels using networkx at the position
         nx.draw_networkx_edge_labels(species_graph, pos, edge_labels=edge_labels, ax=ax)
@@ -219,15 +202,15 @@ class Runner():
             # draws image on the portion of canvas
             ax.add_artist(ab)
 
-        # Remove axes for cleaner look
+            # Remove axes for cleaner look
         ax.set_axis_off()
 
         # shows the graph
         plt.show()
-
         # https://networkx.org/documentation/stable/auto_examples/drawing/plot_custom_node_icons.html
         # https://stackoverflow.com/questions/44865023/how-can-i-create-a-circular-mask-for-a-numpy-array
-        # https://www.geeksforgeeks.org/python/python-numpy-dstack-method/
+        # https://matplotlib.org/stable/gallery/text_labels_and_annotations/demo_annotation_box.html
+        # https://stackoverflow.com/questions/10678441/flipping-the-boolean-values-in-a-list-python
 
     def run(self):
         """
