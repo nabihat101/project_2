@@ -19,7 +19,8 @@ import numpy as np
 
 def calculate_interaction_likelihood(co_occurrences: int, obs_a: int, obs_b: int) -> float:
     """
-    Calculates the likelihood of interaction between two species using the Jaccard Index. Returns a float between 0.0 (never interact) and 1.0 (always interact).
+    Calculates the likelihood of interaction between two species using the Jaccard Index. Returns a float between 0.0
+    (never interact) and 1.0 (always interact).
 
     We say that two species are more likely to interact when they are closer to each other.
 
@@ -34,7 +35,42 @@ def calculate_interaction_likelihood(co_occurrences: int, obs_a: int, obs_b: int
     else:
         total_unique_observations = (obs_a + obs_b) - co_occurrences
         likelihood = co_occurrences / total_unique_observations
-        return likelihood
+        return round(likelihood, 2)
+
+
+def get_interaction_parameters(locs_a: list[tuple[str, float, float]],
+                               locs_b: list[tuple[str, float, float]],
+                               max_distance_km: float) -> tuple[int, int, int]:
+    """Finds the co-occurrences, obs_A, and obs_B for two species in a specific season."""
+    obs_a_count = len(locs_a)
+    obs_b_count = len(locs_b)
+
+    if obs_a_count == 0 or obs_b_count == 0:
+        return 0, obs_a_count, obs_b_count
+
+    # Count how many sightings of A have at least one B nearby on the same day
+    a_near_b = 0
+    for date_a, lat_a, lon_a in locs_a:
+        for date_b, lat_b, lon_b in locs_b:
+            if date_a == date_b:
+                dist = haversine_distance_km((lat_a, lon_a), (lat_b, lon_b))
+                if dist <= max_distance_km:
+                    a_near_b += 1
+                    break
+
+    # Count how many sightings of B have at least one A nearby on the same day
+    b_near_a = 0
+    for date_b, lat_b, lon_b in locs_b:
+        for date_a, lat_a, lon_a in locs_a:
+            if date_b == date_a:
+                dist = haversine_distance_km((lat_b, lon_b), (lat_a, lon_a))
+                if dist <= max_distance_km:
+                    b_near_a += 1
+                    break
+
+    co_occurrences = min(a_near_b, b_near_a)
+
+    return co_occurrences, obs_a_count, obs_b_count
 
 
 def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) -> float:
@@ -111,7 +147,7 @@ def make_circular(img: np.ndarray) -> np.ndarray:
 
 # import python_ta
 # python_ta.check_all(config={
-# 'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules
-# 'allowed-io': [],     # the names (strs) of functions that call print/open/input
-# 'max-line-length': 120
-# })
+#'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules
+#'allowed-io': [],     # the names (strs) of functions that call print/open/input
+#'max-line-length': 120
+#})
