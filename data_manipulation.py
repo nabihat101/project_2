@@ -64,7 +64,7 @@ def data_handle(file: str) -> list[Observation]:
             if season not in obs.season_to_loc:
                 obs.season_to_loc[season] = []
 
-            obs.season_to_loc[season].append((lats[x], long[x]))
+            obs.season_to_loc[season].append((dates[x], lats[x], long[x]))
 
         observations.append(obs)
 
