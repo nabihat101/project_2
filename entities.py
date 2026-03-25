@@ -6,7 +6,7 @@ This file contains all the classes used to represent the data and the graph stru
 The main classes are:
 - Observation: represents a species and the locations it was observed in different seasons
 - Vertex: represents a vertex in the graph, which corresponds to a species in this case
-- Graph: represents the graph structure 
+- Graph: represents the graph structure
 
 Copyright and Usage Information
 ===============================
@@ -40,14 +40,16 @@ class Observation:
     """
     species: str
     season_to_loc: dict[int, list[tuple[float, float]]]
+    image: str
 
-    def __init__(self, species: str) -> None:
+    def __init__(self, species: str, image: str) -> None:
         self.species = species
         self.season_to_loc = {}
+        self.image = image
 
 class Vertex:
     """Represents a vertex in the graph, which corresponds to a species in this case.
-    
+
     Instance Attributes:
          - species: the name of the species represented by this vertex
          - neighbours: a mapping from neighbouring species to the weight of the edge between them
@@ -58,11 +60,13 @@ class Vertex:
     """
     species: str
     neighbours: dict[str, int]
+    image: str
 
-    def __init__(self, species: str) -> None:
+    def __init__(self, species: str, image: str) -> None:
         self.species = species
         self.neighbours = {}  # neighbour_species -> weight
-    
+        self.image = image
+
     # FOR DEBUGGING PURPOSES
     def __repr__(self) -> str:
         """Returns a string representation of the Vertex."""
@@ -76,35 +80,35 @@ class Vertex:
         """Return the edge weight between the two vertices"""
         return self.neighbours[species2]
 
-    
+
 class Graph:
     _vertices: dict[str, Vertex]
 
     def __init__(self) -> None:
         self._vertices = {}  # species -> Vertex
 
-    def add_vertex(self, species: str) -> None:
+    def add_vertex(self, species: str, image: str) -> None:
         """Adds a vertex to the graph. Neighbours are added separately through add_edge.
 
         Preconditions:
             - species is a non-empty string representing the name of the species
         """
         if species not in self._vertices:
-            self._vertices[species] = Vertex(species)
+            self._vertices[species] = Vertex(species, image)
 
-    def add_edge(self, s1: str, s2: str) -> None:
-        """Adds an edge between two species in the graph, incrementing 
+    def add_edge(self, s1: str, s2: str, im1: str, im2: str) -> None:
+        """Adds an edge between two species in the graph, incrementing
         the weight if the edge already exists.
-        
-        Preconditions:  
+
+        Preconditions:
             - s1 and s2 are non-empty strings representing valid species names
             - s1 and s2 are not the same species (no self-loops)
         """
         if s1 == s2:
             return
 
-        self.add_vertex(s1)
-        self.add_vertex(s2)
+        self.add_vertex(s1, im1)
+        self.add_vertex(s2, im2)
 
         v1 = self._vertices[s1]
         v2 = self._vertices[s2]
@@ -127,28 +131,54 @@ class Graph:
         we add all species observed in that season as vertices, and create co-occurrence
         edges between species observed in the same season.
 
-        Thus the graph represents co-occurrence of species in the same season, 
+        Thus the graph represents co-occurrence of species in the same season,
         but does not show each individual observation.
 
         Preconditions:
             - season is between 1 and 4 inclusive.
             - observations is a list of objects with `species` and `season_to_loc`.
         """
-        species_seen_in_season = []
+        species_season_to_loc = {}
 
         for observation in observations:
             if season in observation.season_to_loc:
-                species_seen_in_season.append(observation.species)
-                self.add_vertex(observation.species)
+                if observation.species not in species_season_to_loc:  # TO HANDLE CASES WHERE A SAME SPECIES IS OBSERVED MORE THAN ONCE
+                    species_season_to_loc[observation.species] = [
+                        (observation.season_to_loc[season], observation.image)]
+                else:  # Add all the locations for this species in this season
+                    species_season_to_loc[observation.species].extend([(observation.season_to_loc[season],
+                                                                        observation.image)])  # Add in all locations for this season for this species
 
+                self.add_vertex(observation.species, observation.image)
+
+        species_seen_in_season = list(species_season_to_loc.keys())
         # Add an edge between each pair of species observed in the same season.
-        for i in range(len(species_seen_in_season)):
+        for i in range(len(species_seen_in_season) - 1):
             source_species = species_seen_in_season[i]
+
             for j in range(i + 1, len(species_seen_in_season)):
                 target_species = species_seen_in_season[j]
-                if source_species != target_species:
-                    # Assuming a proximity threshold of 0.5 km for co-occurrence
-                    self.add_edge(source_species, target_species)
+
+                # create a nested list of images and locations
+                locs1 = [l[0] for l in species_season_to_loc[source_species]]
+                im1 = [l[1] for l in species_season_to_loc[source_species]]
+                locs2 = [l[0] for l in species_season_to_loc[target_species]]
+                im2 = [l[1] for l in species_season_to_loc[target_species]]
+
+                # flatten the nested lists
+                l1 = [l for x in locs1 for l in x]
+                i1 = [l for x in im1 for l in x]
+                l2 = [l for x in locs2 for l in x]
+                i2 = [l for x in im2 for l in x]
+
+                if not l1 or not l2:
+                    continue
+                else:
+                    for k in range(len(l1)):
+                        for l in range(len(l2)):
+                            if haversine_distance_km(l1[k], l2[l]) <= 0.5:
+                                self.add_edge(source_species, target_species, i1[k], i2[l])
+
 
     def is_vertex(self, species) -> bool:
         return species in self._vertices
@@ -163,7 +193,7 @@ class Graph:
 
 class Textbox():
     """Class for user input in the tkinter GUI
-    
+
     Instance Attributes:
         - text: User inputted text, or None if the text has not been submitted yet
         - row: The row of the textbox
@@ -184,17 +214,17 @@ class Textbox():
         self.text = None
 
         self.obj = ttk.Entry(frame)
-        self.obj.grid(column=col, row=row)   
-        
+        self.obj.grid(column=col, row=row)
+
 
 class Popup():
     """Class for creating popup windows, essentially a GUI version of the
-    input() command                                     
-    Instance Attributes:                                                       
-        - text: The text from the popup window, or None if the popup window is  
-          not yet submitted                                                     
-        - label: The popup window label                                        
-        - title: The popup window title                                         
+    input() command
+    Instance Attributes:
+        - text: The text from the popup window, or None if the popup window is
+          not yet submitted
+        - label: The popup window label
+        - title: The popup window title
     """
 
     text: Optional[str]
@@ -208,8 +238,8 @@ class Popup():
         self.display()
 
     def display(self):
-        """                                                                     
-        Display the popup window.                                               
+        """
+        Display the popup window.
         """
 
         self._popup = tk.Tk()
@@ -218,24 +248,22 @@ class Popup():
         label.pack(padx=20, pady=20)
         self._entry = tk.Entry(self._popup)
         self._entry.pack(pady=10)
-        submit_button = tk.Button(self._popup, text = "Enter", command = self._get_text)
+        submit_button = tk.Button(self._popup, text="Enter", command=self._get_text)
         submit_button.pack()
 
         self._popup.mainloop()
 
     def _get_text(self):
-        """                                                                     
-        Set self.text to the popup text, only meant to be called from display   
         """
-        
+        Set self.text to the popup text, only meant to be called from display
+        """
+
         self.text = self._entry.get()
         self._popup.destroy()
 
-
-        
 # import python_ta
-   # python_ta.check_all(config={
-    #'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules
-    #'allowed-io': [],     # the names (strs) of functions that call print/open/input
-    #'max-line-length': 120
-#})
+# python_ta.check_all(config={
+# 'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules
+# 'allowed-io': [],     # the names (strs) of functions that call print/open/input
+# 'max-line-length': 120
+# })
