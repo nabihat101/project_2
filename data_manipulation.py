@@ -26,22 +26,10 @@ def clean_data(data_file: str) -> None:
     """
 
     df = pd.read_csv(data_file)
-    df_new = df.drop(columns=["id", "uuid", "observed_on_string", "time_observed_at", "time_zone", "user_id", "user_login", "user_name", "created_at", "updated_at", "quality_grade", "url", "image_url", "sound_url", "tag_list", "description", "num_identification_agreements", "num_identification_disagreements", "captive_cultivated", "oauth_application_id", "private_place_guess", "private_latitude", "private_longitude","public_positional_accuracy", "geoprivacy", "taxon_geoprivacy", "coordinates_obscured", "positioning_method", "positioning_device", "scientific_name", "iconic_taxon_name", "taxon_id", "common_name"])
+    df_new = df.drop(columns=["id", "uuid", "observed_on_string", "time_observed_at", "time_zone", "user_id", "user_login", "user_name", "created_at", "updated_at", "quality_grade", "url", "sound_url", "tag_list", "description", "num_identification_agreements", "num_identification_disagreements", "captive_cultivated", "oauth_application_id", "private_place_guess", "private_latitude", "private_longitude","public_positional_accuracy", "geoprivacy", "taxon_geoprivacy", "coordinates_obscured", "positioning_method", "positioning_device", "scientific_name", "iconic_taxon_name", "taxon_id", "common_name"])
     df_new = df_new[df_new["positional_accuracy"] <= 1000]
     df_new.to_csv("new_file.csv",index=False)
 
-
-class Observation:
-    """
-    groups observations together
-    """
-    species: str
-    season_to_loc: dict[int, tuple[int, int]]
-
-    def __init__(self, species: str) -> None:
-
-        self.species = species
-        self.season_to_loc = {}
 
 def data_handle(file: str) -> list[Observation]:
     df = pd.read_csv(file)
@@ -50,7 +38,10 @@ def data_handle(file: str) -> list[Observation]:
     observations = []
 
     for species, group in grouped:
-        obs = Observation(species)
+
+        # for the image_url, we drop all the places where the user didn't put an image, and take the first image
+
+        obs = Observation(species, group["image_url"])
 
         dates = list(group["observed_on"])
         lats = list(group["latitude"])
