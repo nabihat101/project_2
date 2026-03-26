@@ -112,7 +112,7 @@ class Graph:
         we add all species observed in that season as vertices, and create co-occurrence
         edges between species observed in the same season.
 
-        Thus the graph represents co-occurrence of species in the same season,
+        Thus, the graph represents co-occurrence of species in the same season,
         but does not show each individual observation.
 
         Preconditions:
@@ -136,7 +136,7 @@ class Graph:
                 locs_a = obs_dict[source_species].season_to_loc[season]
                 locs_b = obs_dict[target_species].season_to_loc[season]
 
-                # Check for co-occurrences within 0.5 km on the exact same day
+                # Check for co-occurrences within 1 km in the same season
                 co_occur, obs_a, obs_b = get_interaction_parameters(locs_a, locs_b, 1)
 
                 # Only add edge if they actually co-occurred
