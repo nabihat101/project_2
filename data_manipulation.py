@@ -20,6 +20,7 @@ import pandas as pd
 
 from entities import Graph, Observation
 
+
 def clean_data(data_file: str) -> None:
     """
     creates a datamap using pandas library to clean and filter data based on conditions
@@ -31,18 +32,6 @@ def clean_data(data_file: str) -> None:
     df_new.to_csv("new_file.csv",index=False)
 
 
-class Observation:
-    """
-    groups observations together
-    """
-    species: str
-    season_to_loc: dict[int, tuple[int, int]]
-
-    def __init__(self, species: str) -> None:
-
-        self.species = species
-        self.season_to_loc = {}
-
 def data_handle(file: str) -> list[Observation]:
     df = pd.read_csv(file)
     grouped = df.groupby("species_guess")
@@ -50,7 +39,7 @@ def data_handle(file: str) -> list[Observation]:
     observations = []
 
     for species, group in grouped:
-        obs = Observation(species)
+        obs = Observation(str(species))
 
         dates = list(group["observed_on"])
         lats = list(group["latitude"])
@@ -60,7 +49,6 @@ def data_handle(file: str) -> list[Observation]:
             curr = dates[x].split("-")[1]
 
             season = 0
-            # Winter is first season
             if int(curr) in [12, 1, 2]:
                 season = 1
             elif int(curr) in [3, 4, 5]:
@@ -73,7 +61,8 @@ def data_handle(file: str) -> list[Observation]:
             if season not in obs.season_to_loc:
                 obs.season_to_loc[season] = []
 
-            obs.season_to_loc[season].append((lats[x], long[x]))
+            # UPDATE: Added dates[x] to the tuple
+            obs.season_to_loc[season].append((dates[x], lats[x], long[x]))
 
         observations.append(obs)
 
