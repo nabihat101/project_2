@@ -177,7 +177,7 @@ class Textbox():
     frame: ttk.Frame
     obj: ttk.Entry
 
-    def __init__(self, frame: ttk.Frame, col: int, row: int):
+    def __init__(self, frame: ttk.Frame, col: int, row: int) -> None:
         self.row = row
         self.col = col
         self.frame = frame
@@ -186,6 +186,11 @@ class Textbox():
         self.obj = ttk.Entry(frame)
         self.obj.grid(column=col, row=row)   
 
+class Species_Input():
+    """Class for the species input tkinter GUI"""
+
+    def __init__(self) -> None:
+        pass
         
 # import python_ta
    # python_ta.check_all(config={

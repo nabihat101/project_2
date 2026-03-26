@@ -19,79 +19,26 @@ class Runner():
 
     def __init__(self, data_file):
         self.data_file = data_file
-
-    def _ask_species(self) -> entities.Graph:
-        """ Ask the user which species and season, only returning when the
-        values are valid inputs
-
-        LEAVING THIS HERE FOR NOW BUT ITS NOT IN USE IM USING A DIFFERENT ONE
-        """
-        species_popup = entities.Popup(title = "Choose a species",
-                             label = "Which species would you like to look at?")
-        species = species_popup.text
         
-        season_popup = entities.Popup(title = "Choose a season",
-                                    label = "Which season would you like to look at? (summer, spring, fall, winter)")
-        season = season_popup.text
-        season = season.lower()
-
-        while season not in {"spring", "summer", "fall", "winter"}:
-            season_popup = entities.Popup(title = "Choose a season",
-                                label = "Not a valid season name! (summer, spring, fall, winter)")
-            season = season_popup.text
-            season = season.lower()
-            
-        if season == "summer":
-            graph = self._summer
-        elif season == "spring":
-            graph = self._spring
-        elif season == "fall":
-            graph = self._fall
-        elif season == "winter":
-            graph = self._winter
-                        
-        while not graph.is_vertex(species):
-            
-            species_popup = entities.Popup(title = "Choose a species",
-                                     label = "That species doesn't have data for this season. Choose a species.")
-            species_popup.display()
-            species = species_popup.text
-            season_popup = entities.Popup(title = "Choose a season",
-                                    label = "Which season would you like to look at? (summer, spring, fall, winter)")
-            season_popup.display()
-            season = season_popup.text
-            
-            season = season.lower()
-
-            while season not in {"spring", "summer", "fall", "winter"}:
-                    season_popup = entities.Popup(title = "Choose a season",
-                                            label = "Not a valid season name! (summer, spring, fall, winter)")
-                    season_popup.display()
-                    season = season_popup.text
-                    season = season.lower()
-            
-            if season == "summer":
-                graph = self._summer
-            elif season == "spring":
-                graph = self._spring
-            elif season == "fall":
-                graph = self._fall
-            elif season == "winter":
-                graph = self._winter
-        self._species = species
-        self._graph = graph
+    def create_species_graph(self) -> nx.Graph:
+        """Initialize a networkx graph from our graph class"""
         
-    def create_species_graph(self):
         species_graph = nx.Graph()
+
+        # add a node for the target species
         species_graph.add_node(self._species)
         species = self._graph.get_vertex(self._species)
+
+        # add nodes for each neighbour, and edges between the target species and neighbour
         for neighbour in self._graph.get_neighbours(self._species):
             species_graph.add_node(neighbour)
             species_graph.add_edge(self._species, neighbour, weight=species.get_weight(neighbour))
+            
         return species_graph
     
-    def display_window(self):
-        """Display the window that lets you create a graph"""
+    def display_window(self) -> None:
+        """Display the window that lets you create a graph and specify parameters."""
+        
         root = Tk()
         root.title('Species Interaction Visualizer')
         frm = ttk.Frame(root, padding=15)
@@ -116,7 +63,7 @@ class Runner():
         ttk.Label(frm, text="Graph statistics can go here").grid(column=0, row=4)
         root.mainloop()
 
-    def _initialize_graph_vals(self):
+    def _initialize_graph_vals(self) -> None:
         """Save the values in the textboxes, and draw and display the graph from them."""
         self.species_input.text = self.species_input.obj.get()
         self.season_input_text = self.season_input.get()
@@ -138,7 +85,7 @@ class Runner():
         nx.draw_networkx(species_graph)
         plt.show()
     
-    def run(self):
+    def run(self) -> None:
         """
         Run and create a graph based on user input
         """
