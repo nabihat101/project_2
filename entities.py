@@ -26,6 +26,8 @@ from typing import Optional
 from utils import haversine_distance_km, get_interaction_parameters, calculate_interaction_likelihood
 from tkinter import ttk
 
+import pandas as pd
+
 class Observation:
     """
     Takes each observation and stores it in an object to make it easier to manipulate and build the graph.
@@ -163,8 +165,13 @@ class Graph:
                 else:  # Add all the locations for this species in this season
                     species_season_to_loc[observation.species].extend([(observation.season_to_loc[season],
                                                                         observation.image)])  # Add in all locations for this season for this species
+                if not observation.image.dropna().empty:
+                    self.add_vertex(observation.species, observation.image.dropna().iloc[0])
 
-                self.add_vertex(observation.species, observation.image)
+                # If the species has no images, we use a stock image to represent them
+                # its this duck right now but we should definitely change it to smth else
+                else:
+                    self.add_vertex(observation.species, 'https://static.inaturalist.org/photos/604719843/large.jpg')
 
         species_seen_in_season = list(species_season_to_loc.keys())
         # Add an edge between each pair of species observed in the same season.
@@ -204,14 +211,13 @@ class Graph:
 
                                 # add edge
                                 self.add_edge(source_species, target_species, i1[k], i2[l])
-
+                                
                                 # update prob dict.
                                 v1 = self._vertices[source_species]
                                 v2 = self._vertices[target_species]
 
                                 v1.neighbours_probability[target_species] = prob
                                 v2.neighbours_probability[source_species] = prob
-
 
     def is_vertex(self, species) -> bool:
         return species in self._vertices

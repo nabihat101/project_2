@@ -10,6 +10,7 @@ import urllib.request
 import numpy as np
 from PIL import Image
 from io import BytesIO
+from pandas import isna
 
 from utils import get_interaction_parameters, calculate_interaction_likelihood
 
@@ -166,7 +167,6 @@ class Runner():
 
             # get the url from our nodes that we iniitalized previously
             img = species_graph.nodes[n]['image']
-
             # some of the images are in a Panda series format, not url. So we extract
             # the first part of this series which is the url
             if hasattr(img, "iloc"):
@@ -190,8 +190,11 @@ class Runner():
                 # in case file is not a url
                 else:
                     img = plt.imread(img)
-
-            img = make_circular(img)
+            try:
+                img = make_circular(img)
+            except:
+                print(img)
+                input()
 
             # creates the actual image and shrinks it
             imagebox = OffsetImage(img, zoom=0.1)
