@@ -20,14 +20,13 @@ import pandas as pd
 
 from entities import Graph, Observation
 
-
 def clean_data(data_file: str) -> None:
     """
     creates a datamap using pandas library to clean and filter data based on conditions
     """
 
     df = pd.read_csv(data_file)
-    df_new = df.drop(columns=["id", "uuid", "observed_on_string", "time_observed_at", "time_zone", "user_id", "user_login", "user_name", "created_at", "updated_at", "quality_grade", "url", "image_url", "sound_url", "tag_list", "description", "num_identification_agreements", "num_identification_disagreements", "captive_cultivated", "oauth_application_id", "private_place_guess", "private_latitude", "private_longitude","public_positional_accuracy", "geoprivacy", "taxon_geoprivacy", "coordinates_obscured", "positioning_method", "positioning_device", "scientific_name", "iconic_taxon_name", "taxon_id", "common_name"])
+    df_new = df.drop(columns=["id", "uuid", "observed_on_string", "time_observed_at", "time_zone", "user_id", "user_login", "user_name", "created_at", "updated_at", "quality_grade", "url", "sound_url", "tag_list", "description", "num_identification_agreements", "num_identification_disagreements", "captive_cultivated", "oauth_application_id", "private_place_guess", "private_latitude", "private_longitude","public_positional_accuracy", "geoprivacy", "taxon_geoprivacy", "coordinates_obscured", "positioning_method", "positioning_device", "scientific_name", "iconic_taxon_name", "taxon_id", "common_name"])
     df_new = df_new[df_new["positional_accuracy"] <= 1000]
     df_new.to_csv("new_file.csv",index=False)
 
@@ -39,7 +38,9 @@ def data_handle(file: str) -> list[Observation]:
     observations = []
 
     for species, group in grouped:
-        obs = Observation(str(species))
+
+        # for the image_url, we drop all the places where the user didn't put an image, and take the first image
+        obs = Observation(species, group["image_url"])
 
         dates = list(group["observed_on"])
         lats = list(group["latitude"])
@@ -49,6 +50,7 @@ def data_handle(file: str) -> list[Observation]:
             curr = dates[x].split("-")[1]
 
             season = 0
+            # Winter is first season
             if int(curr) in [12, 1, 2]:
                 season = 1
             elif int(curr) in [3, 4, 5]:
@@ -61,7 +63,6 @@ def data_handle(file: str) -> list[Observation]:
             if season not in obs.season_to_loc:
                 obs.season_to_loc[season] = []
 
-            # UPDATE: Added dates[x] to the tuple
             obs.season_to_loc[season].append((dates[x], lats[x], long[x]))
 
         observations.append(obs)
