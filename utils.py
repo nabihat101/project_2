@@ -15,6 +15,7 @@ please consult our Course Syllabus.
 
 This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, Ruoshui Deng
 """
+from datetime import datetime
 
 
 def calculate_interaction_likelihood(co_occurrences: int, obs_a: int, obs_b: int) -> float:
@@ -48,28 +49,31 @@ def get_interaction_parameters(locs_a: list[tuple[str, float, float]],
     if obs_a_count == 0 or obs_b_count == 0:
         return 0, obs_a_count, obs_b_count
 
-    # Count how many sightings of A have at least one B nearby on the same day
+    parsed_a = [(datetime.strptime(d, "%Y-%m-%d"), lat, lon) for d, lat, lon in locs_a]
+    parsed_b = [(datetime.strptime(d, "%Y-%m-%d"), lat, lon) for d, lat, lon in locs_b]
+
+    # Count how many sightings of A have at least one B nearby within 90 days
     a_near_b = 0
-    for date_a, lat_a, lon_a in locs_a:
-        for date_b, lat_b, lon_b in locs_b:
-            if date_a == date_b:
+    for d_a, lat_a, lon_a in parsed_a:
+        for d_b, lat_b, lon_b in parsed_b:
+            # Check the 90-day (3 month) window
+            if abs((d_a - d_b).days) <= 90:
                 dist = haversine_distance_km((lat_a, lon_a), (lat_b, lon_b))
                 if dist <= max_distance_km:
                     a_near_b += 1
                     break
 
-    # Count how many sightings of B have at least one A nearby on the same day
+    # Count how many sightings of B have at least one A nearby within 90 days
     b_near_a = 0
-    for date_b, lat_b, lon_b in locs_b:
-        for date_a, lat_a, lon_a in locs_a:
-            if date_b == date_a:
+    for d_b, lat_b, lon_b in parsed_b:
+        for d_a, lat_a, lon_a in parsed_a:
+            if abs((d_b - d_a).days) <= 90:
                 dist = haversine_distance_km((lat_b, lon_b), (lat_a, lon_a))
                 if dist <= max_distance_km:
                     b_near_a += 1
                     break
 
     co_occurrences = min(a_near_b, b_near_a)
-
     return co_occurrences, obs_a_count, obs_b_count
 
 

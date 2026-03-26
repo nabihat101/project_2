@@ -137,7 +137,7 @@ class Graph:
                 locs_b = obs_dict[target_species].season_to_loc[season]
 
                 # Check for co-occurrences within 0.5 km on the exact same day
-                co_occur, obs_a, obs_b = get_interaction_parameters(locs_a, locs_b, 0.5)
+                co_occur, obs_a, obs_b = get_interaction_parameters(locs_a, locs_b, 1)
 
                 # Only add edge if they actually co-occurred
                 if co_occur > 0:
