@@ -45,7 +45,7 @@ def data_handle(file: str) -> list[Observation]:
         dates = list(group["observed_on"])
         lats = list(group["latitude"])
         long = list(group["longitude"])
-
+        
         for x in range(len(dates)):
             curr = dates[x].split("-")[1]
 

@@ -200,7 +200,7 @@ class Graph:
                             # extract the latitude and longitude from the (x,y,z) tuple
                             loc1 = (l1[k][1], l1[k][2])
                             loc2 = (l2[l][1], l2[l][2])
-
+                            
                             if haversine_distance_km(loc1, loc2) <= 0.5:
                                 # updating the probabilities and the self.neighbours_probability attribute
 
