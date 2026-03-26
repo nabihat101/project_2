@@ -40,7 +40,6 @@ def data_handle(file: str) -> list[Observation]:
     for species, group in grouped:
 
         # for the image_url, we drop all the places where the user didn't put an image, and take the first image
-        g = group["species_guess"]
         obs = Observation(species, group["image_url"])
 
         dates = list(group["observed_on"])

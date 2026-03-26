@@ -190,11 +190,9 @@ class Runner():
                 # in case file is not a url
                 else:
                     img = plt.imread(img)
-            try:
-                img = make_circular(img)
-            except:
-                print(img)
-                input()
+
+            img = make_circular(img)
+
 
             # creates the actual image and shrinks it
             imagebox = OffsetImage(img, zoom=0.1)

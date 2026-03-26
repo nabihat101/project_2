@@ -26,8 +26,6 @@ from typing import Optional
 from utils import haversine_distance_km, get_interaction_parameters, calculate_interaction_likelihood
 from tkinter import ttk
 
-import pandas as pd
-
 class Observation:
     """
     Takes each observation and stores it in an object to make it easier to manipulate and build the graph.
