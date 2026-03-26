@@ -70,8 +70,7 @@ def data_handle(file: str) -> list[Observation]:
 
 
 def observations_to_graph(observations: list[Observation]) -> Graph:
-    """Builds 4 graphs from a list of Observation objects (one for each season), by
-    calling the graph buildiing method. See Graph.build_from_observations for more details.
+    """Builds 4 graphs from a list of Observation objects (one for each season), by calling the graph building method. See Graph.build_from_observations for more details.
 
     Preconditions:
         - each Observation in the list has a valid species name and season_to_loc mapping

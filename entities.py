@@ -21,6 +21,10 @@ This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, R
 """
 
 from utils import haversine_distance_km, get_interaction_parameters, calculate_interaction_likelihood
+import tkinter as tk
+from typing import Optional
+from utils import haversine_distance_km
+from tkinter import ttk
 
 
 class Observation:
@@ -68,7 +72,15 @@ class Vertex:
         """Returns a string representation of the Vertex."""
         return f"Vertex(species={self.species}, neighbours={self.neighbours})"
 
+    def calculate_weighted_degree(self) -> int:
+        """Return the sum of the weights in self.neighbours"""
+        return sum(self.neighbours[neighbour] for neighbour in self.neighbours)
 
+    def get_weight(self, species2: str) -> int:
+        """Return the edge weight between the two vertices"""
+        return self.neighbours[species2]
+
+    
 class Graph:
     _vertices: dict[str, Vertex]
 
@@ -144,9 +156,89 @@ class Graph:
                     likelihood = calculate_interaction_likelihood(co_occur, obs_a, obs_b)
                     self.add_edge(source_species, target_species, likelihood)
 
-    def __repr__(self) -> str:
-        return f"Graph(vertices={list(self._vertices.keys())})"
+    def is_vertex(self, species) -> bool:
+        return species in self._vertices
 
+    def get_vertex(self, species) -> Vertex:
+        return self._vertices[species]
+
+    def get_neighbours(self, species) -> list:
+        """Return a list of neighbours of the given vertex"""
+        return list(self._vertices[species].neighbours.keys())
+
+
+class Textbox():
+    """Class for user input in the tkinter GUI
+    
+    Instance Attributes:
+        - text: User inputted text, or None if the text has not been submitted yet
+        - row: The row of the textbox
+        - col: the column of the textbox
+        - frame: the tkinter frame the textbox is in
+        - obj: the ttk.Entry object of the textbox
+    """
+    text: Optional[str]
+    row: int
+    col: int
+    frame: ttk.Frame
+    obj: ttk.Entry
+
+    def __init__(self, frame: ttk.Frame, col: int, row: int):
+        self.row = row
+        self.col = col
+        self.frame = frame
+        self.text = None
+
+        self.obj = ttk.Entry(frame)
+        self.obj.grid(column=col, row=row)   
+        
+
+class Popup():
+    """Class for creating popup windows, essentially a GUI version of the
+    input() command                                     
+    Instance Attributes:                                                       
+        - text: The text from the popup window, or None if the popup window is  
+          not yet submitted                                                     
+        - label: The popup window label                                        
+        - title: The popup window title                                         
+    """
+
+    text: Optional[str]
+    label: str
+    title: str
+
+    def __init__(self, label, title):
+        self.text = None
+        self.label = label
+        self.title = title
+        self.display()
+
+    def display(self):
+        """                                                                     
+        Display the popup window.                                               
+        """
+
+        self._popup = tk.Tk()
+        self._popup.title(self.title)
+        label = tk.Label(self._popup, text=self.label)
+        label.pack(padx=20, pady=20)
+        self._entry = tk.Entry(self._popup)
+        self._entry.pack(pady=10)
+        submit_button = tk.Button(self._popup, text = "Enter", command = self._get_text)
+        submit_button.pack()
+
+        self._popup.mainloop()
+
+    def _get_text(self):
+        """                                                                     
+        Set self.text to the popup text, only meant to be called from display   
+        """
+        
+        self.text = self._entry.get()
+        self._popup.destroy()
+
+
+        
 # import python_ta
 # python_ta.check_all(config={
 # 'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules
