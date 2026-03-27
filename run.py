@@ -10,8 +10,7 @@ import urllib.request
 import numpy as np
 from PIL import Image
 from io import BytesIO
-import math
-#from bokeh import figure
+from mplcursors import cursor
 
 class Runner():
     """Class with methods for running the visualization
@@ -35,13 +34,11 @@ class Runner():
         for neighbour in self._graph.get_neighbours(self._species):
             neighbour_v = self._graph.get_vertex(neighbour)
             species_graph.add_node(neighbour, image=neighbour_v.image, name=neighbour)
-            x = species.get_prob(neighbour)
-            species_graph.add_edge(self._species, neighbour, weight=species.get_weight(neighbour), label=math.log10(x))
+            species_graph.add_edge(self._species, neighbour, weight=species.get_weight(neighbour), label=species.get_prob(neighbour))
         return species_graph
 
     def display_window(self):
         """Display the window that lets you create a graph"""
-        
         root = Tk()
         root.title('Species Interaction Visualizer')
         frm = ttk.Frame(root, padding=10)
@@ -66,7 +63,7 @@ class Runner():
         ttk.Label(frm, text="Graph statistics can go here").grid(column=0, row=4)
         root.mainloop()
 
-    def _initialize_graph_vals(self) -> None:
+    def _initialize_graph_vals(self):
         """Save the values in the textboxes, and draw and display the graph from them."""
         self.species_input.text = self.species_input.obj.get()
         self.season_input.text = self.season_input.obj.get()
@@ -88,10 +85,6 @@ class Runner():
         # creates corrdinates for each node on graph
         pos = nx.spring_layout(species_graph, k=10)
 
-        HOVER_TOOLTIPS = [
-            ("name", "@name"),
-        ]
-
         # creates the graph space: fig is the whole canvas and ax is the place where graph is drawn
         fig, ax = plt.subplots()
 
@@ -104,11 +97,14 @@ class Runner():
         # draw labels using networkx at the position
         nx.draw_networkx_edge_labels(species_graph, pos, edge_labels=edge_labels, ax=ax)
 
+        node_points = []
+
         # draw images at node positions manually
         for n in species_graph.nodes():
 
             # get position of the node from before
             (x, y) = pos[n]
+            node_points.append((x, y, n))
 
             # get the url from our nodes that we iniitalized previously
             img = species_graph.nodes[n]['image']
@@ -137,9 +133,6 @@ class Runner():
                     img = plt.imread(img)
 
             img = make_circular(img)
-            #plot = figure(tooltips=HOVER_TOOLTIPS, tools="pan,wheel_zoom,save,reset",
-            #        active_scroll='wheel_zoom', title='my plot', sizing_mode='stretch_both', width=1000, height=1000)
-            #plot.renderers.append(species_graph)
 
             # creates the actual image and shrinks it
             imagebox = OffsetImage(img, zoom=0.1)
@@ -153,13 +146,20 @@ class Runner():
             # Remove axes for cleaner look
         ax.set_axis_off()
 
+        x_vals = [p[0] for p in node_points]
+        y_vals = [p[1] for p in node_points]
+        labels = [p[2] for p in node_points]
+        scatter = ax.scatter(x_vals, y_vals, s=100, alpha=0)
+        crs = cursor(scatter, hover=True)
+
+        crs.connect(
+            "add",
+            lambda sel:
+                sel.annotation.set_text(f"{labels[sel.index]}")
+        )
+
         # shows the graph
         plt.show()
-
-        # https://networkx.org/documentation/stable/auto_examples/drawing/plot_custom_node_icons.html
-        # https://stackoverflow.com/questions/44865023/how-can-i-create-a-circular-mask-for-a-numpy-array
-        # https://matplotlib.org/stable/gallery/text_labels_and_annotations/demo_annotation_box.html
-        # https://stackoverflow.com/questions/10678441/flipping-the-boolean-values-in-a-list-python
 
     def run(self):
         """
