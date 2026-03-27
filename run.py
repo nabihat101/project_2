@@ -67,6 +67,7 @@ class Runner:
         ttk.Label(frm, text="Proximity for co-occurence (m)").grid(column=1, row=3)
         self.prox_input = entities.Textbox(frm, 0, 3)
 
+
         # Buttons
         ttk.Button(frm, text="Quit", command=root.destroy).grid(column=2, row=0)
         ttk.Button(frm, text="Initialize Graph with current settings", command=self._initialize_graph_vals).grid(

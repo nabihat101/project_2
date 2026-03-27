@@ -20,7 +20,6 @@ import pandas as pd
 
 from entities import Graph, Observation
 
-
 def clean_data(data_file: str) -> None:
     """
     creates a datamap using pandas library to clean and filter data based on conditions

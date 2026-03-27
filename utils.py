@@ -35,7 +35,7 @@ def calculate_interaction_likelihood(co_occurrences: int, obs_a: int, obs_b: int
     else:
         total_unique_observations = (obs_a + obs_b) - co_occurrences
         likelihood = co_occurrences / total_unique_observations
-        return likelihood
+        return round(likelihood, 2)
 
 
 def get_interaction_parameters(locs_a: list[tuple[str, float, float]],
