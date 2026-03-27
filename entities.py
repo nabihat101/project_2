@@ -20,10 +20,9 @@ please consult our Course Syllabus.
 This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, Ruoshui Deng
 """
 
-from utils import haversine_distance_km, get_interaction_parameters, calculate_interaction_likelihood
-import tkinter as tk
 from typing import Optional
-from utils import haversine_distance_km
+
+from utils import get_interaction_parameters, calculate_interaction_likelihood
 from tkinter import ttk
 
 
@@ -40,12 +39,20 @@ class Observation:
         - each location is a tuple of (latitude, longitude)
     """
     species: str
-    # Updated: Now stores a list of (date_string, latitude, longitude)
     season_to_loc: dict[int, list[tuple[str, float, float]]]
+    image: str
 
-    def __init__(self, species: str) -> None:
+    def __init__(self, species: str, image: str) -> None:
         self.species = species
         self.season_to_loc = {}
+        self.image = image
+
+
+def get_observation(observations: list[Observation], target: str) -> Observation | None:
+    for obs in observations:
+        if obs.species == target:
+            return obs
+    return None
 
 
 class Vertex:
@@ -54,18 +61,24 @@ class Vertex:
     Instance Attributes:
          - species: the name of the species represented by this vertex
          - neighbours: a mapping from neighbouring species to the weight of the edge between them
+         - image: a url for the images of the species
+         - neighbours_probability: a mapping from neighbouring species to the probability of the two species interacting
+         based on functions in utils.py
     Representation Invariants:
          - species is a non-empty string
          - neighbours only contains keys that are valid species names (non-empty strings)
          - weights in neighbours are positive integers
     """
     species: str
-    # UPDATE: values are floats because likelihood is between 0.0 and 1.0
     neighbours: dict[str, float]
+    image: str
+    neighbours_probability: dict[str, float]
 
-    def __init__(self, species: str) -> None:
+    def __init__(self, species: str, image: str) -> None:
         self.species = species
-        self.neighbours = {}  # neighbour_species -> weight
+        self.neighbours = {}  # neighbour_species -> likelihood float
+        self.image = image
+        self.neighbours_probability = {}
 
     # FOR DEBUGGING PURPOSES
     def __repr__(self) -> str:
@@ -76,29 +89,33 @@ class Vertex:
         """Return the sum of the weights in self.neighbours"""
         return sum(self.neighbours[neighbour] for neighbour in self.neighbours)
 
-    def get_weight(self, species2: str) -> int:
+    def get_weight(self, species2: str) -> float:
         """Return the edge weight between the two vertices"""
         return self.neighbours[species2]
 
-    
+    def get_prob(self, species2: str) -> float:
+        """Return the probability of interaction between the two vertices"""
+        return self.neighbours_probability[species2]
+
+
 class Graph:
     _vertices: dict[str, Vertex]
 
     def __init__(self) -> None:
         self._vertices = {}  # species -> Vertex
 
-    def add_vertex(self, species: str) -> None:
+    def add_vertex(self, species: str, image: str) -> None:
         """Adds a vertex to the graph. Neighbours are added separately through add_edge.
 
         Preconditions:
             - species is a non-empty string representing the name of the species
         """
         if species not in self._vertices:
-            self._vertices[species] = Vertex(species)
+            self._vertices[species] = Vertex(species, image)
 
-    def add_edge(self, s1: str, s2: str, weight: float) -> None:
-        """Adds an edge between two species in the graph, incrementing
-        the weight if the edge already exists.
+    def add_edge(self, s1: str, s2: str, im1: str, im2: str, co_occurrences: int, prob: float) -> None:
+        """Adds an edge between two species in the graph, storing both the raw
+        co-occurrence count and the calculated interaction probability.
 
         Preconditions:
             - s1 and s2 are non-empty strings representing valid species names
@@ -107,15 +124,19 @@ class Graph:
         if s1 == s2:
             return
 
-        self.add_vertex(s1)
-        self.add_vertex(s2)
+        self.add_vertex(s1, im1)
+        self.add_vertex(s2, im2)
 
         v1 = self._vertices[s1]
         v2 = self._vertices[s2]
 
-        # Set the exact likelihood weight
-        v1.neighbours[s2] = weight
-        v2.neighbours[s1] = weight
+        # 1. Store the raw number of times they interacted
+        v1.neighbours[s2] = co_occurrences
+        v2.neighbours[s1] = co_occurrences
+
+        # 2. Store the calculated statistical likelihood (0.0 to 1.0)
+        v1.neighbours_probability[s2] = prob
+        v2.neighbours_probability[s1] = prob
 
     def build_from_observations(self, observations: list, season: int) -> None:
         """Builds a seasonal graph from observations.
@@ -124,37 +145,68 @@ class Graph:
         we add all species observed in that season as vertices, and create co-occurrence
         edges between species observed in the same season.
 
-        Thus, the graph represents co-occurrence of species in the same season,
+        Thus the graph represents co-occurrence of species in the same season,
         but does not show each individual observation.
 
         Preconditions:
             - season is between 1 and 4 inclusive.
             - observations is a list of objects with `species` and `season_to_loc`.
         """
-        species_seen_in_season = []
-        obs_dict = {}
+        species_data = {}  # species -> {'locs': list, 'image': str}
 
-        for observation in observations:
-            if season in observation.season_to_loc:
-                species_seen_in_season.append(observation.species)
-                self.add_vertex(observation.species)
-                obs_dict[observation.species] = observation
+        # Gather all data and build vertices first
+        for obs in observations:
+            if season in obs.season_to_loc:
 
-        for i in range(len(species_seen_in_season)):
-            source_species = species_seen_in_season[i]
-            for j in range(i + 1, len(species_seen_in_season)):
-                target_species = species_seen_in_season[j]
+                # If we haven't seen this species yet, figure out its image and add the vertex
+                if obs.species not in species_data:
+                    # Fallback duck image
+                    img_val = 'https://static.inaturalist.org/photos/604719843/large.jpg'
 
-                locs_a = obs_dict[source_species].season_to_loc[season]
-                locs_b = obs_dict[target_species].season_to_loc[season]
+                    # Safely extract the image string (handling the pandas Series if it exists)
+                    if hasattr(obs.image, 'dropna') and not obs.image.dropna().empty:
+                        img_val = str(obs.image.dropna().iloc[0])
+                    elif isinstance(obs.image, str) and obs.image.strip():
+                        img_val = obs.image
 
-                # Check for co-occurrences within 1 km in the same season
-                co_occur, obs_a, obs_b = get_interaction_parameters(locs_a, locs_b, 1)
+                    species_data[obs.species] = {'locs': [], 'image': img_val}
+                    self.add_vertex(obs.species, img_val)
 
-                # Only add edge if they actually co-occurred
-                if co_occur > 0:
-                    likelihood = calculate_interaction_likelihood(co_occur, obs_a, obs_b)
-                    self.add_edge(source_species, target_species, likelihood)
+                # Append all locations for this observation
+                species_data[obs.species]['locs'].extend(obs.season_to_loc[season])
+
+        species_seen = list(species_data.keys())
+
+        # Compare each pair of species ONCE
+        for i in range(len(species_seen) - 1):
+            source_species = species_seen[i]
+
+            for j in range(i + 1, len(species_seen)):
+                target_species = species_seen[j]
+
+                locs1 = species_data[source_species]['locs']
+                locs2 = species_data[target_species]['locs']
+
+                # Skip if one of them has no location data
+                if not locs1 or not locs2:
+                    continue
+
+                co_occurrences, obs_a_count, obs_b_count = get_interaction_parameters(locs1, locs2, 1.0)
+
+                # Only add the edge if they actually interacted
+                if co_occurrences > 0:
+                    prob = calculate_interaction_likelihood(co_occurrences, obs_a_count, obs_b_count)
+
+                    im1 = species_data[source_species]['image']
+                    im2 = species_data[target_species]['image']
+
+                    self.add_edge(source_species, target_species, im1, im2, co_occurrences, prob)
+
+                    # Update the exact probability float in neighbours_probability
+                    v1 = self._vertices[source_species]
+                    v2 = self._vertices[target_species]
+                    v1.neighbours_probability[target_species] = prob
+                    v2.neighbours_probability[source_species] = prob
 
     def is_vertex(self, species) -> bool:
         return species in self._vertices
@@ -169,7 +221,7 @@ class Graph:
 
 class Textbox():
     """Class for user input in the tkinter GUI
-    
+
     Instance Attributes:
         - text: User inputted text, or None if the text has not been submitted yet
         - row: The row of the textbox
@@ -190,55 +242,8 @@ class Textbox():
         self.text = None
 
         self.obj = ttk.Entry(frame)
-        self.obj.grid(column=col, row=row)   
-        
+        self.obj.grid(column=col, row=row)
 
-class Popup():
-    """Class for creating popup windows, essentially a GUI version of the
-    input() command                                     
-    Instance Attributes:                                                       
-        - text: The text from the popup window, or None if the popup window is  
-          not yet submitted                                                     
-        - label: The popup window label                                        
-        - title: The popup window title                                         
-    """
-
-    text: Optional[str]
-    label: str
-    title: str
-
-    def __init__(self, label, title):
-        self.text = None
-        self.label = label
-        self.title = title
-        self.display()
-
-    def display(self):
-        """                                                                     
-        Display the popup window.                                               
-        """
-
-        self._popup = tk.Tk()
-        self._popup.title(self.title)
-        label = tk.Label(self._popup, text=self.label)
-        label.pack(padx=20, pady=20)
-        self._entry = tk.Entry(self._popup)
-        self._entry.pack(pady=10)
-        submit_button = tk.Button(self._popup, text = "Enter", command = self._get_text)
-        submit_button.pack()
-
-        self._popup.mainloop()
-
-    def _get_text(self):
-        """                                                                     
-        Set self.text to the popup text, only meant to be called from display   
-        """
-        
-        self.text = self._entry.get()
-        self._popup.destroy()
-
-
-        
 # import python_ta
 # python_ta.check_all(config={
 # 'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules

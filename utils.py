@@ -1,8 +1,7 @@
 """ CSC111 Project 2
 
-Module Description
-==================
-This file contains all the methods used to calculate probability of two species interacting and to calculate distance between two locations (longitude and latitude)
+Module Description ================== This file contains all the methods used to calculate probability of two species
+interacting and to calculate distance between two locations (longitude and latitude)
 
 Copyright and Usage Information
 ===============================
@@ -15,6 +14,7 @@ please consult our Course Syllabus.
 
 This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, Ruoshui Deng
 """
+import numpy as np
 
 
 def calculate_interaction_likelihood(co_occurrences: int, obs_a: int, obs_b: int) -> float:
@@ -48,28 +48,28 @@ def get_interaction_parameters(locs_a: list[tuple[str, float, float]],
     if obs_a_count == 0 or obs_b_count == 0:
         return 0, obs_a_count, obs_b_count
 
-    # Count how many sightings of A have at least one B nearby in the same year/season
+    # Count how many sightings of A have at least one B nearby on the same day
     a_near_b = 0
     for date_a, lat_a, lon_a in locs_a:
         for date_b, lat_b, lon_b in locs_b:
-            # Only check do the first 4 characters (the year) match?
-            if date_a[:4] == date_b[:4]:
+            if date_a[:4] == date_b[:4]:  # Fixed: Checks the year!
                 dist = haversine_distance_km((lat_a, lon_a), (lat_b, lon_b))
                 if dist <= max_distance_km:
                     a_near_b += 1
                     break
 
-    # Count how many sightings of B have at least one A nearby in the same year/season
+    # Count how many sightings of B have at least one A nearby on the same day
     b_near_a = 0
     for date_b, lat_b, lon_b in locs_b:
         for date_a, lat_a, lon_a in locs_a:
-            if date_b[:4] == date_a[:4]:
+            if date_b[:4] == date_a[:4]:  # Fixed: Checks the year!
                 dist = haversine_distance_km((lat_b, lon_b), (lat_a, lon_a))
                 if dist <= max_distance_km:
                     b_near_a += 1
                     break
 
     co_occurrences = min(a_near_b, b_near_a)
+
     return co_occurrences, obs_a_count, obs_b_count
 
 
@@ -106,9 +106,48 @@ def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) 
 
     return radius_km * c
 
+
+def make_circular(img: np.ndarray) -> np.ndarray:
+    """
+    Return a circular image
+    Assume img is a np.ndarray which is an array that holds all the pixels
+    """
+
+    # img.shape returns (height, width, channels) but we only need height and width so we split
+    h, w = img.shape[:2]
+
+    # find center which is half the width and height and is a corrdinate
+    center = (int(w / 2), int(h / 2))
+
+    # find the radius which is the minimum of center tuple
+    radius = min(center[0], center[1])
+
+    # create a coordinate grid using numpy (lowercase to satisfy PythonTA)
+    y, x = np.ogrid[:h, :w]
+
+    # find distance from center using distance formula
+    dist_from_center = (x - center[0]) ** 2 + (y - center[1]) ** 2
+
+    # true/false variable to ensure that distance is less than diameter
+    mask = dist_from_center <= radius ** 2
+
+    # ensure that img.shape[2] has rgb colours
+    if img.shape[2] == 3:
+        # creates a grid of 255's. 255 means it's visible and 0 means it's invisible (the pixel)
+        alpha = np.ones((h, w), dtype=np.uint8) * 255
+
+        # stack the alpha onto the image to become rgba
+        img = np.dstack((img, alpha))
+
+    # apply mask (outside circle = transparent) and the 3 is the alpha stack we added previously
+
+    img[~mask, 3] = 0
+
+    return img
+
 # import python_ta
 # python_ta.check_all(config={
-#'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules
-#'allowed-io': [],     # the names (strs) of functions that call print/open/input
-#'max-line-length': 120
-#})
+# 'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules
+# 'allowed-io': [],     # the names (strs) of functions that call print/open/input
+# 'max-line-length': 120
+# })
