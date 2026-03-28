@@ -71,8 +71,8 @@ class Runner():
         species_graph.add_node(self._species, image=species.image, name=self._species, level=0)
         visited.add(self._species)
 
-        while len(visited) < max_nodes:
-            current, level = queue.pop()
+        while queue and len(visited) < max_nodes:
+            current, level = queue.pop(0)
             current_v = self._graph.get_vertex(current)
 
             neighbours = self._graph.get_neighbours(current)
