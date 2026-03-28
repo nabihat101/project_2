@@ -253,15 +253,12 @@ class SpeciesSearchDropdown():
     Instance Attributes:
         - window: The Tkinter window the button should be placed in.
         - species: The selected species, or None if one has not been selected yet.
-
-    Private Instance Attributes:
-        - _input_area: the ttk.Entry widget for user inputted text
-        - 
-"""
+        - all_species: A list of every species in the dataset.
+    """
     window: tk.Tk
     species: Optional[str]
+    all_species: list[str]
     
-
     def __init__(self, c: int, r: int, window: tk.Tk) -> None:
         self.window = window
         self.species = None
@@ -272,21 +269,21 @@ class SpeciesSearchDropdown():
         open_button.grid(column = c, row = r)
 
         # initialize the text telling you the species
-        self.species_label = ttk.Label(window,
+        self._species_label = ttk.Label(window,
                                        text = "Currently selected species: None")
-        self.species_label.grid(column=c+1,row=r)
+        self._species_label.grid(column=c+1,row=r)
 
     def open_window(self) -> None:
         """Open the species selector window"""
-        self.new_win = tk.Toplevel(self.window)
-        self.new_win.title("Select a Species")
+        self._new_win = tk.Toplevel(self.window)
+        self._new_win.title("Select a Species")
         
         # Text at the top of the window
-        label = ttk.Label(self.new_win, text="Select a species from the list below")
+        label = ttk.Label(self._new_win, text="Select a species from the list below")
         label.pack(side = tk.TOP)
 
         # Initialize the input area for users to type text
-        self._input_area = ttk.Entry(self.new_win)
+        self._input_area = ttk.Entry(self._new_win)
         self._input_area.pack()
 
         # make it so we run self.update_dropdown whenever any text
@@ -296,15 +293,15 @@ class SpeciesSearchDropdown():
         # initialize the list of species, to be modified when we filter by the
         # text in the input area
         self.all_species = get_all_species('new_file.csv')
-        self.species_list = tk.StringVar(value = self.all_species)
+        self._species_list = tk.StringVar(value = self.all_species)
         
         # initialize the dropdown menu, showing all species initially
-        self.dropdown = tk.Listbox(self.new_win,
-                                   listvariable=self.species_list, selectmode="browse")
-        self.dropdown.pack(side=tk.BOTTOM, expand=True, fill=tk.BOTH)
+        self._dropdown = tk.Listbox(self._new_win,
+                                   listvariable=self._species_list, selectmode="browse")
+        self._dropdown.pack(side=tk.BOTTOM, expand=True, fill=tk.BOTH)
 
         # bind it so we run enter_species when something in the list is clicked
-        self.dropdown.bind("<<ListboxSelect>>", self.enter_species)
+        self._dropdown.bind("<<ListboxSelect>>", self.enter_species)
 
     def update_dropdown(self, event) -> None:
         """Update the listbox to show only species starting with the input in the
@@ -319,23 +316,21 @@ class SpeciesSearchDropdown():
                             if species.lower().startswith(filter_text.lower())]
 
         # update self.species_list to the new list
-        self.species_list.set(new_species_list)
+        self._species_list.set(new_species_list)
 
     def enter_species(self, event):
         """Set self.species to the selected species, and close the window."""
 
         # update self.species
-        selected_index = self.dropdown.curselection()
-        self.species = self.dropdown.get(selected_index)
+        selected_index = self._dropdown.curselection()
+        self.species = self._dropdown.get(selected_index)
 
         # update the text label
-        self.species_label.config(text="Currently selected species: "+self.species)
+        self._species_label.config(text="Currently selected species: "+self.species)
 
         # close the window
-        self.new_win.destroy()
+        self._new_win.destroy()
         
-        
-
     # Code generally based on:
     # https://coderslegacy.com/searchable-combobox-in-tkinter
     # https://www.pythontutorial.net/tkinter/tkinter-listbox
