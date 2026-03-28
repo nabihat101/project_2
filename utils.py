@@ -78,6 +78,10 @@ def get_interaction_parameters(locs_a: list[tuple[str, float, float]],
 
 def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) -> float:
     """Calculates distance in kilometers between two (lat, lon) points using the Haversine formula.
+
+    Preconditions:
+        - loc1 and loc2 are floats representing (latitude, longitude)
+        
      >>> haversine_distance_km((40.7, -70.8), (51.3, 0.18))
     5386.3
 
@@ -113,7 +117,9 @@ def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) 
 def make_circular(img: np.ndarray) -> np.ndarray:
     """
     Return a circular image
-    Assume img is a np.ndarray which is an array that holds all the pixels
+
+    Preconditions:
+        - img is a np.ndarray which is an array that holds all the pixels
     """
 
     # img.shape returns (height, width, channels) but we only need height and width so we split
