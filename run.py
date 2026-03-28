@@ -53,7 +53,7 @@ class Runner():
 
     def create_species_graph(self):
         """
-        Creates species graph using thresholds stated below to display only a portion of the entire graph. 
+        Creates a networkx species graph using thresholds stated below to display only a portion of the entire graph using networkx.
         """
         
         species_graph = nx.Graph()
@@ -101,7 +101,10 @@ class Runner():
         return species_graph
 
     def display_window(self):
-        """Display the window that lets you create a graph"""
+        """
+        Display the window that lets you create a graph using tkinter and adding the use input spaces and buttons.
+        """
+        
         root = Tk()
         root.title('Species Interaction Visualizer')
         frm = ttk.Frame(root)
@@ -125,7 +128,10 @@ class Runner():
         root.mainloop()
 
     def _initialize_graph_vals(self):
-        """Save the values in the textboxes, and draw and display the graph from them."""
+        """
+        Save the values in the textboxes, and draw and display the graph from them.
+        """
+        
         self.season_input_text = self.season_input.get()
 
         if self.season_input_text == "Spring":
@@ -166,12 +172,8 @@ class Runner():
 
         # node_info is a dict. storing a node name to it's neighbours and likelihood of interacting
         node_info = {}
-
-        node_info = {}
-
         for node in species_graph.nodes():
             neighbours = []
-
             for nbr in species_graph.neighbors(node):
 
                 # get the probability of a neighbour from label that we previously coded
@@ -192,6 +194,7 @@ class Runner():
 
             # get the url from our nodes that we iniitalized previously
             img = species_graph.nodes[n]['image']
+            
             # some of the images are in a Panda series format, not url. So we extract
             # the first part of this series which is the url
             if hasattr(img, "iloc"):
@@ -238,15 +241,18 @@ class Runner():
             # draws image on the portion of canvas
             ax.add_artist(ab)
 
-            # Remove axes for cleaner look
+        # Remove axes for cleaner look
         ax.set_axis_off()
 
         x_vals = [p[0] for p in node_points]
         y_vals = [p[1] for p in node_points]
         labels = [p[2] for p in node_points]
+
+        # create cursor for the hover feature
         scatter = ax.scatter(x_vals, y_vals, s=100, alpha=0)
         crs = cursor(scatter, hover=True)
 
+        # initialize text for the hover feature 
         crs.connect(
             "add",
             lambda sel: (
