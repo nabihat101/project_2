@@ -92,7 +92,7 @@ class Runner():
                 display_label = f"{x * 100:.2f}%"
                 scaled_thickness = max(0.5, math.log10(x * 1000000))
 
-                species_graph.add_edge(current, neighbour, weight=scaled_thickness, label=display_label)
+                species_graph.add_edge(current, neighbour, weight=current_v.get_weight(neighbour), label=display_label)
 
                 if neighbour not in visited:
                     visited.add(neighbour)
@@ -167,7 +167,6 @@ class Runner():
         # draw edges
         edges = species_graph.edges()
         weights = [species_graph[u][v]['weight'] for u, v in edges]
-        weights = [w * 0.3 for w in weights]
         nx.draw_networkx_edges(species_graph, pos, ax=ax, width=weights)
 
         # node_info is a dict. storing a node name to it's neighbours and likelihood of interacting
