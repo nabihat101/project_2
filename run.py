@@ -61,8 +61,8 @@ class Runner():
 
         # Add text boxes and dropdown menus for inputs
         ttk.Label(frm, text="Welcome to the species interaction visualizer!").grid(column=0, row=0)
-        ttk.Label(frm, text="Input species").grid(column=1, row=1)
-        self.species_input = entities.Textbox(frm, 0, 1)
+        self.species_input = entities.SpeciesSearchDropdown(c=0, r=1, window=frm)
+        
         ttk.Label(frm, text="Input season").grid(column=1, row=2)
         self.season_input = ttk.Combobox(frm, values = ['Spring', 'Summer', 'Fall', 'Winter'])
         self.season_input.grid(column=0, row=2)
@@ -83,7 +83,6 @@ class Runner():
 
     def _initialize_graph_vals(self):
         """Save the values in the textboxes, and draw and display the graph from them."""
-        self.species_input.text = self.species_input.obj.get()
         self.season_input_text = self.season_input.get()
         self.prox_input.text = self.prox_input.obj.get()
 
@@ -100,7 +99,7 @@ class Runner():
             self.status_label.config(text='Not a valid season.')
             return
 
-        self._species = self.species_input.text
+        self._species = self.species_input.species
         self._graph = graph
 
         # CRASH PREVENTION: Check if the species exists in this season's graph before drawing!

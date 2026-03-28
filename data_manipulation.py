@@ -116,6 +116,7 @@ def observations_to_graph(observations: list[Observation]) -> Graph:
     winter.build_from_observations(observations, 1)
     return summer, spring, fall, winter
 
+
 # def run_simulation(data_file: str, species_a: str, species_b: str) -> dict[str, float]:
 #     """Runs the data pipeline and computes seasonal proximity between two species."""
 #     clean_data(data_file)

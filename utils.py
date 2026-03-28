@@ -15,6 +15,7 @@ please consult our Course Syllabus.
 This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, Ruoshui Deng
 """
 import numpy as np
+import pandas as pd
 
 
 def calculate_interaction_likelihood(co_occurrences: int, obs_a: int, obs_b: int) -> float:
@@ -144,6 +145,19 @@ def make_circular(img: np.ndarray) -> np.ndarray:
     img[~mask, 3] = 0
 
     return img
+
+
+def get_all_species(data_file: str) -> list[str]:
+    """Returns a list of every species in the dataset, used for the species
+    dropdown menu in entities.py
+    
+    Preconditions:
+        - data_file is a valid file path to a csv file in the format written by
+          the clean_data function
+    """
+
+    df = pd.read_csv(data_file)
+    return list(df['species_guess'].unique())
 
 # import python_ta
 # python_ta.check_all(config={

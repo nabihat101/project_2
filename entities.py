@@ -23,6 +23,8 @@ This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, R
 from typing import Optional
 
 from utils import get_interaction_parameters, calculate_interaction_likelihood
+from utils import get_all_species
+import tkinter as tk
 from tkinter import ttk
 
 
@@ -243,6 +245,101 @@ class Textbox():
 
         self.obj = ttk.Entry(frame)
         self.obj.grid(column=col, row=row)
+
+        
+class SpeciesSearchDropdown():
+    """New window for selecting a species from all the species.
+
+    Instance Attributes:
+        - window: The Tkinter window the button should be placed in.
+        - species: The selected species, or None if one has not been selected yet.
+
+    Private Instance Attributes:
+        - _input_area: the ttk.Entry widget for user inputted text
+        - 
+"""
+    window: tk.Tk
+    species: Optional[str]
+    
+
+    def __init__(self, c: int, r: int, window: tk.Tk) -> None:
+        self.window = window
+        self.species = None
+
+        # initialize the button to open the popup window
+        open_button = ttk.Button(window, command = self.open_window,
+                                 text = "Select a Species")
+        open_button.grid(column = c, row = r)
+
+        # initialize the text telling you the species
+        self.species_label = ttk.Label(window,
+                                       text = "Currently selected species: None")
+        self.species_label.grid(column=c+1,row=r)
+
+    def open_window(self) -> None:
+        """Open the species selector window"""
+        self.new_win = tk.Toplevel(self.window)
+        self.new_win.title("Select a Species")
+        
+        # Text at the top of the window
+        label = ttk.Label(self.new_win, text="Select a species from the list below")
+        label.pack(side = tk.TOP)
+
+        # Initialize the input area for users to type text
+        self._input_area = ttk.Entry(self.new_win)
+        self._input_area.pack()
+
+        # make it so we run self.update_dropdown whenever any text
+        # is inputted in the input area
+        self._input_area.bind("<KeyRelease>", self.update_dropdown)
+
+        # initialize the list of species, to be modified when we filter by the
+        # text in the input area
+        self.all_species = get_all_species('new_file.csv')
+        self.species_list = tk.StringVar(value = self.all_species)
+        
+        # initialize the dropdown menu, showing all species initially
+        self.dropdown = tk.Listbox(self.new_win,
+                                   listvariable=self.species_list, selectmode="browse")
+        self.dropdown.pack(side=tk.BOTTOM, expand=True, fill=tk.BOTH)
+
+        # bind it so we run enter_species when something in the list is clicked
+        self.dropdown.bind("<<ListboxSelect>>", self.enter_species)
+
+    def update_dropdown(self, event) -> None:
+        """Update the listbox to show only species starting with the input in the
+        entry box.
+        """
+        
+        # get the text from the input area
+        filter_text = self._input_area.get()
+
+        # construct a new list of just species starting with that text
+        new_species_list = [species for species in self.all_species
+                            if species.startswith(filter_text)]
+
+        # update self.species_list to the new list
+        self.species_list.set(new_species_list)
+
+    def enter_species(self, event):
+        """Set self.species to the selected species, and close the window."""
+
+        # update self.species
+        selected_index = self.dropdown.curselection()
+        self.species = self.dropdown.get(selected_index)
+
+        # update the text label
+        self.species_label.config(text="Currently selected species: "+self.species)
+
+        # close the window
+        self.new_win.destroy()
+        
+        
+
+    # Code generally based on:
+    # https://coderslegacy.com/searchable-combobox-in-tkinter
+    # https://www.pythontutorial.net/tkinter/tkinter-listbox
+
 
 # import python_ta
 # python_ta.check_all(config={
