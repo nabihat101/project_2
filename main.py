@@ -19,7 +19,7 @@ This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, R
 import run
 
 if __name__ == '__main__':
-    r = run.Runner(''data_file - Sheet1.csv'')
+    r = run.Runner('data.csv')
     r.run()
 
 # import python_ta

@@ -1,4 +1,4 @@
-Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,positional_accuracy,species_guess
+Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,positional_accuracy,common_name
 14308,2025-07-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/539630655/medium.jpg,"Woodbine Beach, Toronto, ON, Canada",43.6619326195,-79.3052963793,15.0,Common Tern
 4578,2025-02-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/485034634/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6252026268,-79.3305575789,122.0,Trumpeter Swan
 17488,2025-09-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/568147608/medium.jpg,"Riverdale Park West, Toronto, ON, CA",43.6659793125,-79.3575004662,82.0,Great Egret
@@ -129,7 +129,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 17725,2025-09-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/569748368/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Grey Catbird
 8487,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/500342005/medium.jpeg,"Edenbridge-Humber Valley, Etobicoke, ON, Canada",43.6707539618,-79.5128405783,182.0,Blue Jay
 2702,2025-03-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/474415363/medium.jpg,"North York General Hospital, Toronto, ON, CA",43.7683133333,-79.3622133333,4.0,Cooper's Hawk
-14628,2025-07-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/543498175/medium.jpg,"North York, ON M2J 1G2, Canada",43.77445132,-79.34617284,9.0,Black-capped Chickadee
+14628,2025-07-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/543498175/medium.jpg,"North York, ON M2J 1G2, Canada",43.77445132,-79.34617284,9.0,House Sparrow
 14048,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/536841693/medium.jpg,"Lawrence Ave W, Toronto, ON, CA",43.709995,-79.4728083333,2.0,Canada Goose
 16301,2025-08-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/559442001/medium.jpg,"New Toronto, Etobicoke, ON, Canada",43.5968300098,-79.5126702437,15.0,Cape May Warbler
 4546,2025-04-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/484746786/medium.jpeg,"Toronto, ON M4W 2R8, Canada",43.6801633812,-79.3841097504,106.0,Hairy Woodpecker
@@ -218,7 +218,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 3031,2025-03-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/475926184/medium.jpg,"Toronto, ON, Canada",43.6200155423,-79.4739790099,200.0,Northern Red-tailed Hawk
 22388,2025-12-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/597562276/medium.jpg,"Bayview Village, North York, ON, Canada",43.7782567,-79.3828127,895.0,Northern Cardinal
 15579,2025-08-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552718891/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6726613841,-79.3309396604,15.0,Bay-breasted Warbler
-15470,2025-07-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/551359069/medium.jpg,"Downtown Toronto, Toronto, ON, Canada",43.6404333056,-79.376225,12.0,Passer domesticus
+15470,2025-07-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/551359069/medium.jpg,"Downtown Toronto, Toronto, ON, Canada",43.6404333056,-79.376225,12.0,House Sparrow
 23313,2025-05-30,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/602877409/medium.jpg,"Toronto, ON, Canada",43.5902394031,-79.5172906038,58.0,Western Grebe
 6012,2025-04-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/490650651/medium.jpg,"Humber River Recreational Tr, Toronto, ON, CA",43.652780342,-79.4956699532,410.0,Great Egret
 20252,2025-10-23,,https://static.inaturalist.org/photos/583790282/medium.jpg,"Corktown Common, Toronto, ON, CA",43.6535416667,-79.3528366667,4.0,Black-capped Chickadee
@@ -266,7 +266,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 8177,2025-05-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/499403249/medium.jpeg,"Toronto, ON M6H 2G5, Canada",43.6746058667,-79.4321715832,16.0,Baltimore Oriole
 19018,2025-10-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/577882276/medium.jpg,"Bayview Village, North York, ON, Canada",43.781705492,-79.3738223916,529.0,Yellow-bellied Sapsucker
 14008,2025-06-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/536389223/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Mallard
-15533,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552168975/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.642485,-79.4668888889,12.0,Agelaius phoeniceus
+15533,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552168975/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.642485,-79.4668888889,12.0,Red-winged Blackbird
 673,2025-01-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/464142132/medium.jpeg,"Toronto, ON, Canada",43.6033316157,-79.4909521942,683.0,Long-tailed Duck
 18554,2025-09-28,CC-BY-NC-ND,https://inaturalist-open-data.s3.amazonaws.com/photos/574767422/medium.jpg,"Toronto, ON, Canada",43.6408540423,-79.3227052281,8.0,Gadwall
 23399,2025-12-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/603370204/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Downy Woodpecker
@@ -384,7 +384,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 15862,2025-05-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/555317402/medium.jpg,"Leaside-Bennington, Toronto, ON, Canada",43.6826896977,-79.3670578934,244.0,Song Sparrow
 466,2025-01-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/463263459/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,European Starling
 19629,2025-10-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/580717562/medium.jpg,"Toronto, ON, CA",43.6280216667,-79.3274383333,2.0,Mallard
-15531,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552168862/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6436166944,-79.4673966944,12.0,Anas platyrhynchos
+15531,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552168862/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6436166944,-79.4673966944,12.0,Mallard
 21447,2025-11-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/590845049/medium.jpg,"Steeles Ave W, Toronto, ON, CA",43.7859466667,-79.4718783333,4.0,Ring-billed Gull
 1586,2025-02-01,,https://static.inaturalist.org/photos/468936151/medium.jpg,"Scarborough, ON, Canada",43.7093042554,-79.227503685,31.0,Ring-billed Gull
 22223,2025-04-17,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/595950536/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.632447032,-79.3237387975,66.0,Blue-winged Teal
@@ -462,8 +462,8 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 16685,2025-09-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/562528506/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Magnolia Warbler
 6185,2025-04-25,,https://static.inaturalist.org/photos/491547943/medium.jpg,"Spadina Quay Wetlands, Toronto, ON, CA",43.6371273948,-79.3924616435,4.0,Feral Pigeon
 11242,2025-05-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/512705839/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Ring-billed Gull
-20058,2025-09-23,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/582969599/medium.jpg,"Pricefield Road Playground, Rosedale, Toronto, ON, Canada",43.681648779,-79.3885881924,4.0,Carpintero velloso
-15821,2025-08-19,,https://static.inaturalist.org/photos/554907920/medium.jpg,"South Riverdale, Toronto, ON, Kanada",43.6323273549,-79.3234822793,4.0,Königstyrann
+20058,2025-09-23,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/582969599/medium.jpg,"Pricefield Road Playground, Rosedale, Toronto, ON, Canada",43.681648779,-79.3885881924,4.0,Hairy Woodpecker
+15821,2025-08-19,,https://static.inaturalist.org/photos/554907920/medium.jpg,"South Riverdale, Toronto, ON, Kanada",43.6323273549,-79.3234822793,4.0,Eastern Kingbird
 19164,2025-10-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/578457102/medium.jpg,"Everett Cres, Toronto, ON, CA",43.69607,-79.3111366667,12.0,Hairy Woodpecker
 9509,2025-05-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/503860671/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Black-and-white Warbler
 16155,2025-08-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/558228423/medium.jpg,"Toronto, ON, CA",43.7054685317,-79.233932281,3.0,Mallard
@@ -527,7 +527,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 135,2025-01-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/461983275/medium.jpeg,"Toronto, CA-ON, CA",43.6432120954,-79.3206808716,93.0,Red-breasted Merganser
 3920,2025-03-29,,https://static.inaturalist.org/photos/480840229/medium.jpeg,"Ontario, CA",43.624949971,-79.2898764474,168.0,Yellow-bellied Sapsucker
 17405,2025-09-10,,https://static.inaturalist.org/photos/567610219/medium.jpg,"High Park, Toronto, ON, Canada",43.6448671353,-79.4631851301,271.0,Red-breasted Nuthatch
-16540,2025-08-31,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/561237840/medium.jpg,"High Park-Swansea, Toronto, ON, 加拿大",43.6445704823,-79.4620754104,38.0,美洲红尾鸲
+16540,2025-08-31,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/561237840/medium.jpg,"High Park-Swansea, Toronto, ON, 加拿大",43.6445704823,-79.4620754104,38.0,American Redstart
 13262,2025-06-28,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/528294006/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6388238539,-79.4641515612,22.0,Lesser Scaup
 5971,2025-04-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/490416710/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Belted Kingfisher
 7519,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/496745200/medium.jpg,"German Mills Crk, North York, ON M2M 4C9, Canada",43.7972667,-79.3843997,184.0,Black-capped Chickadee
@@ -554,7 +554,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 3714,2025-03-23,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/479069922/medium.jpg,"Taylor Creek Park, Toronto, ON, CA",43.7007754949,-79.3129064806,40.0,Eastern Screech-Owl
 3345,2025-03-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/477190655/medium.jpeg,"Toronto, ON, Canada",43.661690096,-79.3154827505,4.0,Bufflehead
 14491,2025-07-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/542085137/medium.jpg,"73 Cardiff Rd, North York, ON M4P 2P4, Canada",43.713027,-79.3841394,179.0,House Finch
-8695,2025-05-06,,https://static.inaturalist.org/photos/500881210/medium.jpeg,"Toronto, ON M5J 2Z8, Canada",43.644026,-79.3794635,97.0,Gray Catbird
+8695,2025-05-06,,https://static.inaturalist.org/photos/500881210/medium.jpeg,"Toronto, ON M5J 2Z8, Canada",43.644026,-79.3794635,97.0,Grey Catbird
 14636,2025-07-01,CC-BY-NC,https://static.inaturalist.org/photos/543691411/medium.jpg,"Etobicoke, ON M8V 4B7, Canada",43.5908385026,-79.5131541789,207.0,Red-necked Grebe
 13141,2025-06-26,CC-BY-NC,,"Balsam Ave, Toronto, ON, CA",43.6771920643,-79.2907282127,5.0,Common Raven
 17177,2025-09-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/566302404/medium.jpg,"Downsview Park, Toronto, ON, CA",43.7412015571,-79.4815737041,20.0,Indigo Bunting
@@ -580,7 +580,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 10860,2025-05-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/510669652/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,American Goldfinch
 18909,2025-09-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/577029604/medium.jpg,"Rouge Marsh, Toronto, ON, Canada",43.7936798075,-79.121652294,10.0,Great Egret
 11317,2025-05-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/513233150/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Northern Yellow Warbler
-18241,2025-09-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/572474763/medium.jpg,"Woodbine Beach Dune Ecosystem , Toronto, ON, Canada",43.6596840763,-79.3065159894,2.0,Clay-colored Sparrow
+18241,2025-09-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/572474763/medium.jpg,"Woodbine Beach Dune Ecosystem , Toronto, ON, Canada",43.6596840763,-79.3065159894,2.0,Clay-coloured Sparrow
 9111,2025-05-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/502036256/medium.jpg,"Todmorden Mills Park, Toronto, ON, CA",43.6850054112,-79.3602755333,372.0,Hooded Warbler
 10894,2025-05-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/510801095/medium.jpg,"Walmsley Blvd, Toronto, ON, CA",43.6926571711,-79.3997166593,62.0,Common Grackle
 16526,2025-09-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/561212258/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Song Sparrow
@@ -612,10 +612,10 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 8324,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/499722013/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Common Tern
 14763,2025-07-30,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/545007785/medium.jpg,"David A. Balfour Park, Toronto, ON, Canada",43.6859879185,-79.387216061,8.0,Ruby-throated Hummingbird
 11041,2025-05-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/511480326/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Chipping Sparrow
-17911,2025-09-22,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/570603563/medium.jpg,"E.T. Seton Park, North York, ON, Canada",43.7167310629,-79.3449033945,8.0,Gray-cheeked Thrush
+17911,2025-09-22,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/570603563/medium.jpg,"E.T. Seton Park, North York, ON, Canada",43.7167310629,-79.3449033945,8.0,Grey-cheeked Thrush
 8643,2025-04-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/500758413/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Red-breasted Merganser
 7879,2025-05-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/498362845/medium.jpeg,"Toronto, ON M6S 2X3, Canada",43.6420688445,-79.4627085328,15.0,Red-winged Blackbird
-13558,2025-06-15,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/531325835/medium.jpg,"Centro, Toronto, ON, Canadá",43.640447921,-79.3745731535,124.0,Andorinha-das-chaminés
+13558,2025-06-15,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/531325835/medium.jpg,"Centro, Toronto, ON, Canadá",43.640447921,-79.3745731535,124.0,Barn Swallow
 5231,2025-04-16,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/488020272/medium.png,"Toronto, ON, Canada",43.6675737915,-79.2915012118,294.0,Iceland Gull
 9705,2025-05-06,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/505025127/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Northern Cardinal
 5366,2025-04-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/488491139/medium.jpeg,"Steeles, Scarborough, ON, Canada",43.8116321323,-79.3069795147,31.0,Blue-winged Teal
@@ -637,7 +637,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 23870,2025-02-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/611626734/medium.jpg,"Bayview Village, North York, ON, Canada",43.778876414,-79.3788644883,909.0,Northern Cardinal
 14372,2025-07-21,,https://static.inaturalist.org/photos/540523506/medium.jpg,"York University Heights, North York, ON, Canada",43.7702666922,-79.5073454964,4.0,Eastern Kingbird
 14786,2025-07-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/545158004/medium.jpg,"Wellesley St E, Toronto, ON, CA",43.666295,-79.3787083333,27.0,Feral Pigeon
-5243,2025-04-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/488036550/medium.jpeg,"North York, ON M4A 1P7, Kanada",43.7306651631,-79.3177622929,38.0,Carolinaspecht
+5243,2025-04-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/488036550/medium.jpeg,"North York, ON M4A 1P7, Kanada",43.7306651631,-79.3177622929,38.0,Red-bellied Woodpecker
 9927,2025-05-16,,https://static.inaturalist.org/photos/505979716/medium.jpg,"Corktown Common, Toronto, ON, CA",43.65447,-79.3525166667,9.0,Blackburnian Warbler
 8289,2025-05-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/499699052/medium.jpg,"Ontario, CA",43.6622577378,-79.5995592329,174.0,Canada Goose
 20540,2025-10-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/586137625/medium.jpg,"St Clements Ave, Toronto, ON, CA",43.7125533856,-79.4020854744,8.0,House Sparrow
@@ -705,7 +705,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 22700,2025-12-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/599359140/medium.jpg,"Bayview Village, North York, ON, Canada",43.780013658,-79.372450324,489.0,Downy Woodpecker
 2755,2025-03-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/474980813/medium.jpeg,"North York, ON M3L 1A3, Canada",43.7211667142,-79.510711357,21.0,Feral Pigeon
 14528,2025-07-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/542427234/medium.jpg,"Mount Pleasant East, Toronto, ON, Canada",43.6928891748,-79.3910317416,49.0,White-breasted Nuthatch
-13742,2025-07-06,,https://static.inaturalist.org/photos/533214037/medium.jpg,"Rouge, Scarborough, ON, 加拿大",43.828202731,-79.1899204053,57.0,美洲黑水鸡
+13742,2025-07-06,,https://static.inaturalist.org/photos/533214037/medium.jpg,"Rouge, Scarborough, ON, 加拿大",43.828202731,-79.1899204053,57.0,Common Gallinule
 16654,2025-09-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/562250040/medium.jpg,"Barberry Pl, Toronto, ON, CA",43.7673383333,-79.384575,4.0,American Robin
 18650,2025-10-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/575239494/medium.jpg,"Etobicoke, ON M9W 6V3, Canada",43.7254924834,-79.6093006432,29.0,Great Blue Heron
 7964,2025-05-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/498756065/medium.jpg,"Ashbridge's Bay Park, Toronto, ON, Canada",43.6615760646,-79.3130331837,8.0,Black-throated Blue Warbler
@@ -737,7 +737,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 3938,2025-03-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/481153085/medium.jpg,"Bayview Village, North York, ON, Canada",43.7814418137,-79.388326578,134.0,Northern Cardinal
 23157,2025-12-14,,https://static.inaturalist.org/photos/602514359/medium.jpg,"North York, ON M4A 1P5, Canada",43.7306307608,-79.3138590083,96.0,Red-tailed Hawk
 2874,2025-03-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/475553804/medium.jpg,"Colonel Samuel Smith Park, New Toronto, Toronto, ON, Canada",43.5926649047,-79.5131030437,820.0,Gadwall
-12406,2025-06-12,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/519975926/medium.jpg,"David Balfour Park Trail, Toronto, ON, Canada",43.6814357728,-79.3832341864,15.0,Carpintero velloso
+12406,2025-06-12,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/519975926/medium.jpg,"David Balfour Park Trail, Toronto, ON, Canada",43.6814357728,-79.3832341864,15.0,Hairy Woodpecker
 7185,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/494826559/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6409978492,-79.4584432496,59.0,Red-winged Blackbird
 18454,2025-09-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/573793530/medium.jpg,"Toronto, ON M5T 1G1, Canada",43.6531845322,-79.3914844841,201.0,Feral Pigeon
 1358,2025-02-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/467711889/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Northern Cardinal
@@ -817,7 +817,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 1430,2025-02-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/468276122/medium.jpeg,"Unwin Bridge, Toronto, ON, Canada",43.6475889556,-79.3280621469,4.0,Tundra Swan
 6656,2025-04-25,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/492313931/medium.png,"Centre Island, Toronto, ON, Canada",43.6240049993,-79.3923546347,164.0,Savannah Sparrow
 13505,2025-07-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/530765294/medium.jpg,"Humber Bay, Toronto, ON, CA",43.6225265225,-79.4784433453,172.0,Gadwall
-4141,2025-03-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/482305647/medium.jpg,"Bay St, Toronto, ON, CA",43.64143,-79.3766633333,102.0,Merle d'Amérique
+4141,2025-03-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/482305647/medium.jpg,"Bay St, Toronto, ON, CA",43.64143,-79.3766633333,102.0,American Robin
 5561,2025-04-20,,https://static.inaturalist.org/photos/489058925/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6491965708,-79.3237503191,31.0,Yellow-rumped Warbler
 19925,2025-10-18,,https://static.inaturalist.org/photos/582195797/medium.jpg,"Corktown Common, Toronto, ON, CA",43.6538166667,-79.3512716667,2.0,Northern Mockingbird
 22949,2025-06-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/601222551/medium.jpg,"Toronto, ON, Canada",43.6430464507,-79.3341002377,30.0,Double-crested Cormorant
@@ -863,7 +863,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 11615,2025-06-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/515264952/medium.jpg,"Whistle Post St, Toronto, ON, CA",43.6872433333,-79.2950409902,16.0,Swainson's Thrush
 22942,2025-12-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/601001548/medium.jpg,"Cardiff Rd, Toronto, ON, CA",43.7129959,-79.3841547,39.0,House Finch
 776,2025-01-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/464516866/medium.jpg,"Downsview, Toronto, ON, Canada",43.743060288,-79.4820398432,266.0,Black-capped Chickadee
-15048,2025-07-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/547609153/medium.jpg,"East York, ON M4B 2P6, Canada",43.7053351238,-79.301402159,178.0,Black-capped Chickadee
+15048,2025-07-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/547609153/medium.jpg,"East York, ON M4B 2P6, Canada",43.7053351238,-79.301402159,178.0,Eastern Black-capped Chickadee
 10369,2025-05-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/508306228/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,238.0,Common Grackle
 23761,2025-10-01,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/608240708/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6597014603,-79.3066450967,12.0,Ruby-crowned Kinglet
 6589,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/492057035/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Ruby-crowned Kinglet
@@ -874,7 +874,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 6227,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491622242/medium.jpg,"Great Lakes Waterfront Tr, Toronto, ON, CA",43.6368576829,-79.3934389019,10.0,Canada Goose
 12068,2025-06-07,,https://static.inaturalist.org/photos/517293907/medium.jpg,"Finch Ave W, Toronto, ON, CA",43.7680427015,-79.4708286913,10.0,Tree Swallow
 2038,2025-01-13,,https://static.inaturalist.org/photos/471292146/medium.jpeg,"Toronto, ON, Canada",43.7175142939,-79.2211259902,603.0,White-winged Scoter
-7156,2025-04-27,,https://static.inaturalist.org/photos/494708872/medium.jpg,"Flemingdon Park, Toronto, ON, CA",43.7148866667,-79.3420033333,10.0,Yellow-rumped Warbler
+7156,2025-04-27,,https://static.inaturalist.org/photos/494708872/medium.jpg,"Flemingdon Park, Toronto, ON, CA",43.7148866667,-79.3420033333,10.0,Myrtle Warbler
 12915,2025-06-21,,https://static.inaturalist.org/photos/524732202/medium.jpg,"Cherry St, Toronto, ON, CA",43.6438833333,-79.3526466667,5.0,Great Egret
 21910,2025-11-22,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/593740832/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6425447288,-79.4687614637,79.0,Common Merganser
 5868,2025-04-22,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/490001900/medium.jpg,"Nipigon Ave, Toronto, ON, CA",43.7983344543,-79.4159641057,184.0,Ruby-crowned Kinglet
@@ -989,7 +989,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 23096,2025-02-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/602308191/medium.jpg,"Toronto, ON, Canada",43.6455024137,-79.3272640184,142.0,Tufted Duck
 7442,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/496339856/medium.jpg,"Bayview Woods-Steeles, North York, ON, Canada",43.7973136935,-79.3844683076,52.0,Mallard
 15101,2025-08-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/547772655/medium.jpg,"Edenbridge-Humber Valley, Etobicoke, ON, Canada",43.669245,-79.511903,4.0,Great Blue Heron
-13398,2025-06-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/529526274/medium.jpg,"Carl Hall Rd, Toronto, ON, CA",43.7491133333,-79.474595,8.0,Killdeer
+13398,2025-06-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/529526274/medium.jpg,"Carl Hall Rd, Toronto, ON, CA",43.7491133333,-79.474595,8.0,North American Killdeer
 22197,2025-11-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/595931724/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,American Robin
 1727,2025-02-12,CC-BY-NC-ND,https://inaturalist-open-data.s3.amazonaws.com/photos/469879091/medium.jpeg,"Colonel Samuel Smith Park, 3145 Lake Shore Blvd W, Etobicoke, ON M8V 4B6, Canada",43.591398,-79.5133857,198.0,Greater Scaup
 20295,2025-10-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/584434733/medium.jpg,"Finch Ave West at Jane St East Side, Glenfield-Jane Heights, ON M3N 2K1, Canada",43.7573410993,-79.5169666037,105.0,European Starling
@@ -1036,7 +1036,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 5045,2025-04-15,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/487069216/medium.png,"Toronto, ON, Canada",43.657843407,-79.3051534975,244.0,Harlequin Duck
 7770,2025-04-30,CC-BY-NC,https://static.inaturalist.org/photos/498043032/medium.jpg,"Toronto Islands, Toronto, Ontario",43.623913,-79.395063,1.0,Scissor-tailed Flycatcher
 1462,2025-02-07,,https://static.inaturalist.org/photos/468629899/medium.jpeg,"Toronto, ON M5S 3H7, Canada",43.6625656895,-79.3960516155,71.0,Red-tailed Hawk
-15532,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552168954/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.642575,-79.467035,16.0,Leuconotopicus villosus
+15532,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552168954/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.642575,-79.467035,16.0,Hairy Woodpecker
 17510,2025-09-17,,https://static.inaturalist.org/photos/568379933/medium.jpg,"Corktown Common, Toronto, ON, CA",43.65492,-79.35215,44.0,Nashville Warbler
 11806,2025-05-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/515921895/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6617712015,-79.3068150239,15.0,Bonaparte's Gull
 6285,2025-04-25,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/491683647/medium.jpeg,"Queens Quay West at Dan Leckie Way East Side, Toronto, ON M5V 3M8, Canada",43.63657012,-79.39611898,7.0,Long-tailed Duck
@@ -1144,7 +1144,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 23194,2025-12-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/602707937/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Red-bellied Woodpecker
 13713,2025-07-06,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/532712986/medium.jpg,"Toronto, ON, Canada",43.5931536423,-79.5105403662,49.0,Hooded Merganser
 3609,2025-03-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/478356552/medium.jpg,"Cardiff Rd, Toronto, ON, CA",43.7130263364,-79.3839815873,39.0,Blue Jay
-14066,2025-07-15,,https://static.inaturalist.org/photos/537049942/medium.jpg,"High Park, 多倫多, ON, CA",43.6451681544,-79.4663898686,5.0,旅鶇
+14066,2025-07-15,,https://static.inaturalist.org/photos/537049942/medium.jpg,"High Park, 多倫多, ON, CA",43.6451681544,-79.4663898686,5.0,American Robin
 17934,2025-08-18,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/570888396/medium.jpg,"Port Lands, Toronto, ON, Canada",43.6460391486,-79.3444533902,8.0,Mute Swan
 6486,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491927748/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Red-winged Blackbird
 18323,2025-05-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/573009216/medium.jpg,"St Lawrence-East Bayfront-The Islands, Toronto, ON, Canada",43.6255308073,-79.3578291998,200.0,Gadwall
@@ -1287,7 +1287,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 16119,2025-08-26,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/558123526/medium.jpg,"Scarborough, ON M1P 3P5, Canada",43.7629911911,-79.2681954056,384.0,American Robin
 16298,2025-06-07,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/559440592/medium.jpg,"New Toronto, Etobicoke, ON, Canada",43.5911086005,-79.5173989065,12.0,European Starling
 20708,2025-10-23,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/587019592/medium.jpg,"Wilket Creek Tr, Toronto, ON, CA",43.7274466667,-79.3534866667,13.0,Great Blue Heron
-21031,2025-04-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/588859122/medium.jpg,"Centro, Toronto, ON, Canadá",43.6419891917,-79.3869201809,97.0,Pardal
+21031,2025-04-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/588859122/medium.jpg,"Centro, Toronto, ON, Canadá",43.6419891917,-79.3869201809,97.0,House Sparrow
 19007,2025-10-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/577871422/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Golden-crowned Kinglet
 19257,2025-10-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/579241231/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,American Robin
 12787,2025-06-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/523178425/medium.jpg,"Toronto Zoo, Toronto, ON, CA",43.8217977636,-79.1813597085,9.0,Hairy Woodpecker
@@ -1355,7 +1355,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 397,2025-01-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/462991821/medium.jpeg,"Toronto, ON M4W 1V2, Canada",43.6799073283,-79.3803077191,97.0,Winter Wren
 17562,2025-09-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/568729968/medium.jpg,"Rosetta McClain Gardens, 5 Glen Everest Rd, Scarborough, ON M1N 1J2, Canada",43.6968253,-79.2557466,193.0,Common Grackle
 10277,2025-05-16,,https://static.inaturalist.org/photos/507772719/medium.jpg,"Birch Cliff, Scarborough, ON, Canada",43.696374064,-79.255858851,15.0,American Redstart
-19959,2025-05-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/582495745/medium.jpg,"Parque Downsview, 70 Canuck Ave, North York, ON M3K 2C5, Canadá",43.7439594,-79.4841427,186.0,Maçarico-pintado
+19959,2025-05-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/582495745/medium.jpg,"Parque Downsview, 70 Canuck Ave, North York, ON M3K 2C5, Canadá",43.7439594,-79.4841427,186.0,Spotted Sandpiper
 6962,2025-04-27,,https://static.inaturalist.org/photos/493960400/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6460543321,-79.4696225805,4.0,Double-crested Cormorant
 16780,2025-09-06,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/563143177/medium.jpg,"Toronto, CA-ON, CA",43.6138698609,-79.3863624707,4.0,Song Sparrow
 23204,2025-12-26,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/602769994/medium.jpg,"Toronto, ON M6K 3C3, Canada",43.6306744524,-79.4101271778,4.0,Black-capped Chickadee
@@ -1364,7 +1364,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 3147,2025-03-13,,https://static.inaturalist.org/photos/476345873/medium.jpg,"Beltline Tr, Toronto, ON, CA",43.6876033333,-79.3677133333,14.0,White-breasted Nuthatch
 6214,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491613020/medium.jpeg,"Toronto, ON M5V 2Y5, Canada",43.6369138677,-79.3943994585,6.0,Common Grackle
 9189,2025-05-06,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/502399132/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Blackburnian Warbler
-15818,2025-08-19,,https://static.inaturalist.org/photos/554906728/medium.jpg,"South Riverdale, Toronto, ON, Kanada",43.6442530858,-79.3212259394,8.0,Rauchschwalbe
+15818,2025-08-19,,https://static.inaturalist.org/photos/554906728/medium.jpg,"South Riverdale, Toronto, ON, Kanada",43.6442530858,-79.3212259394,8.0,Barn Swallow
 2374,2025-02-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/472833782/medium.jpg,"Edwards Gardens, 755 Lawrence Ave E, North York, ON M3C 1P2, Canada",43.7338039,-79.357924,193.0,Black-capped Chickadee
 22419,2025-04-21,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/597537100/medium.jpg,"New Toronto, Etobicoke, ON, Canada",43.5904404034,-79.5147108009,35.0,Brown Thrasher
 17742,2025-09-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/569752076/medium.jpg,"Centennial Scarborough, Scarborough, ON, Canada",43.7690660179,-79.140929048,117.0,American Herring Gull
@@ -1376,7 +1376,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 11952,2025-05-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/516598452/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Cedar Waxwing
 4715,2025-04-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/485689780/medium.jpg,"Bayview Village, North York, ON, Canada",43.7792981108,-79.369997286,381.0,American Robin
 10403,2025-05-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/508417217/medium.jpg,"Tommy Thompson Park, Toronto, ON, CA",43.6285826037,-79.3256660277,280.0,Black-bellied Plover
-12793,2025-05-25,,https://static.inaturalist.org/photos/523200252/medium.jpg,"East Point Park Bird Sanctuary, West Hill, Scarborough, ON M1E 3Z4加拿大",43.763026,-79.1518517,187.0,北美金翅雀
+12793,2025-05-25,,https://static.inaturalist.org/photos/523200252/medium.jpg,"East Point Park Bird Sanctuary, West Hill, Scarborough, ON M1E 3Z4加拿大",43.763026,-79.1518517,187.0,American Goldfinch
 6833,2025-04-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/493102727/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6277799169,-79.3266381528,15.0,American Coot
 15157,2025-08-06,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/548646284/medium.jpg,"Toronto, ON M4M 2Z5, Canada",43.6580396309,-79.3321919069,32.0,American Goldfinch
 21509,2025-11-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/591264940/medium.jpg,"Rouge Beach , Toronto, ON, Canada",43.7943308304,-79.1174217526,4.0,Ring-billed Gull
@@ -1393,7 +1393,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 12291,2025-06-04,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/519053759/medium.jpg,"Rouge Marsh, Toronto, ON, Canada",43.7943197538,-79.1202445216,4.0,Wood Duck
 5531,2025-04-20,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/489047234/medium.jpg,"Ontario, CA",43.7203152172,-79.375220842,319.0,Common Raven
 23201,2025-12-26,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/602769245/medium.jpg,"Shriners' Peace Memorial, Toronto, ON M6K 3C3, Canada",43.6298670715,-79.4220153987,8.0,Mute Swan
-7290,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/495953843/medium.jpg,"Jane St, Toronto, ON, CA",43.69737,-79.50148,6.0,Birds
+7290,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/495953843/medium.jpg,"Jane St, Toronto, ON, CA",43.69737,-79.50148,6.0,House Sparrow
 20081,2025-09-16,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/583017032/medium.jpg,"Humbermede, North York, ON, Canada",43.741956826,-79.5471138018,8.0,Yellow-rumped Warbler
 20819,2025-11-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/587551666/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Fox Sparrow
 5985,2025-04-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/490429396/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Pine Warbler
@@ -1482,7 +1482,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 23549,2025-12-31,,https://static.inaturalist.org/photos/604282706/medium.jpg,"Corktown Common, Toronto, ON, CA",43.6533916667,-79.3524083333,5.0,Black-capped Chickadee
 3416,2025-03-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/477631559/medium.jpeg,"Parkdale, Toronto, ON, Canada",43.633256296,-79.4375754495,27.0,Common Grackle
 19685,2025-10-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/581015753/medium.jpg,"Rosetta McClain Gardens, 5 Glen Everest Rd, Scarborough, ON M1N 1J2, Canada",43.6968253,-79.2557466,193.0,White-throated Sparrow
-6642,2025-04-25,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/492297991/medium.png,"Toronto, ON, Canada",43.6157822959,-79.3724006176,237.0,裏海燕鷗
+6642,2025-04-25,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/492297991/medium.png,"Toronto, ON, Canada",43.6157822959,-79.3724006176,237.0,Caspian Tern
 14047,2025-05-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/536841641/medium.jpg,"Toronto, ON, CA",43.706975,-79.4820633333,6.0,American Goldfinch
 4615,2025-03-20,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/485245664/medium.png,"South Riverdale, Toronto, ON, Canada",43.6602014741,-79.310163751,139.0,Northern Cardinal
 21663,2025-10-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/591978251/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6501418873,-79.3213223129,273.0,American Tree Sparrow
@@ -1491,7 +1491,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 16839,2025-08-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/563607967/medium.jpg,"Bayview Village, North York, ON, Canada",43.7764504315,-79.3675610574,434.0,Northern Cardinal
 369,2025-01-07,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/462637974/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Dark-eyed Junco
 21113,2025-11-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/589477032/medium.jpg,"Hawk Hill - High Park, Toronto, ON, Canada",43.6463000354,-79.4656896358,10.0,Evening Grosbeak
-18611,2025-09-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/575019739/medium.jpg,"Martin Goodman Tr, Toronto, ON, CA",43.6379,-79.3817833333,6.0,Goéland à bec cerclé
+18611,2025-09-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/575019739/medium.jpg,"Martin Goodman Tr, Toronto, ON, CA",43.6379,-79.3817833333,6.0,Ring-billed Gull
 23315,2025-05-30,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/602877427/medium.jpg,"New Toronto, Etobicoke, ON, Canada",43.5924296559,-79.5135630209,31.0,Cedar Waxwing
 15556,2025-08-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552451165/medium.jpg,"E.T. Seton Park, Park, North York, ON, Canada",43.7153752967,-79.3425451888,2.0,Green Heron
 15652,2025-02-26,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/553380702/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6453861704,-79.4646415592,79.0,Red-tailed Hawk
@@ -1509,7 +1509,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 11541,2025-06-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/514897434/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Red-winged Blackbird
 16782,2025-09-06,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/563144045/medium.jpg,"Gibraltar Point Beach, Toronto, ON M5J 2W2, Canada",43.6139975428,-79.38740585,27.0,Mallard
 14932,2025-08-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/546488480/medium.jpg,"Robertson Cres, Toronto, ON, CA",43.6376833333,-79.3850116667,12.0,Ring-billed Gull
-10754,2025-05-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/510323686/medium.jpg,"Ontario, CA",43.6835016324,-79.3675213848,146.0,Gray Catbird
+10754,2025-05-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/510323686/medium.jpg,"Ontario, CA",43.6835016324,-79.3675213848,146.0,Grey Catbird
 6925,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/493829806/medium.jpeg,"Rosetta McClain Gardens, 5 Glen Everest Rd, Scarborough, ON M1N 1J2, Canada",43.6968253,-79.2557466,193.0,Palm Warbler
 4575,2025-02-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/485031890/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6255609953,-79.330045358,161.0,Red-breasted Merganser
 20375,2025-09-30,,https://static.inaturalist.org/photos/585062151/medium.jpg,"Corktown Common, Toronto, ON, CA",43.655145,-79.35208,8.0,Orange-crowned Warbler
@@ -1558,7 +1558,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 20909,2025-10-23,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/588001231/medium.jpg,"Ontario, CA",43.6517945396,-79.356242675,146.0,Northern Cardinal
 20684,2025-10-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/586650595/medium.jpg,"Colonel Samuel Smith Park, 3145 Lake Shore Blvd W, Etobicoke, ON M8V 4B6, Canada",43.591398,-79.5133857,198.0,Ring-billed Gull
 5664,2025-04-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/489128350/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Great Blue Heron
-6633,2025-04-25,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/492293955/medium.png,"St Lawrence-East Bayfront-The Islands, Toronto, ON, Canada",43.6230071938,-79.3639252253,31.0,林鴛鴦
+6633,2025-04-25,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/492293955/medium.png,"St Lawrence-East Bayfront-The Islands, Toronto, ON, Canada",43.6230071938,-79.3639252253,31.0,Wood Duck
 11457,2025-06-01,,https://static.inaturalist.org/photos/514277614/medium.jpg,"Toronto, ON M5J 2T5, Canada",43.6391261836,-79.3760393187,4.0,House Sparrow
 893,2025-01-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/464874760/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Canvasback
 6443,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491842944/medium.jpg,"Rosetta McClain Gardens, 5 Glen Everest Rd, Scarborough, ON M1N 1J2, Canada",43.6968253,-79.2557466,193.0,Red-bellied Woodpecker
@@ -1582,7 +1582,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 22885,2025-12-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/600852618/medium.jpg,"Bayview Village, North York, ON, Canada",43.7785915029,-79.3772766104,561.0,Dark-eyed Junco
 9498,2025-05-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/503677457/medium.jpeg,"Evergreen Brick Works, 550 Bayview Ave, Toronto, ON M4W 3X8, Canada",43.6843314,-79.3647127,165.0,Northern Cardinal
 23681,2025-12-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/606028489/medium.jpg,"The Kingsway, Etobicoke, ON, Canada",43.647502813,-79.5127394605,244.0,Downy Woodpecker
-9431,2025-05-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/503452861/medium.jpeg,"North York, ON M2H 1A1, Canada",43.7903684026,-79.376026243,296.0,Gray Catbird
+9431,2025-05-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/503452861/medium.jpeg,"North York, ON M2H 1A1, Canada",43.7903684026,-79.376026243,296.0,Grey Catbird
 17322,2025-09-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/567309939/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Black-crowned Night Heron
 7169,2025-04-27,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/494782164/medium.jpeg,"Scarborough, ON M1P 3P5, Canada",43.7634069,-79.26845717,6.0,Ruby-crowned Kinglet
 20504,2025-10-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/585941189/medium.jpg,"Bayview Village, North York, ON, Canada",43.7825085504,-79.3736762266,639.0,Mallard
@@ -1604,7 +1604,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 22944,2025-06-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/601213927/medium.jpg,"Toronto, ON, Canada",43.6373857135,-79.3423320848,50.0,Mute Swan
 23361,2025-12-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/603063142/medium.jpg,"Bayview Village, North York, ON, Canada",43.7807355173,-79.3838426683,633.0,Downy Woodpecker
 2362,2025-02-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/472799047/medium.jpeg,"Toronto, ON, Canada",43.6358186933,-79.4490564479,98.0,Red-breasted Merganser
-20104,2025-03-11,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/583085921/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6478941219,-79.4705294897,62.0,林鴛鴦
+20104,2025-03-11,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/583085921/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6478941219,-79.4705294897,62.0,Wood Duck
 21119,2025-11-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/589499556/medium.jpg,"Rouge National Urban Park, Rouge Beach and Marsh, 195 Rouge Hills Dr, Scarborough, ON M1C 2Z1, Canada",43.789969,-79.1216979,185.0,Northern Cardinal
 13252,2025-06-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/528098742/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Great Crested Flycatcher
 1898,2025-02-16,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/470648304/medium.jpg,"Bayview Village, North York, ON, Canada",43.7815231477,-79.3883587644,219.0,Northern Cardinal
@@ -1673,8 +1673,8 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 12659,2025-06-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/522258914/medium.jpg,"HFVP+MC, Toronto, ON M8V 4B6, Canada",43.5930769095,-79.5122529566,53.0,Common Merganser
 3422,2025-03-18,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/477678177/medium.jpeg,"Toronto, ON M5J 2T5, Canada",43.6385627719,-79.3789002299,10.0,Ring-billed Gull
 18404,2025-09-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/573456686/medium.jpg,"Tommy Thompson Park , Toronto, ON, Canada",43.6249776812,-79.3252215441,31.0,Pied-billed Grebe
-13104,2025-06-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/526798044/medium.jpg,Toronto,43.6424980164,-79.466835022,4.0,Stockente
-7940,2025-04-28,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/498618141/medium.png,"Old East York, East York, ON, Canada",43.7011702922,-79.3196144471,42.0,綠頭鴨
+13104,2025-06-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/526798044/medium.jpg,Toronto,43.6424980164,-79.466835022,4.0,Mallard
+7940,2025-04-28,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/498618141/medium.png,"Old East York, East York, ON, Canada",43.7011702922,-79.3196144471,42.0,Mallard
 22654,2025-12-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/598970316/medium.jpg,"Banbury-Don Mills, North York, ON, Canada",43.7343048926,-79.3542139909,65.0,American Robin
 13646,2025-07-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/532022359/medium.jpg,"Rouge, Scarborough, ON, Canada",43.8225041695,-79.1665450959,509.0,Hooded Merganser
 13430,2025-06-21,,https://static.inaturalist.org/photos/539728956/medium.jpg,"Toronto, ON M5V 1J3, Canada",43.6418718305,-79.3905792385,7.0,House Sparrow
@@ -1790,7 +1790,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 11122,2025-05-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/511965964/medium.jpg,"Woodbine Beach, Toronto, ON, Canada",43.6616922363,-79.3076281349,2.0,Caspian Tern
 15059,2025-08-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/547660008/medium.jpg,"Lower Reesor Pond, Toronto, ON M1B 5W5, Canada",43.8280937,-79.1899396,175.0,Wood Duck
 15980,2025-08-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/556905232/medium.jpg,"Bayview Village, North York, ON, Canada",43.7822404793,-79.3750296255,730.0,Song Sparrow
-13743,2025-07-06,,https://static.inaturalist.org/photos/533217533/medium.jpg,"Lower Reesor Pond, Toronto, ON M1B 5W5加拿大",43.8280937,-79.1899396,175.0,绿头鸭
+13743,2025-07-06,,https://static.inaturalist.org/photos/533217533/medium.jpg,"Lower Reesor Pond, Toronto, ON M1B 5W5加拿大",43.8280937,-79.1899396,175.0,Mallard
 20491,2025-10-28,,https://static.inaturalist.org/photos/585833651/medium.jpg,"Corktown Common, Toronto, ON, CA",43.6535416667,-79.35267,9.0,Northern Cardinal
 345,2025-01-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/462609214/medium.jpg,"Bridle Path-Sunnybrook-York Mills, Toronto, ON, Canada",43.7301005027,-79.357842113,479.0,House Finch
 2955,2025-03-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/475663856/medium.jpeg,"Bluffers Park, Scarborough, Canada",43.7084487624,-79.2284149165,75.0,Trumpeter Swan
@@ -1810,7 +1810,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 19588,2025-10-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/580391594/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,White-throated Sparrow
 3699,2025-03-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/478941385/medium.jpeg,"East End-Danforth, ON M4C 1C1, Canada",43.6848933738,-79.3065590411,67.0,Red-bellied Woodpecker
 18270,2025-09-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/572799650/medium.jpg,"Colonel Samuel Smith Park, 3145 Lake Shore Blvd W, Etobicoke, ON M8V 4B6, Canada",43.591398,-79.5133857,198.0,Common Yellowthroat
-21976,2025-11-22,CC-BY-NC-SA,https://inaturalist-open-data.s3.amazonaws.com/photos/594147824/medium.jpg,Bluffers Park Beach,43.7168535188,-79.2240439047,516.0,Harle huppé
+21976,2025-11-22,CC-BY-NC-SA,https://inaturalist-open-data.s3.amazonaws.com/photos/594147824/medium.jpg,Bluffers Park Beach,43.7168535188,-79.2240439047,516.0,Red-breasted Merganser
 22474,2025-12-07,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/598143594/medium.jpg,"73 Cardiff Rd, North York, ON M4P 2P4, Canada",43.713027,-79.3841394,179.0,Northern Cardinal
 232,2025-01-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/462262170/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Common Goldeneye
 1974,2025-02-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/471004542/medium.jpg,"Bayview Village, North York, ON, Canada",43.7802073766,-79.3733590502,584.0,Downy Woodpecker
@@ -1823,7 +1823,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 17452,2025-09-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/567962949/medium.jpg,"East York, ON M4H 1P6, Canada",43.6954321957,-79.3597341701,6.0,Double-crested Cormorant
 9312,2025-05-10,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/502937681/medium.jpg,"Midtown Toronto, Toronto, ON, Canada",43.6834201846,-79.414284267,65.0,Veery
 5055,2025-04-13,CC-BY-NC-ND,https://inaturalist-open-data.s3.amazonaws.com/photos/487132324/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6452800991,-79.3213099394,15.0,Tree Swallow
-22742,2025-12-14,CC-BY-NC-SA,https://inaturalist-open-data.s3.amazonaws.com/photos/599858299/medium.jpg,"Étienne Brûlé Park, Toronto",43.6527798758,-79.4981689773,85.0,Goéland hudsonien
+22742,2025-12-14,CC-BY-NC-SA,https://inaturalist-open-data.s3.amazonaws.com/photos/599858299/medium.jpg,"Étienne Brûlé Park, Toronto",43.6527798758,-79.4981689773,85.0,American Herring Gull
 10278,2025-05-16,,https://static.inaturalist.org/photos/507772746/medium.jpg,"Birch Cliff, Scarborough, ON, Canada",43.696374064,-79.255858851,15.0,Magnolia Warbler
 8125,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/499316710/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Red-necked Grebe
 5923,2025-04-23,,https://static.inaturalist.org/photos/490332593/medium.jpeg,"South Riverdale, Toronto, ON, Canada",43.6458978525,-79.3207179227,31.0,Cliff Swallow
@@ -1871,7 +1871,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 18835,2025-10-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/576461871/medium.jpg,"Ashbridge's Bay Park, Toronto, ON, Canada",43.6584160019,-79.3070481204,8.0,Red-tailed Hawk
 11734,2025-06-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/515671054/medium.jpg,"Rouge, Scarborough, ON, Canada",43.8216722817,-79.1649324968,123.0,Mallard
 21294,2025-11-10,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/590234101/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6441001091,-79.4688759346,188.0,Hooded Merganser
-5220,2025-04-16,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/488017931/medium.png,"Taylor-Massey, ON, Canada",43.698737481,-79.2933392964,75.0,綠頭鴨
+5220,2025-04-16,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/488017931/medium.png,"Taylor-Massey, ON, Canada",43.698737481,-79.2933392964,75.0,Mallard
 15985,2025-08-22,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/556921539/medium.jpg,"Bayview Village, North York, ON, Canada",43.7815011347,-79.3731540035,448.0,Least Flycatcher
 23198,2025-12-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/602714398/medium.jpg,"Ontario, CA",43.717540365,-79.4956569257,4.0,Downy Woodpecker
 10165,2025-05-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/507404421/medium.jpg,"Wilket Creek Tr, Toronto, ON, CA",43.7296477606,-79.3556143458,6.0,Northern Cardinal
@@ -1949,7 +1949,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 4033,2025-04-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/481884643/medium.jpg,"Bayview Village, North York, ON, Canada",43.7787450262,-79.3701475096,743.0,American Robin
 782,2025-01-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/464518164/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Gadwall
 8926,2025-04-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/501464101/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Red-necked Grebe
-20109,2025-10-18,,https://static.inaturalist.org/photos/583105007/medium.jpg,"South Riverdale, Toronto, ON, 加拿大",43.6265789782,-79.3282972706,61.0,小潜鸭
+20109,2025-10-18,,https://static.inaturalist.org/photos/583105007/medium.jpg,"South Riverdale, Toronto, ON, 加拿大",43.6265789782,-79.3282972706,61.0,Lesser Scaup
 9021,2025-05-07,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/501618787/medium.jpeg,"Toronto, ON M5V 3C7, Canada",43.6466531201,-79.3869391456,18.0,White-throated Sparrow
 15373,2025-08-07,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/550113326/medium.jpg,"Bayview Village, North York, ON, Canada",43.7797426021,-79.3748347117,770.0,Cedar Waxwing
 18467,2025-09-29,CC-BY-NC,https://static.inaturalist.org/photos/573900596/medium.jpg,"Rouge, Scarborough, ON, Canada",43.8213437638,-79.1640912913,122.0,Great Blue Heron
@@ -1992,7 +1992,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 16521,2025-09-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/561201596/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6548600413,-79.3086840283,31.0,European Starling
 8660,2025-04-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/500778235/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Ring-billed Gull
 20530,2025-10-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/586075681/medium.jpg,"Ashbridge’s Bay Park , Toronto, ON, Canada",43.6590936169,-79.3117303296,4.0,Pine Warbler
-22228,2025-04-18,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/595965938/medium.jpg,"Ontario, CA",43.7157206258,-79.3109257825,122.0,遊隼
+22228,2025-04-18,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/595965938/medium.jpg,"Ontario, CA",43.7157206258,-79.3109257825,122.0,Peregrine Falcon
 7758,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/497889896/medium.jpg,"Edenbridge-Humber Valley, Etobicoke, ON, Canada",43.6760254077,-79.5100720749,281.0,Hairy Woodpecker
 5825,2025-04-22,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/489932034/medium.jpg,"Bayview Village, North York, ON, Canada",43.7792749674,-79.3700017559,342.0,Ruby-crowned Kinglet
 279,2025-01-04,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/462339076/medium.jpeg,"Ashbridges Bay, Toronto, ON, Canada",43.6603169,-79.3151711,945.0,Bufflehead
@@ -2027,7 +2027,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 4722,2025-04-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/485689892/medium.jpg,"Bayview Village, North York, ON, Canada",43.7792981108,-79.369997286,381.0,Song Sparrow
 16704,2025-08-31,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/562448766/medium.jpg,"New Toronto, Etobicoke, ON, Canada",43.5931467872,-79.5133120164,247.0,Mute Swan
 6888,2025-04-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/493701125/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Mallard
-5241,2025-04-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/488035563/medium.jpeg,"Toronto, ON, Kanada",43.6228906743,-79.3611228839,83.0,Mittelsäger
+5241,2025-04-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/488035563/medium.jpeg,"Toronto, ON, Kanada",43.6228906743,-79.3611228839,83.0,Red-breasted Merganser
 15502,2025-08-13,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/551852062/medium.jpg,"Bernice Ave, Toronto, ON, CA",43.6389032339,-79.4971108286,9.0,American Robin
 367,2025-01-07,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/462636591/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Canada Goose
 7481,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/496644846/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,House Sparrow
@@ -2044,8 +2044,8 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 5004,2025-04-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/486860756/medium.jpg,"High Park, Toronto, ON, CA",43.6494501774,-79.4602218737,4.0,Mallard
 19599,2025-10-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/580397969/medium.jpg,"Bayview Village, North York, ON, Canada",43.7809860636,-79.3707793847,332.0,Cedar Waxwing
 19928,2025-09-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/582212490/medium.jpg,"High Park Tr, Toronto, ON, CA",43.6436216667,-79.46737,3.0,Mallard
-17633,2025-09-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/569123937/medium.jpg,"Ashbridge’s Bay Park Toronto, ON, Canada",43.6613557365,-79.3135499401,2.0,Gray-cheeked Thrush
-10422,2025-05-11,,https://static.inaturalist.org/photos/508470764/medium.jpg,"New Toronto, Etobicoke, ON, Canada",43.5901987392,-79.5165242357,33.0,Grèbe élégant
+17633,2025-09-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/569123937/medium.jpg,"Ashbridge’s Bay Park Toronto, ON, Canada",43.6613557365,-79.3135499401,2.0,Grey-cheeked Thrush
+10422,2025-05-11,,https://static.inaturalist.org/photos/508470764/medium.jpg,"New Toronto, Etobicoke, ON, Canada",43.5901987392,-79.5165242357,33.0,Western Grebe
 19237,2025-10-11,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/579029683/medium.jpg,"High Park, Toronto, ON, CA",43.645,-79.4591133333,12.0,Black-crowned Night Heron
 14839,2025-07-30,,https://static.inaturalist.org/photos/545590605/medium.jpg,"Corktown Common, Toronto, ON, CA",43.6551333333,-79.3522633333,4.0,Song Sparrow
 14738,2025-07-29,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/544666115/medium.jpg,"Toronto, ON, CA",43.6676885699,-79.290846131,349.0,Bonaparte's Gull
@@ -2091,7 +2091,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 9440,2025-05-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/503504866/medium.jpeg,"Etobicoke, ON M9B 2B3, Canada",43.65266106,-79.5417301,8.0,Red-bellied Woodpecker
 22512,2025-05-06,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/598397652/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6582608528,-79.3070874658,58.0,Tennessee Warbler
 20611,2025-10-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/586491272/medium.jpg,"High Park - North Half, Toronto, ON, Canada",43.6490889589,-79.4642275187,440.0,Song Sparrow
-18416,2025-09-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/573531233/medium.jpg,"E.T. Seton Park, North York, ON, Canada",43.7150284638,-79.3416859658,8.0,Gray Catbird
+18416,2025-09-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/573531233/medium.jpg,"E.T. Seton Park, North York, ON, Canada",43.7150284638,-79.3416859658,8.0,Grey Catbird
 22827,2025-12-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/600611138/medium.jpg,"Bayview Village, North York, ON, Canada",43.7803231724,-79.3893228021,15.0,Dark-eyed Junco
 13408,2025-06-29,,https://static.inaturalist.org/photos/529690191/medium.jpg,"High Park Tr, Toronto, ON, CA",43.6438966667,-79.4677883333,7.0,Lesser Scaup
 18907,2025-09-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/577023688/medium.jpg,"Rouge Marsh, Toronto, ON, Canada",43.7940075738,-79.1194079451,8.0,Red-winged Blackbird
@@ -2116,7 +2116,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 20409,2025-10-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/585315386/medium.jpg,"Dufferin Grove, Toronto, ON, Canada",43.6598396586,-79.4265815614,30.0,Purple Finch
 1946,2025-02-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/470883783/medium.jpg,"Bayview Village, North York, ON, Canada",43.7815049375,-79.3870957668,72.0,Red-tailed Hawk
 11512,2025-06-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/514741811/medium.jpg,"Clouston Ave, Toronto, ON, CA",43.69405,-79.510795,2.0,Cooper's Hawk
-13224,2025-06-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/527712538/medium.jpg,Toronto,43.6200675964,-79.3759078979,97.0,Braunkopf-Kuhstärling
+13224,2025-06-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/527712538/medium.jpg,Toronto,43.6200675964,-79.3759078979,97.0,Brown-headed Cowbird
 16242,2025-08-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/558937783/medium.jpg,"Rouge, Scarborough, ON, Canada",43.8223679718,-79.166367325,80.0,Cedar Waxwing
 14965,2025-08-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/546893852/medium.jpg,"South Cedarbrae, Scarborough, ON, Canada",43.7518697653,-79.2329296998,4.0,Mourning Dove
 2815,2025-03-09,,https://static.inaturalist.org/photos/475349624/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.647947066,-79.4706819179,15.0,Mallard
@@ -2159,7 +2159,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 9579,2025-05-13,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/504356634/medium.jpg,"Ashbridge's Bay Park, Toronto, ON, Canada",43.6564027467,-79.3070098225,8.0,Glaucous Gull
 555,2025-01-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/463562158/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Red-breasted Merganser
 18507,2025-09-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/574317380/medium.jpg,"Woodbine Beach Dune Habitat, Toronto, ON, Canada",43.6598123019,-79.3086209578,2.0,Song Sparrow
-11505,2025-06-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/514492623/medium.jpg,"Milliken Park, Scarborough, ON, Canada",43.8288929279,-79.27085911,53.0,Cardinalis cardinalis
+11505,2025-06-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/514492623/medium.jpg,"Milliken Park, Scarborough, ON, Canada",43.8288929279,-79.27085911,53.0,Northern Cardinal
 7266,2025-04-28,,https://static.inaturalist.org/photos/495887193/medium.jpeg,"High Park - Grenadier Cafe, Toronto, ON M6S 2X4, Canada",43.6463869772,-79.4663415849,24.0,Dark-eyed Junco
 1136,2025-01-25,CC-BY,https://static.inaturalist.org/photos/466857979/medium.jpg,"Toronto, ON, Canada",43.6459238896,-79.3275815301,141.0,Great Black-backed Gull
 23304,2025-07-17,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/602860620/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6445208666,-79.4586786041,49.0,Ruby-throated Hummingbird
@@ -2216,7 +2216,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 21723,2025-11-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/592329284/medium.jpg,"Lambton Baby Point, Toronto, ON, Canada",43.6533853587,-79.5022259094,15.0,Eastern Bluebird
 16275,2025-08-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/559218590/medium.jpg,"Rosetta McClain Gardens, 5 Glen Everest Rd, Scarborough, ON M1N 1J2, Canada",43.6968253,-79.2557466,193.0,Eastern Wood-Pewee
 22394,2025-12-06,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/597713940/medium.jpg,"John Garland Blvd at Mosque Cres North Side, Etobicoke, ON M9V 1N8, Canada",43.733136989,-79.5923236012,4.0,Red-breasted Nuthatch
-13100,2025-06-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/526794475/medium.jpg,Toronto,43.6427688599,-79.4666366577,185.0,Purpurgrackel
+13100,2025-06-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/526794475/medium.jpg,Toronto,43.6427688599,-79.4666366577,185.0,Common Grackle
 5393,2025-04-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/488585964/medium.jpeg,"Leaside-Bennington, Toronto, ON, Canada",43.7199468955,-79.3546300303,8.0,White-throated Sparrow
 13869,2025-07-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/534831515/medium.jpg,"Rouge Marsh, Toronto, ON, Canada",43.7939516875,-79.1197555127,75.0,Wood Duck
 5432,2025-04-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/488811470/medium.jpeg,"South Riverdale, Toronto, ON, Canada",43.6459354682,-79.3204384549,15.0,Mallard
@@ -2280,7 +2280,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 20268,2025-10-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/584073300/medium.jpg,"Woodbine Beach Dune Habitat, Toronto, ON, Canada",43.6614440466,-79.3071572671,8.0,Northern Harrier
 20512,2025-10-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/585941262/medium.jpg,"Bayview Village, North York, ON, Canada",43.7825085504,-79.3736762266,639.0,Red-winged Blackbird
 20951,2025-11-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/588098899/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6250196669,-79.3306995335,244.0,Barrow's Goldeneye
-13231,2025-06-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/527827267/medium.jpg,Toronto,43.6167793274,-79.3745880127,583.0,Wanderdrossel
+13231,2025-06-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/527827267/medium.jpg,Toronto,43.6167793274,-79.3745880127,583.0,American Robin
 3594,2025-03-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/478248316/medium.jpeg,"North Riverdale, Toronto, ON, Canada",43.6751207908,-79.358058358,8.0,House Sparrow
 10772,2025-05-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/510446877/medium.jpg,"Toronto, ON, CA",43.6725808728,-79.2787492321,7.0,Cliff Swallow
 6367,2025-04-25,,https://static.inaturalist.org/photos/491823802/medium.jpg,"Humber Arboretum, Toronto, ON, CA",43.7259572908,-79.6082963353,7.0,American Robin
@@ -2298,7 +2298,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 22327,2025-12-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/596995475/medium.jpg,"Ashbridges Bay Park, Toronto, ON, Canada",43.6613019403,-79.3105486102,4.0,Northern Harrier
 10500,2025-05-23,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/509241530/medium.jpg,"Woodbine Beach, Toronto, ON, Canada",43.6619511481,-79.3068229959,4.0,Lesser Black-backed Gull
 9707,2025-05-06,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/505028939/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Blue-winged Teal
-5217,2025-03-13,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/487988179/medium.jpg,"Ontario, CA",43.6699990474,-79.3576207804,60.0,Mergus serrator
+5217,2025-03-13,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/487988179/medium.jpg,"Ontario, CA",43.6699990474,-79.3576207804,60.0,Red-breasted Merganser
 17995,2025-05-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/571282502/medium.jpg,"King St W, Toronto, ON, CA",43.6478416667,-79.381395,39.0,Veery
 23762,2025-10-01,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/608240719/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6556940615,-79.3102652384,29.0,Hermit Thrush
 12399,2025-06-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/519870945/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Song Sparrow
@@ -2538,7 +2538,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 5988,2025-04-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/490430760/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Hermit Thrush
 17574,2025-09-18,,https://static.inaturalist.org/photos/568809365/medium.jpg,"Corktown Common, Toronto, ON, CA",43.6542133333,-79.352845,11.0,Red-eyed Vireo
 9134,2025-05-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/502095948/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,White-throated Sparrow
-15545,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552169260/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.639382,-79.462545,18.0,Nycticorax nycticorax
+15545,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552169260/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.639382,-79.462545,18.0,Black-crowned Night Heron
 10055,2025-05-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/506599364/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Black-crowned Night Heron
 11480,2025-06-01,,https://static.inaturalist.org/photos/514395403/medium.jpg,"Tommy Thompson Park, Toronto, ON, CA",43.6221,-79.334555,4.0,Great Egret
 16324,2025-08-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/559550275/medium.jpg,"High Park Tr, Toronto, ON, CA",43.641395,-79.4631883333,15.0,Great Blue Heron
@@ -2594,7 +2594,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 13359,2025-06-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/529291013/medium.jpg,"Rouge, Scarborough, ON, Canada",43.8060901408,-79.1350490565,375.0,Grey Catbird
 7580,2025-04-29,,https://static.inaturalist.org/photos/497012465/medium.jpg,"Corktown Common, Toronto, ON, CA",43.6543216667,-79.3528283333,4.0,House Finch
 23525,2025-10-11,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/604083229/medium.jpg,"The Queensway – Humber Bay, Etobicoke, ON, Canada",43.6215307851,-79.4754044461,493.0,Eastern Phoebe
-7551,2025-04-29,,https://static.inaturalist.org/photos/496887428/medium.jpeg,"High Park, Toronto, ON, CA",43.6483001788,-79.471031189,89.0,紅翅黑鸝
+7551,2025-04-29,,https://static.inaturalist.org/photos/496887428/medium.jpeg,"High Park, Toronto, ON, CA",43.6483001788,-79.471031189,89.0,Red-winged Blackbird
 17570,2025-09-18,,https://static.inaturalist.org/photos/568792176/medium.jpg,Toronto,43.6727371216,-79.320526123,4.0,House Sparrow
 5885,2025-04-22,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/490142039/medium.jpg,"Bayview Village, North York, ON, Canada",43.7799224784,-79.3695895534,426.0,Song Sparrow
 3140,2025-03-02,,https://static.inaturalist.org/photos/476278590/medium.jpg,"Don Valley Brick Works, Toronto, ON, CA",43.6871255167,-79.366764171,383.0,Red-tailed Hawk
@@ -2616,7 +2616,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 23491,2025-12-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/603966549/medium.jpg,"Bayview Village, North York, ON, Canada",43.7797735872,-79.3727962329,525.0,Downy Woodpecker
 1367,2025-02-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/467713671/medium.jpeg,"Toronto, ON, Canada",43.6082353454,-79.4874338663,61.0,Long-tailed Duck
 13313,2025-06-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/528815024/medium.jpg,"Rouge, Scarborough, ON, Canada",43.8281544262,-79.1896168834,1.0,Common Grackle
-20041,2025-02-25,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/582905850/medium.jpg,"Toronto, ON, Canada",43.6566538783,-79.3085494778,94.0,綠頭鴨
+20041,2025-02-25,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/582905850/medium.jpg,"Toronto, ON, Canada",43.6566538783,-79.3085494778,94.0,Mallard
 10960,2025-05-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/511120149/medium.jpg,"Downsview, North York, ON, Canada",43.741357013,-79.4805091663,382.0,Mallard
 1588,2025-02-01,,https://static.inaturalist.org/photos/468936183/medium.jpg,"Scarborough, ON, Canada",43.7093042554,-79.227503685,31.0,Trumpeter Swan
 10428,2025-05-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/508490456/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Great Crested Flycatcher
@@ -2707,7 +2707,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 19791,2025-10-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/581280283/medium.jpg,"North York General Hospital, Toronto, ON, CA",43.769329628,-79.3613735041,29.0,Downy Woodpecker
 5779,2025-04-20,,https://static.inaturalist.org/photos/489687037/medium.jpeg,"Ontario, CA",43.757947372,-79.2920015789,116.0,Peregrine Falcon
 16679,2025-09-04,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/562512159/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,American Redstart
-20112,2025-10-18,,https://static.inaturalist.org/photos/583105122/medium.jpg,"South Riverdale, Toronto, ON, 加拿大",43.6240946486,-79.3258869531,61.0,美洲潜鸭
+20112,2025-10-18,,https://static.inaturalist.org/photos/583105122/medium.jpg,"South Riverdale, Toronto, ON, 加拿大",43.6240946486,-79.3258869531,61.0,Redhead
 12253,2025-06-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/518827609/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Red-winged Blackbird
 12360,2025-06-11,,https://static.inaturalist.org/photos/519441599/medium.jpg,"Bayview Ave, Toronto, ON, CA",43.6532883333,-79.35212,13.0,European Starling
 4133,2025-03-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/482298235/medium.jpeg,"The Kingsway, Etobicoke, ON, Canada",43.6475757539,-79.511716565,909.0,European Starling
@@ -2786,7 +2786,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 6976,2025-04-23,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/494054104/medium.jpeg,"Toronto, ON M5J 2W2, Canada",43.6128496095,-79.388845861,17.0,Killdeer
 16528,2025-09-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/561218837/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Red-breasted Nuthatch
 14291,2025-07-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/539391582/medium.jpg,"Bayview Village, North York, ON, Canada",43.7696520707,-79.3655880798,4.0,American Goldfinch
-16532,2025-08-31,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/561237738/medium.jpg,"High Park-Swansea, Toronto, ON, 加拿大",43.6459415887,-79.4696653073,116.0,大蓝鹭
+16532,2025-08-31,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/561237738/medium.jpg,"High Park-Swansea, Toronto, ON, 加拿大",43.6459415887,-79.4696653073,116.0,Great Blue Heron
 5552,2025-04-20,,https://static.inaturalist.org/photos/489058831/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6491965708,-79.3237503191,31.0,Yellow-bellied Sapsucker
 8811,2025-04-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/501241381/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Mallard
 6854,2025-04-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/493222754/medium.jpg,"Downsview, North York, ON, Canada",43.7397841489,-79.477531417,8.0,Tree Swallow
@@ -2881,7 +2881,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 18319,2025-09-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/573003245/medium.jpg,"Leslie St, Toronto, ON, CA",43.6455783333,-79.3203416667,5.0,Mallard
 14754,2025-07-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/544750155/medium.jpg,"Edenbridge-Humber Valley, Etobicoke, ON, Canada",43.6713282271,-79.5137418005,182.0,Canada Goose
 20,2025-01-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/461162101/medium.jpg,"Bayview Village, North York, ON, Canada",43.7728881061,-79.3656676589,59.0,Song Sparrow
-15500,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/551840619/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6480875,-79.470809,30.0,Nycticorax nycticorax
+15500,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/551840619/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6480875,-79.470809,30.0,Black-crowned Night Heron
 7329,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/496023426/medium.jpeg,"The Beaches, Toronto, ON, Canada",43.6633464036,-79.3122339507,4.0,Green Heron
 14778,2025-07-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/545147940/medium.jpg,"The Queensway, Toronto, ON, CA",43.6154416667,-79.542145,4.0,American Robin
 1115,2025-01-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/466626316/medium.jpeg,"Humber Bay Shores, Etobicoke, ON, Canada",43.6213000806,-79.4740144734,306.0,Bald Eagle
@@ -2948,11 +2948,11 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 5822,2025-04-22,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/489931846/medium.jpg,"Bayview Village, North York, ON, Canada",43.7792749674,-79.3700017559,342.0,Wood Duck
 17116,2025-09-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/565888859/medium.jpg,"Ashbridge's Bay Park, Toronto, ON, Canada",43.6579468811,-79.3079288455,4.0,Swainson's Thrush
 4599,2025-04-01,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/485206271/medium.png,"Toronto, ON, Canada",43.6667240212,-79.2926273925,197.0,Bufflehead
-21153,2025-11-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/589567254/medium.jpg,"High Park Loop, Toronto, ON M6R 2Z6, Kanada",43.6473050074,-79.4610619918,150.0,Winterammer
+21153,2025-11-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/589567254/medium.jpg,"High Park Loop, Toronto, ON M6R 2Z6, Kanada",43.6473050074,-79.4610619918,150.0,Dark-eyed Junco
 15356,2025-05-31,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/550028136/medium.jpg,"Centre Island, Toronto, ON, Canada",43.6158112571,-79.390868213,4.0,Cedar Waxwing
 23067,2025-12-23,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/602113773/medium.jpg,"Toronto, ON, CA",43.7090833333,-79.2268533333,3.0,Hooded Merganser
 9688,2025-05-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/504965538/medium.jpg,"Don Valley Parkway N, Toronto, ON, CA",43.7353866667,-79.33168,6.0,Red-winged Blackbird
-739,2025-01-17,,https://static.inaturalist.org/photos/464328508/medium.jpg,"High Park, Toronto, ON, CA",43.6479383333,-79.4704366667,21.0,綠頭鴨
+739,2025-01-17,,https://static.inaturalist.org/photos/464328508/medium.jpg,"High Park, Toronto, ON, CA",43.6479383333,-79.4704366667,21.0,Mallard
 6544,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491972623/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Red-necked Grebe
 10879,2025-05-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/510700772/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Eastern Phoebe
 7918,2025-04-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/498594596/medium.jpeg,"Rouge Marsh, Toronto, ON, Canada",43.7908222371,-79.1214511642,8.0,Northern Yellow Warbler
@@ -2960,7 +2960,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 13870,2025-07-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/534831510/medium.jpg,"Rouge Marsh, Toronto, ON, Canada",43.7939516875,-79.1197555127,75.0,Marsh Wren
 20696,2025-10-31,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/586703415/medium.jpg,"Walmsley Blvd, Toronto, ON, CA",43.69263,-79.3997116667,12.0,Dark-eyed Junco
 23414,2025-12-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/603440294/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Dark-eyed Junco
-23638,2025-10-18,,https://static.inaturalist.org/photos/604949091/medium.jpg,"South Riverdale, Toronto, ON, 加拿大",43.6220287714,-79.3287128065,31.0,歌带鹀
+23638,2025-10-18,,https://static.inaturalist.org/photos/604949091/medium.jpg,"South Riverdale, Toronto, ON, 加拿大",43.6220287714,-79.3287128065,31.0,Song Sparrow
 23218,2025-05-16,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/602831923/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6428531828,-79.468135722,126.0,Common Loon
 19924,2025-10-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/582183966/medium.jpg,"Yonge St, Toronto, ON, CA",43.6535266702,-79.3796264048,42.0,House Sparrow
 1981,2025-02-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/471006868/medium.jpg,"Bayview Village, North York, ON, Canada",43.7781623417,-79.3700281932,444.0,Downy Woodpecker
@@ -3032,7 +3032,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 18344,2025-09-27,,https://static.inaturalist.org/photos/573025123/medium.jpg,"Olympic Park, Toronto, ON, CA",43.6424216667,-79.3847883333,3.0,Feral Pigeon
 10163,2025-05-19,,https://static.inaturalist.org/photos/507330039/medium.jpg,"Toronto, CA-ON, CA",43.6644092451,-79.4287712127,4.0,Yellow-bellied Flycatcher
 9674,2025-05-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/504835869/medium.jpg,"Ashbridge's Bay Park, Toronto, ON, Canada",43.6615064508,-79.3055978087,8.0,Lesser Black-backed Gull
-23892,2025-12-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/613210962/medium.jpg,"Centro de Toronto, Toronto, Ontario, Canadá",43.643633928,-79.3644755597,62.0,Pato chillón
+23892,2025-12-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/613210962/medium.jpg,"Centro de Toronto, Toronto, Ontario, Canadá",43.643633928,-79.3644755597,62.0,Common Goldeneye
 9452,2025-05-11,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/503549463/medium.jpeg,"Dufferin Grove, Toronto, ON, Canada",43.6569271637,-79.4321324193,15.0,Magnolia Warbler
 20339,2025-10-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/584768976/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,American Robin
 11134,2025-05-06,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/512031083/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Black-throated Blue Warbler
@@ -3076,7 +3076,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 23197,2025-12-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/602709508/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,191.0,Red-bellied Woodpecker
 9102,2025-05-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/501966113/medium.jpg,"Ashbridge's Bay Park, Toronto, ON, Canada",43.6562435038,-79.3074713247,4.0,Thayer's Gull
 3012,2025-03-11,,https://static.inaturalist.org/photos/475911969/medium.jpeg,"Toronto, ON M6R, Canada",43.6490136611,-79.4706304371,24.0,Domestic Mallard
-13772,2025-07-01,,https://static.inaturalist.org/photos/533671599/medium.jpg,"Toronto, ON M6S 2W3, Canada",43.642240382,-79.4663207978,72.0,Blue-gray Gnatcatcher
+13772,2025-07-01,,https://static.inaturalist.org/photos/533671599/medium.jpg,"Toronto, ON M6S 2W3, Canada",43.642240382,-79.4663207978,72.0,Blue-grey Gnatcatcher
 8250,2025-05-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/499642241/medium.jpg,"Grenadier Pond, Toronto, ON, CA",43.643831042,-79.4678776319,23.0,Wood Duck
 18165,2025-09-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/572094467/medium.jpg,"Rosetta McClain Gardens, 5 Glen Everest Rd, Scarborough, ON M1N 1J2, Canada",43.6968253,-79.2557466,193.0,Song Sparrow
 8378,2025-05-04,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/499977780/medium.jpg,"Earl Bales Park, Toronto, ON, CA",43.75277395,-79.4330846,918.0,Northern House Wren
@@ -3214,7 +3214,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 16978,2025-09-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/565092705/medium.jpg,"Etobicoke, ON M9W 6V3, Canada",43.726382,-79.6056302,56.0,Mallard
 11369,2025-05-10,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/513497901/medium.jpg,"Downsview, North York, ON, Canada",43.739427869,-79.4890473466,65.0,Ovenbird
 18582,2025-09-11,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/574905804/medium.jpg,"The Beaches, Toronto, ON, Canada",43.6787005922,-79.2939334616,47.0,Bay-breasted Warbler
-15466,2025-07-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/551358682/medium.jpg,"Centre Island, Toronto, ON, Canada",43.618655,-79.3741033056,16.0,Agelaius phoeniceus
+15466,2025-07-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/551358682/medium.jpg,"Centre Island, Toronto, ON, Canada",43.618655,-79.3741033056,16.0,Red-winged Blackbird
 18245,2025-09-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/572514464/medium.jpg,"York University, Toronto, ON, CA",43.7749466667,-79.5098333333,7.0,Brown Creeper
 8895,2025-05-06,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/501448603/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Black-and-white Warbler
 6453,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491844117/medium.jpg,"Rosetta McClain Gardens, 5 Glen Everest Rd, Scarborough, ON M1N 1J2, Canada",43.6968253,-79.2557466,193.0,Northern Cardinal
@@ -3250,7 +3250,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 17850,2025-09-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/570199883/medium.jpg,"Etobicoke, ON M8V 3W8, Canada",43.5929372847,-79.5108099282,97.0,Yellow-rumped Warbler
 1418,2025-02-04,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/468164019/medium.jpg,"Cardiff Rd, Toronto, ON, CA",43.7130111182,-79.384037732,39.0,Black-capped Chickadee
 20518,2025-10-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/585974753/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Ruby-crowned Kinglet
-15833,2025-08-19,,https://static.inaturalist.org/photos/554909209/medium.jpg,"South Riverdale, Toronto, ON, Kanada",43.6460426978,-79.3246735824,2.0,Goldzeisig
+15833,2025-08-19,,https://static.inaturalist.org/photos/554909209/medium.jpg,"South Riverdale, Toronto, ON, Kanada",43.6460426978,-79.3246735824,2.0,American Goldfinch
 21698,2025-11-13,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/592114921/medium.jpg,"Queens Quay West at Dan Leckie Way East Side, Toronto, ON M5V 3M8, Canada",43.635741266,-79.3938864022,11.0,Long-tailed Duck
 20826,2025-11-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/587560784/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,American Robin
 12810,2025-06-03,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/523515724/medium.jpg,"Ontario, CA",43.6878577893,-79.2823774441,101.0,Blue Jay
@@ -3263,7 +3263,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 13546,2025-07-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/531257206/medium.jpg,"Rouge, Scarborough, ON, Canada",43.8217889728,-79.1643128274,315.0,Mourning Dove
 21744,2025-08-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/592452115/medium.jpg,"Downtown Toronto, Toronto, ON, Canada",43.6538911299,-79.3852761568,2.0,Feral Pigeon
 23810,2025-12-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/610220516/medium.jpg,"Toronto, ON, Canada",43.6651468845,-79.297596336,15.0,Mallard
-3607,2025-03-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/478339552/medium.jpeg,Toronto,43.641254425,-79.3858795166,4.0,Bernache du Canada
+3607,2025-03-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/478339552/medium.jpeg,Toronto,43.641254425,-79.3858795166,4.0,Canada Goose
 19124,2025-10-09,,https://static.inaturalist.org/photos/578262163/medium.jpg,"Corktown Common, Toronto, ON, CA",43.6542133333,-79.3529966667,8.0,White-throated Sparrow
 20804,2025-10-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/587514047/medium.jpg,"Leaside-Bennington, Toronto, ON, Canada",43.7187375671,-79.3570266319,8.0,Red-breasted Nuthatch
 9459,2025-05-09,,https://static.inaturalist.org/photos/503589011/medium.jpg,"Ontario, CA",43.7785997107,-79.3058085844,4.0,Black-capped Chickadee
@@ -3285,7 +3285,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 2090,2025-02-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/471676495/medium.jpg,"Bayview Village, North York, ON, Canada",43.7799103045,-79.3739415264,553.0,Black-capped Chickadee
 14480,2025-07-21,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/542002050/medium.jpg,"Scarborough, ON M1P 3P5, Canada",43.7629911911,-79.2681954056,384.0,Downy Woodpecker
 6974,2025-04-27,,https://static.inaturalist.org/photos/494049243/medium.jpeg,"Centennial Park Picnic area 8, Park, Toronto, ON M9C 3S2, Canada",43.6478198164,-79.5937736705,44.0,Lesser Yellowlegs
-21974,2025-11-22,CC-BY-NC-SA,https://inaturalist-open-data.s3.amazonaws.com/photos/594143492/medium.jpg,Bluffers Park Beach,43.7168535188,-79.2240439047,516.0,Garrot à oeil d'or
+21974,2025-11-22,CC-BY-NC-SA,https://inaturalist-open-data.s3.amazonaws.com/photos/594143492/medium.jpg,Bluffers Park Beach,43.7168535188,-79.2240439047,516.0,Common Goldeneye
 21686,2025-11-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/592042821/medium.jpg,"Bayview Village, North York, ON, Canada",43.7818564673,-79.3860036997,244.0,Downy Woodpecker
 15568,2025-05-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552517342/medium.jpg,"Toronto, ON, CA",43.638695,-79.4813616667,14.0,Trumpeter Swan
 11143,2025-05-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/512064356/medium.jpg,"Queens Quay W, Toronto, ON, CA",43.6396246171,-79.3757721876,4.0,Feral Pigeon
@@ -3366,7 +3366,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 8267,2025-04-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/499684459/medium.jpg,"University Ave, Toronto, ON, CA",43.6532616667,-79.3877033333,40.0,Feral Pigeon
 5423,2025-04-18,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/488799855/medium.jpg,"West side of Grenadier Pond, Toronto, ON",43.641932,-79.468886,50.0,Mallard
 4348,2025-04-06,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/483705302/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6578977423,-79.3078733272,98.0,Red-breasted Nuthatch
-16533,2025-08-31,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/561237732/medium.jpg,"High Park-Swansea, Toronto, ON, 加拿大",43.6465661507,-79.4696572609,23.0,红眼莺雀
+16533,2025-08-31,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/561237732/medium.jpg,"High Park-Swansea, Toronto, ON, 加拿大",43.6465661507,-79.4696572609,23.0,Red-eyed Vireo
 21256,2025-11-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/590131924/medium.jpg,"Rouge Marsh, Toronto, ON, Canada",43.7930075512,-79.1212124116,30.0,Northern Shoveler
 15137,2025-08-06,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/548434333/medium.jpg,"Humber Arboretum, Toronto, ON, CA",43.72605,-79.6087416667,8.0,Canada Goose
 12942,2025-06-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/524802309/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Tree Swallow
@@ -3420,7 +3420,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 10152,2025-05-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/507257879/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Grey Catbird
 10863,2025-05-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/510675798/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Double-crested Cormorant
 14424,2025-07-22,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/541437197/medium.jpg,"Toronto, ON, CA",43.6782083333,-79.32257,10.0,Turkey Vulture
-15831,2025-08-19,,https://static.inaturalist.org/photos/554908819/medium.jpg,"South Riverdale, Toronto, ON, Kanada",43.6289786224,-79.3268808192,4.0,Königstyrann
+15831,2025-08-19,,https://static.inaturalist.org/photos/554908819/medium.jpg,"South Riverdale, Toronto, ON, Kanada",43.6289786224,-79.3268808192,4.0,Eastern Kingbird
 18240,2025-09-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/572474740/medium.jpg,"Woodbine Beach Dune Ecosystem , Toronto, ON, Canada",43.6591030288,-79.3086707508,1.0,Brown Creeper
 19753,2025-10-16,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/581115122/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Song Sparrow
 13264,2025-06-28,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/528301340/medium.jpg,"Swansea, Toronto, ON, Canada",43.63302509,-79.46934005,20.0,Red-winged Blackbird
@@ -3510,7 +3510,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 17671,2025-09-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/569426829/medium.jpg,"Bayview Village, North York, ON, Canada",43.7816661625,-79.3727353443,607.0,Common Yellowthroat
 11256,2025-05-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/512816174/medium.jpg,"TORONTO, Ontario, CANADA",43.6188288665,-79.3739351258,5.0,Canada Goose
 20998,2025-11-05,,https://static.inaturalist.org/photos/588451863/medium.jpg,"Toronto, ON, CA",43.6701232087,-79.3682306831,470.0,House Finch
-17413,2025-09-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/567627231/medium.jpg,"Legislative Assembly of Ontario, Toronto, ON, CA",43.662245,-79.390525,6.0,drozd stěhovavý
+17413,2025-09-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/567627231/medium.jpg,"Legislative Assembly of Ontario, Toronto, ON, CA",43.662245,-79.390525,6.0,American Robin
 252,2025-01-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/462276720/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Long-tailed Duck
 16325,2025-08-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/559550491/medium.jpg,"St Lawrence-East Bayfront-The Islands, Toronto, ON, Canada",43.6483875535,-79.3700614771,32.0,Feral Pigeon
 10724,2025-05-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/510215794/medium.jpg,"Heath Cres, Toronto, ON, CA",43.6915333333,-79.3904416667,6.0,Cooper's Hawk
@@ -3634,7 +3634,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 18446,2025-09-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/573729966/medium.jpg,"Bayview Village, North York, ON, Canada",43.7782744222,-79.3697939535,419.0,Northern Flicker
 23715,2025-10-18,,https://static.inaturalist.org/photos/606928347/medium.jpg,"Broadview North, Toronto, ON M4K 2J1, Canada",43.6911908,-79.3599075,186.0,Yellow-rumped Warbler
 8705,2025-05-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/500943556/medium.jpeg,"Toronto, ON M4T 2V8, Canada",43.6954598306,-79.3838086724,190.0,Northern Parula
-5216,2025-03-13,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/487987499/medium.jpg,"Ontario, CA",43.7470006723,-79.2623680377,60.0,Mergus serrator
+5216,2025-03-13,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/487987499/medium.jpg,"Ontario, CA",43.7470006723,-79.2623680377,60.0,Red-breasted Merganser
 5342,2025-04-13,,https://static.inaturalist.org/photos/488417330/medium.jpg,"New Toronto, Etobicoke, ON, Canada",43.5926804491,-79.5110033528,15.0,Long-tailed Duck
 22347,2025-10-05,,https://static.inaturalist.org/photos/597211620/medium.jpg,"Humber River Recreational Tr, Toronto, ON, CA",43.6568416667,-79.4999866667,8.0,Eastern Phoebe
 16860,2025-09-07,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/563828357/medium.jpg,Toronto,43.6341438293,-79.4747009277,9.0,Great Blue Heron
@@ -3732,7 +3732,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 11362,2025-05-10,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/513497649/medium.jpg,"Glenfield-Jane Heights, North York, ON, Canada",43.7357630091,-79.5004266452,107.0,Northern Yellow Warbler
 12957,2025-06-16,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/525057930/medium.jpg,"Ontario, CA",43.7294884334,-79.3932522639,344.0,House Sparrow
 6256,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491648407/medium.jpeg,"High Park-Swansea, Toronto, ON, Canada",43.6430123746,-79.4582409415,15.0,Wood Duck
-13781,2025-07-08,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/533699615/medium.jpg,"Toronto, ON, Kanada",43.7052628969,-79.234274514,170.0,Kanadagans
+13781,2025-07-08,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/533699615/medium.jpg,"Toronto, ON, Kanada",43.7052628969,-79.234274514,170.0,Canada Goose
 7146,2025-04-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/494681398/medium.jpg,"Ontario St, Toronto, ON, CA",43.66447,-79.3709033333,13.0,Feral Pigeon
 10715,2025-05-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/510178934/medium.jpg,"Rouge Park, Beare Wetlands, Toronto, ON, Canada",43.8219788598,-79.165551278,100.0,Green Heron
 7482,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/496645245/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Red-winged Blackbird
@@ -3829,7 +3829,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 23996,2025-07-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/627639014/medium.jpg,"Major St, Toronto, ON, CA",43.6609416667,-79.4042583333,8.0,Blue Jay
 22628,2025-12-08,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/598830062/medium.jpg,"Ontario, CA",43.7758428464,-79.2699880522,465.0,Gadwall
 8859,2025-04-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/501410845/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Red-winged Blackbird
-14770,2025-07-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/545102562/medium.jpg,"Toronto, ON M5V 2T6, קנדה",43.642500235,-79.3870477751,9.0,Quiscalus quiscula
+14770,2025-07-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/545102562/medium.jpg,"Toronto, ON M5V 2T6, קנדה",43.642500235,-79.3870477751,9.0,Common Grackle
 13798,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/534042916/medium.jpg,"Queens Quay W, Toronto, ON, CA",43.63718,-79.39312,6.0,American Robin
 10357,2025-05-17,,https://static.inaturalist.org/photos/508239274/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6567645892,-79.3052819885,31.0,Red-tailed Hawk
 22596,2025-11-16,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/598829642/medium.jpg,"Ontario, CA",43.7008746407,-79.335280471,122.0,Dark-eyed Junco
@@ -3841,7 +3841,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 22762,2025-12-14,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/599955728/medium.jpg,"Ontario, CA",43.6429289291,-79.3733776459,160.0,Northern Cardinal
 16462,2025-08-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/560702052/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Hairy Woodpecker
 1809,2025-02-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/470291029/medium.jpg,"Bayview Village, North York, ON, Canada",43.7872029839,-79.3818851149,15.0,Northern Cardinal
-23641,2025-10-26,,https://static.inaturalist.org/photos/604950062/medium.jpg,"Ontario, CA",43.7856458409,-79.4470307745,244.0,长耳鸮
+23641,2025-10-26,,https://static.inaturalist.org/photos/604950062/medium.jpg,"Ontario, CA",43.7856458409,-79.4470307745,244.0,Long-eared Owl
 6729,2025-04-26,,https://static.inaturalist.org/photos/492621927/medium.jpg,"High Park, Toronto, ON, CA",43.649075,-79.4709166667,39.0,Wood Duck
 16960,2025-09-09,,https://static.inaturalist.org/photos/565035719/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6455780015,-79.4693392757,31.0,Wood Duck
 17703,2025-09-20,,https://inaturalist-open-data.s3.amazonaws.com/photos/569647155/medium.jpg,"Scarborough City Centre, Scarborough, ON, Canada",43.7767805556,-79.2523111111,30.0,Northern Parula
@@ -3850,7 +3850,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 2852,2025-03-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/475455865/medium.jpeg,"73 Cardiff Rd, North York, ON M4P 2P4, Canada",43.713027,-79.3841394,179.0,Dark-eyed Junco
 20261,2025-10-24,CC-BY,,"Toronto, CA-ON, CA",43.6516540578,-79.4623403996,7.0,Hairy Woodpecker
 22867,2025-12-14,,https://static.inaturalist.org/photos/600849217/medium.jpg,"North York, ON M3C 1A1, Canada",43.712074627,-79.3195040524,33.0,Dark-eyed Junco
-13101,2025-06-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/527712469/medium.jpg,Toronto,43.6432533264,-79.4666366577,4.0,Wanderdrossel
+13101,2025-06-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/527712469/medium.jpg,Toronto,43.6432533264,-79.4666366577,4.0,American Robin
 21587,2025-11-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/591413674/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,American Goldfinch
 13450,2025-07-01,,https://static.inaturalist.org/photos/530046951/medium.jpg,"High Park, Toronto, ON, CA",43.6423716667,-79.4668966667,7.0,Lesser Scaup
 21061,2025-11-06,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/589049876/medium.jpg,"Union, Toronto, ON, CA",43.6447859523,-79.3805024213,226.0,House Sparrow
@@ -3953,8 +3953,8 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 6424,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491838979/medium.jpg,"Rosetta McClain Gardens, 5 Glen Everest Rd, Scarborough, ON M1N 1J2, Canada",43.6968253,-79.2557466,193.0,American Robin
 13909,2025-06-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/535244874/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Mourning Dove
 12773,2025-06-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/523125524/medium.jpg,"Canary Crescent, North York, ON M2K, Canada",43.7813981,-79.3886056,154.0,European Starling
-21973,2025-11-22,CC-BY-NC-SA,https://inaturalist-open-data.s3.amazonaws.com/photos/594141919/medium.jpg,Bluffers Park Beach,43.7168535188,-79.2240439047,516.0,Harle huppé
-3924,2025-03-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/480994498/medium.jpg,"Tommy Thompson Park, Toronto, ON, CA",43.6474499916,-79.3206765923,624.0,Red-tailed Hawk
+21973,2025-11-22,CC-BY-NC-SA,https://inaturalist-open-data.s3.amazonaws.com/photos/594141919/medium.jpg,Bluffers Park Beach,43.7168535188,-79.2240439047,516.0,Red-breasted Merganser
+3924,2025-03-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/480994498/medium.jpg,"Tommy Thompson Park, Toronto, ON, CA",43.6474499916,-79.3206765923,624.0,Eastern Red-tailed Hawk
 5591,2025-04-20,,https://static.inaturalist.org/photos/489059322/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6491965708,-79.3237503191,31.0,Yellow-bellied Sapsucker
 1325,2025-01-30,CC-BY-NC-ND,https://inaturalist-open-data.s3.amazonaws.com/photos/467641768/medium.jpeg,"Colonel Samuel Smith Park, 3145 Lake Shore Blvd W, Etobicoke, ON M8V 4B6, Canada",43.591398,-79.5133857,198.0,American Black Duck
 9806,2025-05-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/505511698/medium.jpg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Grey Catbird
@@ -4035,7 +4035,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 2647,2025-03-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/473885896/medium.jpg,"Cardiff Rd, Toronto, ON, CA",43.7129959,-79.3841547,39.0,Blue Jay
 7688,2025-04-30,,https://static.inaturalist.org/photos/497716155/medium.jpg,"Corktown Common, Toronto, ON, CA",43.654625,-79.3528966667,8.0,White-throated Sparrow
 3162,2025-03-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/476350668/medium.jpeg,"South Riverdale, Toronto, ON, Canada",43.6284979155,-79.3264414208,977.0,American Herring Gull
-6338,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491787626/medium.jpg,"North Bendale, Scarborough, ON M1H, Canada",43.7689833782,-79.2448140323,463.0,Molothrus ater
+6338,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491787626/medium.jpg,"North Bendale, Scarborough, ON M1H, Canada",43.7689833782,-79.2448140323,463.0,Brown-headed Cowbird
 22165,2025-11-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/595526221/medium.jpg,"Bayview Ave, Toronto, ON, CA",43.8021666667,-79.3938833333,13.0,Slate-coloured Junco
 21597,2025-11-14,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/591456426/medium.jpg,"Downsview, North York, ON, Canada",43.741563679,-79.480658029,4.0,Hairy Woodpecker
 16183,2025-08-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/558588376/medium.jpg,"Ashbridge's Bay Park, Toronto, ON, Canada",43.6571747998,-79.3069848662,8.0,Great Blue Heron
@@ -4056,7 +4056,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 9953,2025-05-10,,https://static.inaturalist.org/photos/506191082/medium.jpg,"Bayview Ave, Toronto, ON, CA",43.6840535342,-79.3665219154,189.0,Scarlet Tanager
 16223,2025-08-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/558861318/medium.jpg,"Rosetta McClain Gardens, 5 Glen Everest Rd, Scarborough, ON M1N 1J2, Canada",43.6968253,-79.2557466,193.0,Cape May Warbler
 4480,2025-04-09,CC-BY-NC,,"Toronto Metropolitan University, Toronto, ON, CA",43.6587252181,-79.3780357564,35.0,House Sparrow
-15459,2025-07-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/551353668/medium.jpg,"Ward's Island, Toronto, ON, Canada",43.6234805556,-79.360745,14.0,Nannopterum auritum
+15459,2025-07-08,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/551353668/medium.jpg,"Ward's Island, Toronto, ON, Canada",43.6234805556,-79.360745,14.0,Double-crested Cormorant
 824,2025-01-18,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/464580025/medium.jpg,"Rouge Beach, Scarborough, ON M1C 2Y9, Canada",43.793354,-79.1183353,184.0,Ring-billed Gull
 9946,2025-05-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/506103885/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6726552922,-79.3309053975,4.0,Rose-breasted Grosbeak
 15337,2025-05-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/550008726/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6282066626,-79.3253193762,8.0,Bonaparte's Gull
@@ -4330,7 +4330,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 23783,2025-10-15,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/608248401/medium.jpg,"Toronto, ON, Canada",43.6948584724,-79.2549324407,154.0,Common Loon
 19537,2025-10-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/580328981/medium.jpg,"Bayview Woods-Steeles, North York, ON, Canada",43.7923773503,-79.3793507546,166.0,Hairy Woodpecker
 5227,2025-04-16,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/488018708/medium.png,"Taylor-Massey, ON, Canada",43.6971769864,-79.3053087821,59.0,Hermit Thrush
-13225,2025-06-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/527712663/medium.jpg,Toronto,43.6199874878,-79.3753967285,83.0,Braunkopf-Kuhstärling
+13225,2025-06-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/527712663/medium.jpg,Toronto,43.6199874878,-79.3753967285,83.0,Brown-headed Cowbird
 20254,2025-10-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/583936560/medium.jpg,"Howard St, Toronto, ON, CA",43.6714866667,-79.3717416667,9.0,Feral Pigeon
 8952,2025-04-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/501485648/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Hermit Thrush
 18970,2025-10-08,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/577787240/medium.jpg,"Dufferin Grove, Toronto, ON, Canada",43.657118669,-79.4323457892,4.0,Dark-eyed Junco
@@ -4389,7 +4389,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 19789,2025-10-16,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/581270538/medium.jpg,"Rouge, Scarborough, ON, Canada",43.8148383333,-79.1575166667,15.0,Golden-crowned Kinglet
 7247,2025-04-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/495638291/medium.jpg,"Bayview Village, North York, ON, Canada",43.7795843089,-79.3718862256,567.0,Great Blue Heron
 16661,2025-09-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/562303957/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6443488743,-79.4580397808,61.0,Chimney Swift
-14896,2025-07-23,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/546317207/medium.jpg,"Great Lakes Waterfront Tr, 多倫多, ON, CA",43.6385,-79.3786866667,6.0,環嘴鷗
+14896,2025-07-23,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/546317207/medium.jpg,"Great Lakes Waterfront Tr, 多倫多, ON, CA",43.6385,-79.3786866667,6.0,Ring-billed Gull
 20743,2025-09-14,,https://static.inaturalist.org/photos/587182531/medium.jpg,"Colonel Danforth Park, 73 Colonel Danforth Trail, Toronto, ON M1C 1P8, Canada",43.7782674,-79.1653474,139.0,Turkey Vulture
 10828,2025-05-25,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/510591905/medium.jpg,"Scarborough, ON M1P 3P5, Canada",43.763382,-79.2683459,39.0,Yellow-bellied Sapsucker
 15623,2025-08-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552930450/medium.jpg,"Queen St W, Toronto, ON, CA",43.6430866667,-79.4237666667,39.0,Feral Pigeon
@@ -4415,7 +4415,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 15682,2025-08-16,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/553432422/medium.jpg,"Rouge, Scarborough, ON, Canada",43.8214123968,-79.1646779068,36.0,Eastern Kingbird
 7606,2025-04-29,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/497195542/medium.jpeg,"73 Cardiff Rd, North York, ON M4P 2P4, Canada",43.713027,-79.3841394,179.0,American Robin
 16126,2025-08-26,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/558127869/medium.jpg,"Scarborough, ON M1P 3P5, Canada",43.7629911911,-79.2681954056,384.0,House Finch
-13804,2025-07-09,,https://static.inaturalist.org/photos/534095165/medium.jpg,"Pretpark Centreville, Toronto, ON, CA",43.6170366667,-79.3724216667,5.0,Epauletspreeuw
+13804,2025-07-09,,https://static.inaturalist.org/photos/534095165/medium.jpg,"Pretpark Centreville, Toronto, ON, CA",43.6170366667,-79.3724216667,5.0,Red-winged Blackbird
 20488,2025-10-28,,https://static.inaturalist.org/photos/585821344/medium.jpg,"Corktown Common, Toronto, ON, CA",43.6543466667,-79.3534916667,28.0,Hairy Woodpecker
 19026,2025-10-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/577933457/medium.jpg,"Toronto, ON M4T 2V8, Canada",43.6951388763,-79.3812686205,190.0,Hermit Thrush
 23563,2025-12-31,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/604294346/medium.jpg,"Bayview Village, North York, ON, Canada",43.7814001922,-79.3861671415,536.0,American Robin
@@ -4432,16 +4432,16 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 13795,2025-07-04,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/534023833/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6683344885,-79.3271304587,839.0,Red-tailed Hawk
 4026,2025-04-01,,https://static.inaturalist.org/photos/481866996/medium.jpg,"Beltline Tr, Toronto, ON, CA",43.6905376381,-79.4211541583,8.0,Common Raven
 50,2025-01-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/461507663/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.64753258,-79.3285623455,8.0,Redhead
-19931,2025-05-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/582242390/medium.jpg,"Humber Arboretum, 205 Humber College Blvd, Etobicoke, ON M9W 5L7, Canadá",43.7248385,-79.6074844,649.0,Merganso-cabeçudo
+19931,2025-05-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/582242390/medium.jpg,"Humber Arboretum, 205 Humber College Blvd, Etobicoke, ON M9W 5L7, Canadá",43.7248385,-79.6074844,649.0,Hooded Merganser
 4547,2025-04-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/484746987/medium.jpeg,"Toronto, ON M4W 2R8, Canada",43.680379425,-79.3842629716,129.0,Downy Woodpecker
 7887,2025-05-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/498365810/medium.jpg,"Bayview Village, North York, ON, Canada",43.7803744601,-79.3725729078,420.0,Nashville Warbler
-17847,2025-09-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/570197072/medium.jpg,"HFVP+MC, Toronto, ON M8V 4B6, Canada",43.5927121845,-79.5121631026,31.0,Gray Catbird
+17847,2025-09-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/570197072/medium.jpg,"HFVP+MC, Toronto, ON M8V 4B6, Canada",43.5927121845,-79.5121631026,31.0,Grey Catbird
 17557,2025-09-18,,https://static.inaturalist.org/photos/568731554/medium.jpg,"Toronto, ON M6S 2V5, Canada",43.6478940533,-79.4702874497,31.0,Black-and-white Warbler
 3222,2025-02-17,CC-BY,https://static.inaturalist.org/photos/476549542/medium.jpg,"New Toronto, Etobicoke, ON, Canada",43.592033602,-79.5125757244,40.0,White-winged Crossbill
 7741,2025-04-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/497816502/medium.jpg,"Nipigon Ave, Toronto, ON, CA",43.7983556149,-79.4161356959,128.0,Baltimore Oriole
 1388,2025-02-03,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/467904516/medium.jpeg,"Toronto, ON, Canada",43.6348913732,-79.4603416615,211.0,Lesser Scaup
 20673,2025-04-02,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/586493493/medium.jpg,"High Park-Centre, Toronto, ON, Canada",43.6454712084,-79.4632833811,495.0,Gadwall
-13803,2025-07-09,,https://static.inaturalist.org/photos/534061424/medium.jpg,"Spadina Ave, Toronto, ON, CA",43.64048,-79.3931716667,13.0,Roodkopgier
+13803,2025-07-09,,https://static.inaturalist.org/photos/534061424/medium.jpg,"Spadina Ave, Toronto, ON, CA",43.64048,-79.3931716667,13.0,Turkey Vulture
 11978,2025-01-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/516677621/medium.jpg,"Toronto, ON, Canada",43.6073909071,-79.4876789905,15.0,Tufted Duck
 7607,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/497222289/medium.jpg,"Downsview Park, Toronto, ON, CA",43.7426435455,-79.4817886837,26.0,White-throated Sparrow
 4247,2025-04-04,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/482923172/medium.jpeg,"Leaside-Bennington, Toronto, ON, Canada",43.7202712092,-79.3544453382,8.0,Red-winged Blackbird
@@ -4462,7 +4462,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 14798,2025-07-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/545188664/medium.jpg,"Tam O'Shanter Golf Course, Toronto, ON, CA",43.7913366667,-79.29518,4.0,Red-tailed Hawk
 22843,2025-12-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/600752176/medium.jpg,"G. Ross Lord Reservoir, Toronto, ON M3H 5W5, Canada",43.7724864,-79.4635155,294.0,Pied-billed Grebe
 9595,2025-05-13,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/504439357/medium.jpeg,"Toronto, CA-ON, CA",43.6408466667,-79.45878,4.0,Wood Duck
-14289,2025-05-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/539374525/medium.jpg,"McCaul St, Toronto, ON, CA",43.6527052015,-79.3908668714,66.0,Bernache du Canada
+14289,2025-05-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/539374525/medium.jpg,"McCaul St, Toronto, ON, CA",43.6527052015,-79.3908668714,66.0,Canada Goose
 19254,2025-10-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/579238791/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Mallard
 20973,2025-11-04,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/588258965/medium.jpg,"Downsview, Toronto, ON, Canada",43.743060288,-79.4820398432,266.0,American Goldfinch
 1312,2025-02-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/467643051/medium.jpeg,"73 Cardiff Rd, North York, ON M4P 2P4, Canada",43.713027,-79.3841394,179.0,White-breasted Nuthatch
@@ -4520,8 +4520,8 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 1674,2025-02-07,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/469601201/medium.jpeg,"Agricultural Fields, Scarborough, ON, Canada",43.8484577386,-79.1711250691,1000.0,Horned Lark
 22960,2025-06-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/601233090/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6431063419,-79.3214168757,30.0,Song Sparrow
 7177,2025-04-28,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/494809566/medium.jpeg,"Scarborough, ON M1P 3P5, Canada",43.7633616,-79.2683566,44.0,American Robin
-14775,2025-07-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/545107806/medium.jpg,"טורונטו, אונטריו M6S 5B3, קנדה",43.6258101036,-79.476525262,69.0,Spinus tristis
-11513,2025-05-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/514748748/medium.jpg,"Scarborough, ON M1C 2Y9, Canada",43.7911232831,-79.1213394329,22.0,Gray Catbird
+14775,2025-07-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/545107806/medium.jpg,"טורונטו, אונטריו M6S 5B3, קנדה",43.6258101036,-79.476525262,69.0,American Goldfinch
+11513,2025-05-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/514748748/medium.jpg,"Scarborough, ON M1C 2Y9, Canada",43.7911232831,-79.1213394329,22.0,Grey Catbird
 9821,2025-05-15,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/505539115/medium.jpg,"The Beaches, Toronto, ON, Canada",43.6784034539,-79.2933008011,57.0,Northern Parula
 12727,2025-05-16,,https://static.inaturalist.org/photos/522714368/medium.jpg,"Birch Cliff, Scarborough, ON, Canada",43.6969229915,-79.2546273113,2.0,Red-eyed Vireo
 14375,2025-07-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/540575930/medium.jpg,"73 Cardiff Rd, North York, ON M4P 2P4, Canada",43.713027,-79.3841394,179.0,Black-capped Chickadee
@@ -4531,7 +4531,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 20432,2025-10-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/585623058/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Mallard
 20920,2025-10-26,CC0,https://inaturalist-open-data.s3.amazonaws.com/photos/588001686/medium.jpg,"Ontario, CA",43.6049361076,-79.3863155691,141.0,White-throated Sparrow
 12645,2025-06-16,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/522161554/medium.jpg,"The Beaches, Toronto, ON, Canada",43.6754937481,-79.294808781,2.0,Black-crowned Night Heron
-22503,2025-05-05,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/598395319/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6281478552,-79.3250122227,80.0,裏海燕鷗
+22503,2025-05-05,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/598395319/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6281478552,-79.3250122227,80.0,Caspian Tern
 3151,2025-03-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/476350602/medium.jpeg,"Toronto, ON, Canada",43.6469995355,-79.3272562314,122.0,American Coot
 3767,2025-03-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/479564013/medium.jpg,"Bayview Village, North York, ON, Canada",43.7814777428,-79.3731313446,761.0,Red-winged Blackbird
 5605,2025-04-19,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/489066474/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Spotted Sandpiper
@@ -4548,12 +4548,12 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 2856,2025-03-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/475476026/medium.jpeg,"Scarborough, ON M1L 0E3, Canada",43.7056477829,-79.2819239572,168.0,Eastern Screech-Owl
 17274,2025-09-06,,https://inaturalist-open-data.s3.amazonaws.com/photos/567095889/medium.jpg,"Scarborough City Centre, Scarborough, ON, Canada",43.7774777778,-79.2510611111,13.0,Ruby-throated Hummingbird
 13972,2025-04-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/535798492/medium.jpg,"High Park Tr, Toronto, ON, CA",43.6414083333,-79.46328,4.0,Great Egret
-12586,2025-06-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/521428194/medium.jpg,"Tommy Thompson Park, Toronto, ON, CA",43.651834079,-79.3234402911,22.0,Gray Catbird
+12586,2025-06-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/521428194/medium.jpg,"Tommy Thompson Park, Toronto, ON, CA",43.651834079,-79.3234402911,22.0,Grey Catbird
 9292,2025-05-10,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/502913750/medium.jpg,"Wychwood Park, Toronto, ON M6G, Canada",43.6779251518,-79.4202738997,303.0,Cape May Warbler
 149,2025-01-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/461985704/medium.jpeg,"Toronto, ON, Canada",43.6254671769,-79.3289866671,316.0,Greater Scaup
 3868,2025-03-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/480221513/medium.jpeg,"Tommy Thompson Park, Toronto, ON, Canada",43.6479671304,-79.3200968566,244.0,Ring-necked Duck
 8964,2025-05-07,,https://static.inaturalist.org/photos/501512997/medium.jpeg,"South Riverdale, Toronto, ON, Canada",43.6607792602,-79.3124244256,31.0,Barn Swallow
-13839,2025-07-09,,https://static.inaturalist.org/photos/534349390/medium.jpg,"Toronto Island Park, Toronto, ON, CA",43.622005,-79.3770916667,2.0,Baltimoretroepiaal
+13839,2025-07-09,,https://static.inaturalist.org/photos/534349390/medium.jpg,"Toronto Island Park, Toronto, ON, CA",43.622005,-79.3770916667,2.0,Baltimore Oriole
 7478,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/496644745/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Common Grackle
 21738,2025-11-17,,https://static.inaturalist.org/photos/592394872/medium.jpg,"Corktown Common, Toronto, ON, CA",43.6546166667,-79.3529133333,4.0,Northern Cardinal
 11994,2025-06-06,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/516811960/medium.jpg,"Bayview Village, North York, ON, Canada",43.7799538058,-79.3695407263,864.0,Red-winged Blackbird
@@ -4628,7 +4628,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 10840,2025-05-25,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/510604910/medium.jpg,"Scarborough, ON M1P 3P5, Canada",43.7633808,-79.2683456,45.0,Yellow-rumped Warbler
 5534,2025-04-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/489058044/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Black-capped Chickadee
 6502,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491928617/medium.jpg,"Toronto, ON, Canada",43.694081704,-79.2564225199,474.0,Cooper's Hawk
-15541,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552169084/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6416116944,-79.4646883056,15.0,Agelaius phoeniceus
+15541,2025-07-09,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/552169084/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6416116944,-79.4646883056,15.0,Red-winged Blackbird
 21981,2025-11-23,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/594161064/medium.jpg,"High Park-Swansea, Toronto, ON, Canada",43.6431947146,-79.466421876,8.0,White-throated Sparrow
 7390,2025-04-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/496221546/medium.jpg,"Bayview Village, North York, ON, Canada",43.7815652658,-79.388346418,292.0,American Robin
 11008,2025-05-24,,https://static.inaturalist.org/photos/511203813/medium.jpg,Colonel Samuel Smith Park,43.5926216785,-79.5131125598,209.0,Brant
@@ -4679,7 +4679,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 8599,2025-05-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/500707856/medium.jpg,"L'Amoreaux North Park Tr, Toronto, ON, CA",43.8108927152,-79.3074295019,5.0,Brown-headed Cowbird
 15909,2025-08-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/555837170/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,197.0,Canada Goose
 16061,2025-08-15,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/557305051/medium.jpg,"Toronto, ON M4M 0C3, Canada",43.6595806151,-79.325263761,4.0,Northern Yellow Warbler
-13780,2025-07-08,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/533698369/medium.jpg,"PQ37+M4, Scarborough, Ontario, Kanada",43.7033040116,-79.2372537777,170.0,Wanderdrossel
+13780,2025-07-08,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/533698369/medium.jpg,"PQ37+M4, Scarborough, Ontario, Kanada",43.7033040116,-79.2372537777,170.0,American Robin
 19506,2025-10-10,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/580140324/medium.jpg,"Bayview Village, Toronto, ON, Canada",43.777636267,-79.3704431046,61.0,Black-throated Blue Warbler
 17285,2025-09-12,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/567110511/medium.jpg,"Bayview Village, North York, ON, Canada",43.7817101229,-79.3736545398,905.0,Swainson's Thrush
 23545,2025-12-31,,https://static.inaturalist.org/photos/604248062/medium.jpg,"Toronto, ON, Canada",43.5915507319,-79.5108220258,4.0,Mute Swan
@@ -4729,7 +4729,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 3089,2025-02-05,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/476141558/medium.jpeg,"The Queensway – Humber Bay, Etobicoke, ON, Canada",43.6234058506,-79.4763418997,619.0,Mallard
 3785,2025-03-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/479566709/medium.jpg,"Toronto, ON, Canada",43.6566094643,-79.3127775572,527.0,Lesser Scaup
 17832,2025-09-21,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/570140087/medium.jpg,"Ashbridges Bay Park, Toronto, ON, CA",43.6581994673,-79.3072358658,13.0,Philadelphia Vireo
-6228,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491622408/medium.jpg,"Queens Quay W, Toronto, ON, CA",43.6367737147,-79.3949696758,161.0,Mirlo primavera
+6228,2025-04-25,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/491622408/medium.jpg,"Queens Quay W, Toronto, ON, CA",43.6367737147,-79.3949696758,161.0,American Robin
 4381,2025-04-07,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/483902125/medium.jpg,"Old Toronto, Toronto, ON, Canada",43.6396809608,-79.4598895572,2.0,Bonaparte's Gull
 5011,2025-04-15,,https://static.inaturalist.org/photos/486878347/medium.jpg,"Spadina Ave, Toronto, ON, CA",43.6585189356,-79.399995301,23.0,Canada Goose
 5129,2025-04-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/487589309/medium.jpeg,"Tommy Thompson Park, Toronto, ON, Canada",43.648648907,-79.3232904375,244.0,Neotropic Cormorant
@@ -4929,7 +4929,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 14431,2025-06-28,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/541505372/medium.jpg,"Brimley Rd S, Toronto, ON, CA",43.7070833333,-79.2308666667,20.0,Mallard
 18258,2025-09-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/572624147/medium.jpg,"Bayview Village, North York, ON, Canada",43.7782961331,-79.3692121181,181.0,Mallard
 12342,2025-06-11,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/519374652/medium.jpg,"Toronto, CA-ON, CA",43.6609391449,-79.3078011822,107.0,American Robin
-15823,2025-08-19,,https://static.inaturalist.org/photos/554908004/medium.jpg,"South Riverdale, Toronto, ON, Kanada",43.6321190795,-79.323563772,8.0,Setophaga aestiva
+15823,2025-08-19,,https://static.inaturalist.org/photos/554908004/medium.jpg,"South Riverdale, Toronto, ON, Kanada",43.6321190795,-79.323563772,8.0,Northern Yellow Warbler
 16304,2025-06-07,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/559443498/medium.jpg,"Toronto, ON, Canada",43.5900927056,-79.5156046624,31.0,Barn Swallow
 18844,2025-09-30,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/576625997/medium.jpg,Colonel Samuel Smith Park,43.5913979907,-79.5133858547,199.0,Mallard
 3869,2025-03-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/480222258/medium.jpeg,"Tommy Thompson Park Toronto, ON, Canada",43.6491365333,-79.3202012032,122.0,Red-necked Grebe
@@ -5047,7 +5047,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 22931,2025-11-14,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/600918172/medium.jpg,"The Kingsway, Etobicoke, ON, Canada",43.6475344685,-79.5116382744,978.0,Red-breasted Nuthatch
 16321,2025-08-27,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/559538339/medium.jpg,"Lake Ontario, Toronto, ON, CA",43.6562072973,-79.3071357639,21.0,American Herring Gull
 8515,2025-04-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/500538327/medium.jpeg,"Colonel  Samuel Smith Park, Toronto, ON, Canada",43.5906511232,-79.5131823425,683.0,Common Grackle
-7943,2025-04-28,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/498621555/medium.png,"Woodbine Heights, East York, ON M4C, Canada",43.6993216383,-79.3098878666,77.0,Blue-gray Gnatcatcher
+7943,2025-04-28,CC-BY,https://inaturalist-open-data.s3.amazonaws.com/photos/498621555/medium.png,"Woodbine Heights, East York, ON M4C, Canada",43.6993216383,-79.3098878666,77.0,Blue-grey Gnatcatcher
 18066,2025-09-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/571901123/medium.jpg,"Toronto, ON M5H 1S3, Canada",43.6496497541,-79.3825778738,11.0,Eastern Whip-poor-will
 10628,2025-05-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/509783385/medium.jpg,"Woodbine Beach, Toronto, ON, Canada",43.6611085547,-79.306038679,2.0,Dunlin
 18337,2025-05-26,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/573009390/medium.jpg,"St Lawrence-East Bayfront-The Islands, Toronto, ON, Canada",43.6222640209,-79.3772871153,709.0,Red-winged Blackbird
@@ -5117,7 +5117,7 @@ Unnamed: 0,observed_on,license,image_url,place_guess,latitude,longitude,position
 19978,2025-10-20,CC-BY-NC,https://static.inaturalist.org/photos/582662431/medium.jpg,"South Riverdale, Toronto, ON, Canada",43.6297451683,-79.3235407358,31.0,Song Sparrow
 15744,2025-08-17,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/554041567/medium.jpg,"73 Cardiff Rd, North York, ON M4P 2P4, Canada",43.713027,-79.3841394,179.0,Northern Cardinal
 9051,2025-05-07,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/501711617/medium.jpeg,"Ontario, CA",43.6141797438,-79.4216508743,971.0,Rose-breasted Grosbeak
-17746,2025-09-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/569752134/medium.jpg,"Toronto, ON, Canada",43.7662904872,-79.1451888343,106.0,Larus smithsonianus
+17746,2025-09-20,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/569752134/medium.jpg,"Toronto, ON, Canada",43.7662904872,-79.1451888343,106.0,American Herring Gull
 21563,2025-11-13,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/591314130/medium.jpg,"Bayview Village, North York, ON, Canada",43.7809793951,-79.385096426,394.0,House Sparrow
 23134,2025-12-24,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/602408429/medium.jpg,4001 Leslie Street,43.77078,-79.361503,349.0,American Robin
 1303,2025-02-01,CC-BY-NC,https://inaturalist-open-data.s3.amazonaws.com/photos/467603243/medium.jpg,"QVG8+2C Port Union Waterfront Trail meeting place, Toronto, ON, Canada",43.7695383674,-79.1398019868,954.0,Mallard

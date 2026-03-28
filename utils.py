@@ -165,7 +165,7 @@ def get_all_species(data_file: str) -> list[str]:
     """
 
     df = pd.read_csv(data_file)
-    return list(df['species_guess'].unique())
+    return list(df['common_name'].unique())
 
 # import python_ta
 # python_ta.check_all(config={

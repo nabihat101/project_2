@@ -38,7 +38,7 @@ def clean_data(data_file: str) -> None:
                  "captive_cultivated", "oauth_application_id", "private_place_guess", "private_latitude",
                  "private_longitude", "public_positional_accuracy", "geoprivacy", "taxon_geoprivacy",
                  "coordinates_obscured", "positioning_method", "positioning_device", "scientific_name",
-                 "iconic_taxon_name", "taxon_id", "common_name"], errors="ignore")
+                 "iconic_taxon_name", "taxon_id", "species_guess"], errors="ignore")
 
     # Safely filter by accuracy only if the column actually exists in the file
     if "positional_accuracy" in df_new.columns:
@@ -56,7 +56,7 @@ def data_handle(file: str) -> list[Observation]:
     """
     
     df = pd.read_csv(file)
-    grouped = df.groupby("species_guess")
+    grouped = df.groupby("common_name")
 
     observations = []
 
