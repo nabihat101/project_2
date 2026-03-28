@@ -22,7 +22,10 @@ from entities import Graph, Observation
 
 def clean_data(data_file: str) -> None:
     """
-    creates a datamap using pandas library to clean and filter data based on conditions
+    Creates a datamap using pandas library to clean and filter data based on conditions
+
+    Preconditions:
+        - data_file is a csv. file with the expected columns and data
     """
 
     df = pd.read_csv(data_file)
@@ -45,6 +48,13 @@ def clean_data(data_file: str) -> None:
 
 
 def data_handle(file: str) -> list[Observation]:
+    """
+    Creates a list of Observations (instances of the class Observation) by grouping data using pandas library and error handling
+
+    Preconditions:
+        - data_file is a csv. file with the expected columns and data
+    """
+    
     df = pd.read_csv(file)
     grouped = df.groupby("species_guess")
 
@@ -115,13 +125,6 @@ def observations_to_graph(observations: list[Observation]) -> Graph:
     fall.build_from_observations(observations, 4)
     winter.build_from_observations(observations, 1)
     return summer, spring, fall, winter
-
-
-# def run_simulation(data_file: str, species_a: str, species_b: str) -> dict[str, float]:
-#     """Runs the data pipeline and computes seasonal proximity between two species."""
-#     clean_data(data_file)
-#     observations = data_handle("new_file.csv")
-#     summer, spring, fall, winter = observations_to_graph(observations)
 
 # import python_ta
 # python_ta.check_all(config={
