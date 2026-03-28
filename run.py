@@ -52,6 +52,10 @@ class Runner():
         self.data_file = data_file
 
     def create_species_graph(self):
+        """
+        Creates species graph using thresholds stated below to display only a portion of the entire graph. 
+        """
+        
         species_graph = nx.Graph()
         species = self._graph.get_vertex(self._species)
 
