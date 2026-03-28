@@ -21,7 +21,6 @@ This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, R
 """
 
 from typing import Optional
-
 from utils import get_interaction_parameters, calculate_interaction_likelihood
 from utils import get_all_species
 import tkinter as tk
@@ -36,6 +35,7 @@ class Observation:
         - species: the name of the species observed
         - season_to_loc: a mapping from season to a list of locations (latitude, longitude)
           where the species was observed in that season
+          
     Representation Invariants:
         - season_to_loc only contains keys from 1 to 4, representing the four seasons
         - each location is a tuple of (latitude, longitude)
@@ -66,6 +66,7 @@ class Vertex:
          - image: a url for the images of the species
          - neighbours_probability: a mapping from neighbouring species to the probability of the two species interacting
          based on functions in utils.py
+         
     Representation Invariants:
          - species is a non-empty string
          - neighbours only contains keys that are valid species names (non-empty strings)
@@ -82,7 +83,6 @@ class Vertex:
         self.image = image
         self.neighbours_probability = {}
 
-    # FOR DEBUGGING PURPOSES
     def __repr__(self) -> str:
         """Returns a string representation of the Vertex."""
         return f"Vertex(species={self.species}, neighbours={self.neighbours})"
@@ -211,13 +211,27 @@ class Graph:
                     v2.neighbours_probability[source_species] = prob
 
     def is_vertex(self, species) -> bool:
+        """
+        Return if the species is a node and vertex in self._vertices
+        """
         return species in self._vertices
 
     def get_vertex(self, species) -> Vertex:
+        """
+        Return the vertex object based on the species name
+
+        Preconditions:
+            - species in self._vertices
+        """
         return self._vertices[species]
 
     def get_neighbours(self, species) -> list:
-        """Return a list of neighbours of the given vertex"""
+        """
+        Return a list of neighbours of the given vertex
+
+        Preconditions:
+            - species in self._vertices
+        """
         return list(self._vertices[species].neighbours.keys())
 
         
