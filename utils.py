@@ -1,6 +1,8 @@
 """ CSC111 Project 2
 
-Module Description ================== This file contains all the methods used to calculate probability of two species
+Module Description 
+===============================
+This file contains all the methods used to calculate probability of two species
 interacting and to calculate distance between two locations (longitude and latitude)
 
 Copyright and Usage Information
