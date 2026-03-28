@@ -59,12 +59,13 @@ class Runner():
         frm = ttk.Frame(root, padding=10)
         frm.grid()
 
-        # Add text boxes for inputs
+        # Add text boxes and dropdown menus for inputs
         ttk.Label(frm, text="Welcome to the species interaction visualizer!").grid(column=0, row=0)
         ttk.Label(frm, text="Input species").grid(column=1, row=1)
         self.species_input = entities.Textbox(frm, 0, 1)
         ttk.Label(frm, text="Input season").grid(column=1, row=2)
-        self.season_input = entities.Textbox(frm, 0, 2)
+        self.season_input = ttk.Combobox(frm, values = ['Spring', 'Summer', 'Fall', 'Winter'])
+        self.season_input.grid(column=0, row=2)
         ttk.Label(frm, text="Proximity for co-occurence (m)").grid(column=1, row=3)
         self.prox_input = entities.Textbox(frm, 0, 3)
 
@@ -83,24 +84,28 @@ class Runner():
     def _initialize_graph_vals(self):
         """Save the values in the textboxes, and draw and display the graph from them."""
         self.species_input.text = self.species_input.obj.get()
-        self.season_input.text = self.season_input.obj.get()
+        self.season_input_text = self.season_input.get()
         self.prox_input.text = self.prox_input.obj.get()
 
-        if self.season_input.text == "spring":
+        if self.season_input_text == "Spring":
             graph = self._spring
-        elif self.season_input.text == "summer":
+        elif self.season_input_text == "Summer":
             graph = self._summer
-        elif self.season_input.text == "fall":
+        elif self.season_input_text == "Fall":
             graph = self._fall
-        elif self.season_input.text == "winter":
+        elif self.season_input_text == "Winter":
             graph = self._winter
+        # Show an error if the user enters an invalid season input instead of selecting from the dropdown.
+        else:
+            self.status_label.config(text='Not a valid season.')
+            return
 
         self._species = self.species_input.text
         self._graph = graph
 
         # CRASH PREVENTION: Check if the species exists in this season's graph before drawing!
         if not self._graph.is_vertex(self._species):
-            self.status_label.config(text=f"Species '{self._species}' not found in {self.season_input.text}.")
+            self.status_label.config(text=f"Species '{self._species}' not found in {self.season_input_text}.")
             return
 
         self.status_label.config(text="")  # Clear errors
