@@ -11,9 +11,6 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 from mplcursors import cursor
-import data_manipulation
-import entities
-from utils import make_circular
 import math
 
 class Runner():
