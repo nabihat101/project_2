@@ -1,5 +1,4 @@
-# CSC111 Winter 2026: Python libraries we'll be using this semester.
-
+# CSC111 Winter 2026: Python Libraries required to run this project
 # Testing and code checking
 hypothesis
 pytest
@@ -10,8 +9,8 @@ pandas
 networkx
 matplotlib
 numpy
+mplcursors
 tkinter
 PIL
 io
 os
-mplcursors
