@@ -13,3 +13,5 @@ numpy
 tkinter
 PIL
 io
+os
+mplcursors

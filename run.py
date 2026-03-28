@@ -11,9 +11,6 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 from mplcursors import cursor
-import data_manipulation
-import entities
-from utils import make_circular
 import math
 
 class Runner():
@@ -33,22 +30,45 @@ class Runner():
     def create_species_graph(self):
         species_graph = nx.Graph()
         species = self._graph.get_vertex(self._species)
-        species_graph.add_node(self._species, image=species.image, name=self._species)
 
+        top_k = 4
+        max_nodes = 50
+        min_prob = 0.02  # 2% cutoff
 
-        for neighbour in self._graph.get_neighbours(self._species):
-            neighbour_v = self._graph.get_vertex(neighbour)
-            species_graph.add_node(neighbour, image=neighbour_v.image, name=neighbour)
+        # a list of tuple (node_name, level of graph)
+        queue = [(self._species, 0)]
+        visited = set()
 
-            x = species.get_prob(neighbour)
+        # add first node
+        species_graph.add_node(self._species, image=species.image, name=self._species, level=0)
+        visited.add(self._species)
 
-            # Safeguard to prevent log(0) crashes
-            if x > 0:
+        while len(visited) < max_nodes:
+            current, level = queue.pop()
+            current_v = self._graph.get_vertex(current)
+
+            neighbours = self._graph.get_neighbours(current)
+            neighbours = sorted(neighbours, key=lambda n: current_v.get_prob(n), reverse=True)[:top_k]
+
+            for neighbour in neighbours:
+                x = current_v.get_prob(neighbour)
+
+                if x < min_prob:
+                    continue
+
+                neighbour_v = self._graph.get_vertex(neighbour)
+
+                if neighbour not in species_graph:
+                    species_graph.add_node(neighbour, image=neighbour_v.image, name=neighbour, level=level+1)
+
                 display_label = f"{x * 100:.2f}%"
                 scaled_thickness = max(0.5, math.log10(x * 1000000))
 
-                # Add the edge with the formatted label and scaled weight
-                species_graph.add_edge(self._species, neighbour, weight=scaled_thickness, label=display_label)
+                species_graph.add_edge(current, neighbour, weight=scaled_thickness, label=display_label)
+
+                if neighbour not in visited:
+                    visited.add(neighbour)
+                    queue.append((neighbour, level+1))
 
         return species_graph
 
@@ -111,21 +131,32 @@ class Runner():
 
         species_graph = self.create_species_graph()
         # creates corrdinates for each node on graph
-        pos = nx.spring_layout(species_graph)
+        pos = nx.spring_layout(species_graph, k=10)
 
         # creates the graph space: fig is the whole canvas and ax is the place where graph is drawn
         fig, ax = plt.subplots()
 
-        # draws edges between the nodes
-        nx.draw_networkx_edges(species_graph, pos, ax=ax)
+        # draw edges
+        edges = species_graph.edges()
+        weights = [species_graph[u][v]['weight'] for u, v in edges]
+        weights = [w * 0.3 for w in weights]
+        nx.draw_networkx_edges(species_graph, pos, ax=ax, width=weights)
+
+        # node_info is a dict. storing a node name to it's neighbours and likelihood of interacting
+        node_info = {}
 
         node_info = {}
 
         for node in species_graph.nodes():
             neighbours = []
+
             for nbr in species_graph.neighbors(node):
+
+                # get the probability of a neighbour from label that we previously coded
                 label = species_graph.edges[node, nbr].get("label", "")
                 neighbours.append(f"{nbr}: {label}")
+
+            # use join to create new lines by adding neighbours
             node_info[node] = "\n".join(neighbours)
 
         node_points = []
@@ -133,7 +164,7 @@ class Runner():
         # draw images at node positions manually
         for n in species_graph.nodes():
 
-            # get position of the node from before
+            # get position of the node from before and add to node_points with probabilities
             (x, y) = pos[n]
             node_points.append((x, y, n, node_info[n]))
 
@@ -199,7 +230,8 @@ class Runner():
             lambda sel: (
                 sel.annotation.set_text(
                     f"{node_points[sel.index][2]}\nLikelihood of Interactions:\n{node_points[sel.index][3]}"
-                )
+                ),
+                sel.annotation.get_bbox_patch().set_alpha(1),
             )
         )
 
