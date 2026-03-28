@@ -316,7 +316,7 @@ class SpeciesSearchDropdown():
 
         # construct a new list of just species starting with that text
         new_species_list = [species for species in self.all_species
-                            if species.startswith(filter_text)]
+                            if species.lower().startswith(filter_text.lower())]
 
         # update self.species_list to the new list
         self.species_list.set(new_species_list)
