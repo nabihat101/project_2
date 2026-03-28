@@ -76,35 +76,29 @@ class Runner():
         """Display the window that lets you create a graph"""
         root = Tk()
         root.title('Species Interaction Visualizer')
-        frm = ttk.Frame(root, padding=10)
-        frm.grid()
+        frm = ttk.Frame(root)
+        frm.grid(padx = 20, pady = 10)
 
         # Add text boxes and dropdown menus for inputs
-        ttk.Label(frm, text="Welcome to the species interaction visualizer!").grid(column=0, row=0)
-        self.species_input = entities.SpeciesSearchDropdown(c=0, r=1, window=frm)
+        ttk.Label(frm, text="Welcome to the species interaction visualizer!", font=("TkDefaultFont", 14)).grid(column=0, row=0, pady=10, columnspan=2)
+        self.species_input = entities.SpeciesSearchDropdown(c=1, r=1, window=frm)
         
-        ttk.Label(frm, text="Input season").grid(column=1, row=2)
+        ttk.Label(frm, text="Input season: ").grid(column=0, row=2, padx=5, sticky="E")
         self.season_input = ttk.Combobox(frm, values = ['Spring', 'Summer', 'Fall', 'Winter'])
-        self.season_input.grid(column=0, row=2)
-        ttk.Label(frm, text="Proximity for co-occurence (m)").grid(column=1, row=3)
-        self.prox_input = entities.Textbox(frm, 0, 3)
-
+        self.season_input.grid(column=1, row=2, padx=5, pady = 5, sticky = "W")
 
         # Buttons
-        ttk.Button(frm, text="Quit", command=root.destroy).grid(column=2, row=0)
+        ttk.Button(frm, text="Quit", command=root.destroy).grid(column=1, row=5, padx = 5, pady = 5)
         ttk.Button(frm, text="Initialize Graph with current settings", command=self._initialize_graph_vals).grid(
-            column=1,
-            row=0)
+            column=0, row=5, padx = 5, pady = 5)
 
-        ttk.Label(frm, text="Graph statistics can go here").grid(column=0, row=4)
         self.status_label = ttk.Label(frm, text="", foreground="red")
-        self.status_label.grid(column=0, row=5)
+        self.status_label.grid(column=0, row=4, columnspan=2)
         root.mainloop()
 
     def _initialize_graph_vals(self):
         """Save the values in the textboxes, and draw and display the graph from them."""
         self.season_input_text = self.season_input.get()
-        self.prox_input.text = self.prox_input.obj.get()
 
         if self.season_input_text == "Spring":
             graph = self._spring

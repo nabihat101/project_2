@@ -220,32 +220,6 @@ class Graph:
         """Return a list of neighbours of the given vertex"""
         return list(self._vertices[species].neighbours.keys())
 
-
-class Textbox():
-    """Class for user input in the tkinter GUI
-
-    Instance Attributes:
-        - text: User inputted text, or None if the text has not been submitted yet
-        - row: The row of the textbox
-        - col: the column of the textbox
-        - frame: the tkinter frame the textbox is in
-        - obj: the ttk.Entry object of the textbox
-    """
-    text: Optional[str]
-    row: int
-    col: int
-    frame: ttk.Frame
-    obj: ttk.Entry
-
-    def __init__(self, frame: ttk.Frame, col: int, row: int):
-        self.row = row
-        self.col = col
-        self.frame = frame
-        self.text = None
-
-        self.obj = ttk.Entry(frame)
-        self.obj.grid(column=col, row=row)
-
         
 class SpeciesSearchDropdown():
     """New window for selecting a species from all the species.
@@ -266,12 +240,12 @@ class SpeciesSearchDropdown():
         # initialize the button to open the popup window
         open_button = ttk.Button(window, command = self.open_window,
                                  text = "Select a Species")
-        open_button.grid(column = c, row = r)
+        open_button.grid(column = c, row = r, padx = 5, pady = 5, sticky="W")
 
         # initialize the text telling you the species
         self._species_label = ttk.Label(window,
                                        text = "Currently selected species: None")
-        self._species_label.grid(column=c+1,row=r)
+        self._species_label.grid(column=c-1,row=r, padx=5, sticky="E")
 
     def open_window(self) -> None:
         """Open the species selector window"""
