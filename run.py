@@ -92,7 +92,7 @@ class Runner():
                 display_label = f"{x * 100:.2f}%"
                 scaled_thickness = max(0.5, math.log10(x * 1000000))
 
-                species_graph.add_edge(current, neighbour, weight=(math.sqrt(current_v.get_weight(neighbour)), label=display_label)
+                species_graph.add_edge(current, neighbour, weight=math.sqrt(current_v.get_weight(neighbour)), label=display_label)
 
                 if neighbour not in visited:
                     visited.add(neighbour)
