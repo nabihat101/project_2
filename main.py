@@ -2,7 +2,7 @@
 
 Module Description
 ==================
-Run this file in the python console to create visualization and user interaction 
+Run this file in the python console to create visualization and user interaction
 
 Copyright and Usage Information
 ===============================
@@ -21,10 +21,3 @@ import run
 if __name__ == '__main__':
     r = run.Runner('data.csv')
     r.run()
-
-# import python_ta
-# python_ta.check_all(config={
-# 'extra-imports': ['pandas', 'networkx', 'tkinter', 'math', 'matplotlib', 'urllib.request', 'numpy', 'PIL', 'io', 'math', 'mplcursors'],  # the names (strs) of imported modules
-# 'allowed-io': [],     # the names (strs) of functions that call print/open/input
-# 'max-line-length': 120
-# })

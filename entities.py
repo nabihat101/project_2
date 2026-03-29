@@ -20,11 +20,11 @@ please consult our Course Syllabus.
 This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, Ruoshui Deng
 """
 
-from typing import Optional
-from utils import get_interaction_parameters, calculate_interaction_likelihood
-from utils import get_all_species
 import tkinter as tk
 from tkinter import ttk
+from typing import Optional
+from utils import get_interaction_parameters, calc_jaccard_index
+from utils import get_all_species
 
 
 class Observation:
@@ -35,7 +35,7 @@ class Observation:
         - species: the name of the species observed
         - season_to_loc: a mapping from season to a list of locations (latitude, longitude)
           where the species was observed in that season
-          
+
     Representation Invariants:
         - season_to_loc only contains keys from 1 to 4, representing the four seasons
         - each location is a tuple of (latitude, longitude)
@@ -51,6 +51,12 @@ class Observation:
 
 
 def get_observation(observations: list[Observation], target: str) -> Observation | None:
+    """Search for and return the Observation object corresponding to the target species name.
+        Return None if the target species is not found in the given list of observations.
+
+        Preconditions:
+            - target is a non-empty string
+        """
     for obs in observations:
         if obs.species == target:
             return obs
@@ -66,7 +72,7 @@ class Vertex:
          - image: a url for the images of the species
          - neighbours_probability: a mapping from neighbouring species to the probability of the two species interacting
          based on functions in utils.py
-         
+
     Representation Invariants:
          - species is a non-empty string
          - neighbours only contains keys that are valid species names (non-empty strings)
@@ -101,6 +107,17 @@ class Vertex:
 
 
 class Graph:
+    """A graph representing the co-occurrence of different species in a specific season.
+
+        Each vertex represents a species, and each edge represents that the two species
+        were observed in the same proximity during the same season.
+
+        Instance Attributes:
+            - _vertices: A private mapping of species names to their corresponding Vertex objects.
+
+        Representation Invariants:
+            - all(species == self._vertices[species].species for species in self._vertices)
+        """
     _vertices: dict[str, Vertex]
 
     def __init__(self) -> None:
@@ -115,7 +132,7 @@ class Graph:
         if species not in self._vertices:
             self._vertices[species] = Vertex(species, image)
 
-    def add_edge(self, s1: str, s2: str, im1: str, im2: str, co_occurrences: int, prob: float) -> None:
+    def add_edge(self, s1: str, s2: str, co_occurrences: int, prob: float) -> None:
         """Adds an edge between two species in the graph, storing both the raw
         co-occurrence count and the calculated interaction probability.
 
@@ -126,17 +143,14 @@ class Graph:
         if s1 == s2:
             return
 
-        self.add_vertex(s1, im1)
-        self.add_vertex(s2, im2)
-
         v1 = self._vertices[s1]
         v2 = self._vertices[s2]
 
-        # 1. Store the raw number of times they interacted
+        # Store the raw number of times they interacted
         v1.neighbours[s2] = co_occurrences
         v2.neighbours[s1] = co_occurrences
 
-        # 2. Store the calculated statistical likelihood (0.0 to 1.0)
+        # Store the calculated statistical likelihood (0.0 to 1.0)
         v1.neighbours_probability[s2] = prob
         v2.neighbours_probability[s1] = prob
 
@@ -147,76 +161,70 @@ class Graph:
         we add all species observed in that season as vertices, and create co-occurrence
         edges between species observed in the same season.
 
-        Thus the graph represents co-occurrence of species in the same season,
+        Thus, the graph represents co-occurrence of species in the same season,
         but does not show each individual observation.
 
         Preconditions:
             - season is between 1 and 4 inclusive.
             - observations is a list of objects with `species` and `season_to_loc`.
         """
-        species_data = {}  # species -> {'locs': list, 'image': str}
+        species_data = {}
 
         # Gather all data and build vertices first
         for obs in observations:
             if season in obs.season_to_loc:
-
-                # If we haven't seen this species yet, figure out its image and add the vertex
-                if obs.species not in species_data:
-                    # Fallback duck image
-                    img_val = 'https://static.inaturalist.org/photos/604719843/large.jpg'
-
-                    # Safely extract the image string (handling the pandas Series if it exists)
-                    if hasattr(obs.image, 'dropna') and not obs.image.dropna().empty:
-                        img_val = str(obs.image.dropna().iloc[0])
-                    elif isinstance(obs.image, str) and obs.image.strip():
-                        img_val = obs.image
-
-                    species_data[obs.species] = {'locs': [], 'image': img_val}
-                    self.add_vertex(obs.species, img_val)
-
-                # Append all locations for this observation
-                species_data[obs.species]['locs'].extend(obs.season_to_loc[season])
+                self._record_species_data(obs, season, species_data)
 
         species_seen = list(species_data.keys())
 
         # Compare each pair of species ONCE
         for i in range(len(species_seen) - 1):
             source_species = species_seen[i]
-
             for j in range(i + 1, len(species_seen)):
                 target_species = species_seen[j]
+                self._process_species_pair(source_species, target_species, species_data)
 
-                locs1 = species_data[source_species]['locs']
-                locs2 = species_data[target_species]['locs']
+    def _record_species_data(self, obs: Observation, season: int, species_data: dict) -> None:
+        """Helper method to extract image data and locations to avoid deep nesting."""
+        if obs.species not in species_data:
+            # Fallback duck image
+            img_val = 'https://static.inaturalist.org/photos/604719843/large.jpg'
 
-                # Skip if one of them has no location data
-                if not locs1 or not locs2:
-                    continue
+            # Safely extract the image string
+            if hasattr(obs.image, 'dropna') and not obs.image.dropna().empty:
+                img_val = str(obs.image.dropna().iloc[0])
+            elif isinstance(obs.image, str) and obs.image.strip():
+                img_val = obs.image
 
-                co_occurrences, obs_a_count, obs_b_count = get_interaction_parameters(locs1, locs2, 1.0)
+            species_data[obs.species] = {'locs': [], 'image': img_val}
+            self.add_vertex(obs.species, img_val)
 
-                # Only add the edge if they actually interacted
-                if co_occurrences > 0:
-                    prob = calculate_interaction_likelihood(co_occurrences, obs_a_count, obs_b_count)
+        # Append all locations for this observation
+        species_data[obs.species]['locs'].extend(obs.season_to_loc[season])
 
-                    im1 = species_data[source_species]['image']
-                    im2 = species_data[target_species]['image']
+    def _process_species_pair(self, s1: str, s2: str, species_data: dict) -> None:
+        """Helper method to calculate interactions and add edges to avoid deep nesting."""
+        locs1 = species_data[s1]['locs']
+        locs2 = species_data[s2]['locs']
 
-                    self.add_edge(source_species, target_species, im1, im2, co_occurrences, prob)
+        # Skip if one of them has no location data
+        if not locs1 or not locs2:
+            return
 
-                    # Update the exact probability float in neighbours_probability
-                    v1 = self._vertices[source_species]
-                    v2 = self._vertices[target_species]
-                    v1.neighbours_probability[target_species] = prob
-                    v2.neighbours_probability[source_species] = prob
+        co_occurrences, obs_a_count, obs_b_count = get_interaction_parameters(locs1, locs2, 1.0)
 
-    def is_vertex(self, species) -> bool:
+        # Only add the edge if they actually interacted
+        if co_occurrences > 0:
+            prob = calc_jaccard_index(co_occurrences, obs_a_count, obs_b_count)
+            self.add_edge(s1, s2, co_occurrences, prob)
+
+    def is_vertex(self, species: str) -> bool:
         """
         Return if the species is a node and vertex in self._vertices
         """
         return species in self._vertices
 
-    def get_vertex(self, species) -> Vertex:
+    def get_vertex(self, species: str) -> Vertex:
         """
         Return the vertex object based on the species name
 
@@ -225,7 +233,7 @@ class Graph:
         """
         return self._vertices[species]
 
-    def get_neighbours(self, species) -> list:
+    def get_neighbours(self, species: str) -> list[str]:
         """
         Return a list of neighbours of the given vertex
 
@@ -234,8 +242,8 @@ class Graph:
         """
         return list(self._vertices[species].neighbours.keys())
 
-        
-class SpeciesSearchDropdown():
+
+class SpeciesSearchDropdown:
     """New window for selecting a species from all the species.
 
     Instance Attributes:
@@ -243,23 +251,27 @@ class SpeciesSearchDropdown():
         - species: The selected species, or None if one has not been selected yet.
         - all_species: A list of every species in the dataset.
     """
-    window: tk.Tk
+    window: tk.Tk | ttk.Frame
     species: Optional[str]
     all_species: list[str]
-    
-    def __init__(self, c: int, r: int, window: tk.Tk) -> None:
+    selected_species_var: tk.StringVar
+    _new_win: Optional[tk.Toplevel]
+    _input_area: Optional[ttk.Entry]
+    _dropdown: Optional[tk.Listbox]
+
+    def __init__(self, c: int, r: int, window: tk.Tk | ttk.Frame) -> None:
         self.window = window
-        self.species = None
+        self.species, self._new_win, self._input_area, self._dropdown = None, None, None, None
 
         # initialize the button to open the popup window
-        open_button = ttk.Button(window, command = self.open_window,
-                                 text = "Select a Species")
-        open_button.grid(column = c, row = r, padx = 5, pady = 5, sticky="W")
+        open_button = ttk.Button(window, command=self.open_window,
+                                 text="Select a Species")
+        open_button.grid(column=c, row=r, padx=5, pady=5, sticky="W")
 
         # initialize the text telling you the species
-        self._species_label = ttk.Label(window,
-                                       text = "Currently selected species: None")
-        self._species_label.grid(column=c-1,row=r, padx=5, sticky="E")
+        self.selected_species_var = tk.StringVar(value="None selected")
+        species_display_box = ttk.Entry(window, textvariable=self.selected_species_var, state='readonly', width=35)
+        species_display_box.grid(column=c - 1, row=r, padx=5, sticky="E")
 
     def open_window(self) -> None:
         """Open the species selector window"""
@@ -269,11 +281,11 @@ class SpeciesSearchDropdown():
         # center the new window
         x = self.window.winfo_screenwidth()
         y = self.window.winfo_screenheight()
-        self._new_win.geometry(f"+{x//3}+{y//3}")
-        
+        self._new_win.geometry(f"+{x // 3}+{y // 3}")
+
         # Text at the top of the window
         label = ttk.Label(self._new_win, text="Select a species from the list below")
-        label.pack(side = tk.TOP)
+        label.pack(side=tk.TOP)
 
         # Initialize the input area for users to type text
         self._input_area = ttk.Entry(self._new_win)
@@ -286,52 +298,68 @@ class SpeciesSearchDropdown():
         # initialize the list of species, to be modified when we filter by the
         # text in the input area
         self.all_species = get_all_species('new_file.csv')
-        self._species_list = tk.StringVar(value = self.all_species)
-        
+        # self._species_list = tk.StringVar(value=self.all_species)
+
         # initialize the dropdown menu, showing all species initially
-        self._dropdown = tk.Listbox(self._new_win,
-                                   listvariable=self._species_list, selectmode="browse")
+        self._dropdown = tk.Listbox(self._new_win, selectmode="browse")
         self._dropdown.pack(side=tk.BOTTOM, expand=True, fill=tk.BOTH)
+
+        # Manually insert all species into the Listbox to satisfy the type checker
+        for species in self.all_species:
+            self._dropdown.insert(tk.END, species)
 
         # bind it so we run enter_species when something in the list is clicked
         self._dropdown.bind("<<ListboxSelect>>", self.enter_species)
 
-    def update_dropdown(self, event) -> None:
+    def update_dropdown(self, _event: tk.Event) -> None:
         """Update the listbox to show only species starting with the input in the
         entry box.
         """
-        
+        if self._input_area is None or self._dropdown is None:
+            return
+
         # get the text from the input area
         filter_text = self._input_area.get()
 
         # construct a new list of just species starting with that text
-        new_species_list = [species for species in self.all_species
-                            if filter_text.lower() in species.lower()]
+        new_species_list = [s for s in self.all_species if filter_text.lower() in s.lower()]
 
-        # update self.species_list to the new list
-        self._species_list.set(new_species_list)
+        # clear the current listbox and insert the filtered ones
+        self._dropdown.delete(0, tk.END)
+        for species in new_species_list:
+            self._dropdown.insert(tk.END, species)
 
-    def enter_species(self, event):
+    def enter_species(self, _event: tk.Event) -> None:
         """Set self.species to the selected species, and close the window."""
+        if self._dropdown is None or self._new_win is None:
+            return
 
-        # update self.species
         selected_index = self._dropdown.curselection()
-        self.species = self._dropdown.get(selected_index)
+
+        # Safeguard: Do nothing if the user clicks an empty space in the listbox
+        if not selected_index:
+            return
+
+        # curselection() returns a tuple of indices, so we grab the first one [0]
+        self.species = self._dropdown.get(selected_index[0])
 
         # update the text label
-        self._species_label.config(text="Currently selected species: "+self.species)
+        self.selected_species_var.set(self.species)
 
         # close the window
         self._new_win.destroy()
-        
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod(verbose=True)
 
-    import python_ta
-    python_ta.check_all(config={
-    'extra-imports': ['pandas', 'networkx', 'tkinter', 'math', 'matplotlib', 'urllib.request', 'numpy', 'Pillow', 'io', 'math', 'mplcursors'],  # the names (strs) of imported modules
-    'allowed-io': [],     # the names (strs) of functions that call print/open/input
-    'max-line-length': 120
-    })
+    # Code generally based on:
+    # https://coderslegacy.com/searchable-combobox-in-tkinter
+    # https://www.pythontutorial.net/tkinter/tkinter-listbox
 
+
+# if __name__ == '__main__':
+#     import python_ta
+#
+#     python_ta.check_all(config={
+#         'extra-imports': ['tkinter', 'utils', 'typing'],
+#         'allowed-io': [],
+#         'max-line-length': 120,
+#         'max-messages': 10
+#     })
