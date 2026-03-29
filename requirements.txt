@@ -10,4 +10,4 @@ networkx
 matplotlib
 numpy
 mplcursors
-PIL
+Pillow
