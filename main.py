@@ -2,7 +2,7 @@
 
 Module Description
 ==================
-[INSERT DESCRIPTION]
+Run this file in the python console to create visualization and user interaction
 
 Copyright and Usage Information
 ===============================
@@ -16,11 +16,8 @@ please consult our Course Syllabus.
 This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, Ruoshui Deng
 """
 
+import run
 
-
-# import python_ta
-   # python_ta.check_all(config={
-    #'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules
-    #'allowed-io': [],     # the names (strs) of functions that call print/open/input
-    #'max-line-length': 120
-#})
+if __name__ == '__main__':
+    r = run.Runner('data.csv')
+    r.run()

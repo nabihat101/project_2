@@ -20,14 +20,18 @@ import pandas as pd
 
 from entities import Graph, Observation
 
+
 def clean_data(data_file: str) -> None:
     """
-    creates a datamap using pandas library to clean and filter data based on conditions
+    Creates a datamap using pandas library to clean and filter data based on conditions
+
+    Preconditions:
+        - data_file is a csv. file with the expected columns and data
     """
 
     df = pd.read_csv(data_file)
 
-    # Adding errors="ignore" prevents the KeyError if the columns are already gone!
+    # Adding errors="ignore" prevents the KeyError if the columns are already gone
     df_new = df.drop(
         columns=["id", "uuid", "observed_on_string", "time_observed_at", "time_zone", "user_id", "user_login",
                  "user_name", "created_at", "updated_at", "quality_grade", "url", "sound_url", "tag_list",
@@ -35,7 +39,7 @@ def clean_data(data_file: str) -> None:
                  "captive_cultivated", "oauth_application_id", "private_place_guess", "private_latitude",
                  "private_longitude", "public_positional_accuracy", "geoprivacy", "taxon_geoprivacy",
                  "coordinates_obscured", "positioning_method", "positioning_device", "scientific_name",
-                 "iconic_taxon_name", "taxon_id", "common_name"], errors="ignore")
+                 "iconic_taxon_name", "taxon_id", "species_guess"], errors="ignore")
 
     # Safely filter by accuracy only if the column actually exists in the file
     if "positional_accuracy" in df_new.columns:
@@ -45,60 +49,64 @@ def clean_data(data_file: str) -> None:
 
 
 def data_handle(file: str) -> list[Observation]:
+    """
+    Creates a list of Observations (instances of the class Observation) by grouping data using pandas library and
+    error handling
+
+    Preconditions:
+        - file is a csv. file with the expected columns and data
+    """
     df = pd.read_csv(file)
-    grouped = df.groupby("species_guess")
+    grouped = df.groupby("common_name")
 
     observations = []
 
     for name, group in grouped:
-        # Force species name to string for strict typing
-        species_name = str(name)
-
-        # Safely extract a single valid image string (or empty string) from the Pandas Series
-        valid_images = group["image_url"].dropna()
-        if not valid_images.empty:
-            img_val = str(valid_images.iloc[0])
-        else:
-            img_val = ""
-
-        # Initialize with the strictly typed string variables
-        obs = Observation(species_name, img_val)
-
-        dates = list(group["observed_on"])
-        lats = list(group["latitude"])
-        longs = list(group["longitude"])
-
-        for x in range(len(dates)):
-            # Force string so .split() is guaranteed to work
-            date_str = str(dates[x])
-            curr = date_str.split("-")[1]
-
-            season = 0
-            # Winter is first season
-            if int(curr) in [12, 1, 2]:
-                season = 1
-            elif int(curr) in [3, 4, 5]:
-                season = 2
-            elif int(curr) in [6, 7, 8]:
-                season = 3
-            else:
-                season = 4
-
-            if season not in obs.season_to_loc:
-                obs.season_to_loc[season] = []
-
-            # Force floats for coordinates to satisfy Observation type hint
-            lat_val = float(lats[x])
-            long_val = float(longs[x])
-
-            obs.season_to_loc[season].append((date_str, lat_val, long_val))
-
+        obs = _process_species_group(str(name), group)
         observations.append(obs)
 
     return observations
 
 
-def observations_to_graph(observations: list[Observation]) -> Graph:
+def _process_species_group(name: str, group: pd.DataFrame) -> Observation:
+    """Helper method to process a single species group into an Observation object
+    to reduce local variable complexity.
+    """
+    valid_images = group["image_url"].dropna()
+
+    # Condensing the image check into one line saves a local variable
+    img_val = str(valid_images.iloc[0]) if not valid_images.empty else ""
+
+    obs = Observation(name, img_val)
+
+    dates = list(group["observed_on"])
+    lats = list(group["latitude"])
+    longs = list(group["longitude"])
+
+    for x in range(len(dates)):
+        date_str = str(dates[x])
+        # Condensing the string split and int conversion saves another variable
+        curr_month = int(date_str.split("-")[1])
+
+        if curr_month in [12, 1, 2]:
+            season = 1
+        elif curr_month in [3, 4, 5]:
+            season = 2
+        elif curr_month in [6, 7, 8]:
+            season = 3
+        else:
+            season = 4
+
+        if season not in obs.season_to_loc:
+            obs.season_to_loc[season] = []
+
+        # Appending and casting to float directly saves two more variables
+        obs.season_to_loc[season].append((date_str, float(lats[x]), float(longs[x])))
+
+    return obs
+
+
+def observations_to_graph(observations: list[Observation]) -> tuple[Graph, Graph, Graph, Graph]:
     """Builds 4 graphs from a list of Observation objects (one for each season), by calling the graph building
     method. See Graph.build_from_observations for more details.
 
@@ -116,15 +124,14 @@ def observations_to_graph(observations: list[Observation]) -> Graph:
     winter.build_from_observations(observations, 1)
     return summer, spring, fall, winter
 
-# def run_simulation(data_file: str, species_a: str, species_b: str) -> dict[str, float]:
-#     """Runs the data pipeline and computes seasonal proximity between two species."""
-#     clean_data(data_file)
-#     observations = data_handle("new_file.csv")
-#     summer, spring, fall, winter = observations_to_graph(observations)
 
-# import python_ta
-# python_ta.check_all(config={
-# 'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules
-# 'allowed-io': [],     # the names (strs) of functions that call print/open/input
-# 'max-line-length': 120
-# })
+# if __name__ == '__main__':
+#     import python_ta
+#
+#     python_ta.check_all(config={
+#         'extra-imports': ['pandas', 'entities'],
+#
+#         'allowed-io': ['clean_data', 'data_handle'],
+#         'max-line-length': 120,
+#         'output-format': 'txt'
+#     })

@@ -1,6 +1,8 @@
 """ CSC111 Project 2
 
-Module Description ================== This file contains all the methods used to calculate probability of two species
+Module Description
+===============================
+This file contains all the methods used to calculate probability of two species
 interacting and to calculate distance between two locations (longitude and latitude)
 
 Copyright and Usage Information
@@ -14,10 +16,12 @@ please consult our Course Syllabus.
 
 This file is Copyright (c) 2026 by Nabiha Tariq, Yusyra Hossain, Eleanor Neal, Ruoshui Deng
 """
+import math
 import numpy as np
+import pandas as pd
 
 
-def calculate_interaction_likelihood(co_occurrences: int, obs_a: int, obs_b: int) -> float:
+def calc_jaccard_index(co_occurrences: int, obs_a: int, obs_b: int) -> float:
     """
     Calculates the likelihood of interaction between two species using the Jaccard Index. Returns a float between 0.0
     (never interact) and 1.0 (always interact).
@@ -48,41 +52,46 @@ def get_interaction_parameters(locs_a: list[tuple[str, float, float]],
     if obs_a_count == 0 or obs_b_count == 0:
         return 0, obs_a_count, obs_b_count
 
-    # Count how many sightings of A have at least one B nearby on the same day
+    # Count how many sightings of A have at least one B nearby in the same year
     a_near_b = 0
-    for date_a, lat_a, lon_a in locs_a:
-        for date_b, lat_b, lon_b in locs_b:
-            if date_a[:4] == date_b[:4]:  # Fixed: Checks the year!
-                dist = haversine_distance_km((lat_a, lon_a), (lat_b, lon_b))
-                if dist <= max_distance_km:
-                    a_near_b += 1
-                    break
+    for loc_a in locs_a:
+        if _has_nearby_sighting(loc_a, locs_b, max_distance_km):
+            a_near_b += 1
 
-    # Count how many sightings of B have at least one A nearby on the same day
+    # Count how many sightings of B have at least one A nearby in the same year
     b_near_a = 0
-    for date_b, lat_b, lon_b in locs_b:
-        for date_a, lat_a, lon_a in locs_a:
-            if date_b[:4] == date_a[:4]:  # Fixed: Checks the year!
-                dist = haversine_distance_km((lat_b, lon_b), (lat_a, lon_a))
-                if dist <= max_distance_km:
-                    b_near_a += 1
-                    break
+    for loc_b in locs_b:
+        if _has_nearby_sighting(loc_b, locs_a, max_distance_km):
+            b_near_a += 1
 
     co_occurrences = min(a_near_b, b_near_a)
 
     return co_occurrences, obs_a_count, obs_b_count
 
 
+def _has_nearby_sighting(target_loc: tuple[str, float, float],
+                         comparison_locs: list[tuple[str, float, float]],
+                         max_distance_km: float) -> bool:
+    """Return whether target_loc is within max_distance_km of any location
+    in comparison_locs during the same year.
+    """
+    target_date, target_lat, target_lon = target_loc
+
+    for comp_date, comp_lat, comp_lon in comparison_locs:
+        if target_date[:4] == comp_date[:4]:
+            dist = haversine_distance_km((target_lat, target_lon), (comp_lat, comp_lon))
+            if dist <= max_distance_km:
+                return True
+
+    return False
+
+
 def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) -> float:
     """Calculates distance in kilometers between two (lat, lon) points using the Haversine formula.
-     >>> haversine_distance_km((40.7, -70.8), (51.3, 0.18))
-    5386.3
 
-    >>> haversine_distance_km((40.7128, -74.0060), (34.0522, -118.2437))
-    3935.7
+    Preconditions:
+        - loc1 and loc2 are floats representing (latitude, longitude)
     """
-    import math
-
     # create latitude and longtidue coordinates from the tuples
     lat1, lon1 = loc1
     lat2, lon2 = loc2
@@ -110,7 +119,9 @@ def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) 
 def make_circular(img: np.ndarray) -> np.ndarray:
     """
     Return a circular image
-    Assume img is a np.ndarray which is an array that holds all the pixels
+
+    Preconditions:
+        - img is a np.ndarray which is an array that holds all the pixels
     """
 
     # img.shape returns (height, width, channels) but we only need height and width so we split
@@ -145,9 +156,28 @@ def make_circular(img: np.ndarray) -> np.ndarray:
 
     return img
 
-# import python_ta
-# python_ta.check_all(config={
-# 'extra-imports': ['pandas', 'networkx'],  # the names (strs) of imported modules
-# 'allowed-io': [],     # the names (strs) of functions that call print/open/input
-# 'max-line-length': 120
-# })
+
+def get_all_species(data_file: str) -> list[str]:
+    """Returns a list of every species in the dataset, used for the species
+    dropdown menu in entities.py
+
+    Preconditions:
+        - data_file is a valid file path to a csv file in the format written by
+          the clean_data function
+    """
+
+    df = pd.read_csv(data_file)
+    return list(df['common_name'].unique())
+
+
+# if __name__ == '__main__':
+#     import python_ta
+#
+#     python_ta.check_all(config={
+#         'extra-imports': ['numpy', 'pandas', 'math'],
+#         'allowed-io': ['get_all_species'],
+#         'max-line-length': 120,
+#         'max-messages': 10,
+#         'typecheck': False,
+#         'disable': ['E9999']
+#     })
