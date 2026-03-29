@@ -59,6 +59,7 @@ class Runner():
         species_graph = nx.Graph()
         species = self._graph.get_vertex(self._species)
 
+        # thresholds 
         top_k = 4
         max_nodes = 50
         min_prob = 0.02  # 2% cutoff
