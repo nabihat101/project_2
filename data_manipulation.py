@@ -126,9 +126,13 @@ def observations_to_graph(observations: list[Observation]) -> Graph:
     winter.build_from_observations(observations, 1)
     return summer, spring, fall, winter
 
-# import python_ta
-# python_ta.check_all(config={
-# 'extra-imports': ['pandas', 'networkx', 'tkinter', 'math', 'matplotlib', 'urllib.request', 'numpy', 'PIL', 'io', 'math', 'mplcursors'],  # the names (strs) of imported modules
-# 'allowed-io': [],     # the names (strs) of functions that call print/open/input
-# 'max-line-length': 120
-# })
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod(verbose=True)
+
+    import python_ta
+    python_ta.check_all(config={
+    'extra-imports': ['pandas', 'networkx', 'tkinter', 'math', 'matplotlib', 'urllib.request', 'numpy', 'Pillow', 'io', 'math', 'mplcursors'],  # the names (strs) of imported modules
+    'allowed-io': [],     # the names (strs) of functions that call print/open/input
+    'max-line-length': 120
+    })
