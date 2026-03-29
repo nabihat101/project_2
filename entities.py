@@ -265,6 +265,11 @@ class SpeciesSearchDropdown():
         """Open the species selector window"""
         self._new_win = tk.Toplevel(self.window)
         self._new_win.title("Select a Species")
+
+        # center the new window
+        x = self.window.winfo_screenwidth()
+        y = self.window.winfo_screenheight()
+        self._new_win.geometry(f"+{x//3}+{y//3}")
         
         # Text at the top of the window
         label = ttk.Label(self._new_win, text="Select a species from the list below")

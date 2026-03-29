@@ -107,6 +107,12 @@ class Runner():
         
         root = Tk()
         root.title('Species Interaction Visualizer')
+
+        # center window in middle of screen
+        screen_width = root.winfo_screenwidth()
+        screen_height = root.winfo_screenheight()
+        root.geometry(f"+{(screen_width)//3}+{(screen_height)//3}")
+        
         frm = ttk.Frame(root)
         frm.grid(padx = 20, pady = 10)
 
