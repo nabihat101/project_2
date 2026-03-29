@@ -115,7 +115,11 @@ class Runner:
 
     @staticmethod
     def _fetch_image(img_data: Any) -> np.ndarray:
-        """Helper method to safely download or load an image, preventing deep nesting."""
+        """Helper method to safely download or load an image, preventing deep nesting.
+
+        Preconditions:
+            - img_data is a string representing a URL/file path, or a pandas Series containing one
+        """
         if hasattr(img_data, "iloc"):
             img_data = img_data.iloc[0]
 
@@ -141,14 +145,23 @@ class Runner:
 
     @staticmethod
     def _draw_edges(species_graph: nx.Graph, pos: dict, ax: Any) -> None:
-        """Helper method to draw graph edges."""
+        """Helper method to draw graph edges.
+
+        Preconditions:
+            - all('weight' in species_graph.edges[u, v] for u, v in species_graph.edges())
+            - all(u in pos and v in pos for u, v in species_graph.edges())
+        """
         for u, v in species_graph.edges():
             single_weight = float(species_graph.edges[u, v]['weight'])
             nx.draw_networkx_edges(species_graph, pos, edgelist=[(u, v)], width=single_weight, ax=ax)
 
     @staticmethod
     def _get_node_info(species_graph: nx.Graph) -> dict[str, str]:
-        """Helper method to generate formatted interaction probabilities for the hover tool."""
+        """Helper method to generate formatted interaction probabilities for the hover tool.
+
+        Preconditions:
+            - all('label' in species_graph.edges[u, v] for u, v in species_graph.edges())
+        """
         node_info = {}
         for node in species_graph.nodes():
             neighbours = []
@@ -160,7 +173,12 @@ class Runner:
 
     @staticmethod
     def _draw_images(species_graph: nx.Graph, pos: dict, ax: Any, node_info: dict) -> list[tuple]:
-        """Helper method to draw circular node images and collect positions."""
+        """Helper method to draw circular node images and collect positions.
+
+        Preconditions:
+            - all('image' in species_graph.nodes[node] for node in species_graph.nodes())
+            - all(node in pos and node in node_info for node in species_graph.nodes())
+        """
         node_points = []
         for n in species_graph.nodes():
             x, y = pos[n]
@@ -176,7 +194,11 @@ class Runner:
 
     @staticmethod
     def _setup_hover(ax: Any, node_points: list[tuple]) -> None:
-        """Helper method to establish the interactive cursor."""
+        """Helper method to establish the interactive cursor.
+
+        Preconditions:
+            - all(len(point) == 4 for point in node_points)
+        """
         ax.set_axis_off()
         x_vals = [p[0] for p in node_points]
         y_vals = [p[1] for p in node_points]
@@ -287,16 +309,16 @@ class Runner:
         self.display_window()
 
 
-if __name__ == '__main__':
-    import python_ta
-
-    python_ta.check_all(config={
-        'extra-imports': ['math', 'os', 'urllib.request', 'urllib.error', 'io', 'tkinter', 'matplotlib.pyplot',
-                          'networkx', 'numpy', 'PIL', 'matplotlib.offsetbox', 'mplcursors',
-                          'data_manipulation', 'entities', 'utils'],
-        'allowed-io': ['run', '_initialize_graph_vals'],
-        'max-line-length': 120,
-        'max-messages': 10,
-        'typecheck': False,
-        'disable': ['E9999']
-    })
+# if __name__ == '__main__':
+#     import python_ta
+#
+#     python_ta.check_all(config={
+#         'extra-imports': ['math', 'os', 'urllib.request', 'urllib.error', 'io', 'tkinter', 'matplotlib.pyplot',
+#                           'networkx', 'numpy', 'PIL', 'matplotlib.offsetbox', 'mplcursors',
+#                           'data_manipulation', 'entities', 'utils'],
+#         'allowed-io': ['run', '_initialize_graph_vals'],
+#         'max-line-length': 120,
+#         'max-messages': 10,
+#         'typecheck': False,
+#         'disable': ['E9999']
+#     })

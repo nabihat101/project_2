@@ -28,11 +28,18 @@ def calc_jaccard_index(co_occurrences: int, obs_a: int, obs_b: int) -> float:
 
     We say that two species are more likely to interact when they are closer to each other.
 
-    Special notes on implementation:
+    Instance Attributes:
         co_occurrences: The number of times the two species were observed
                         within your proximity/time thresholds.
         obs_a: Total number of observations for Species A in that season.
         obs_b: Total number of observations for Species B in that season.
+
+    >>> calc_jaccard_index(5, 10, 10)
+    0.33
+    >>> calc_jaccard_index(0, 0, 0)
+    0.0
+    >>> calc_jaccard_index(10, 10, 10)
+    1.0
     """
     if obs_a == 0 and obs_b == 0:
         return 0.0
@@ -45,7 +52,15 @@ def calc_jaccard_index(co_occurrences: int, obs_a: int, obs_b: int) -> float:
 def get_interaction_parameters(locs_a: list[tuple[str, float, float]],
                                locs_b: list[tuple[str, float, float]],
                                max_distance_km: float) -> tuple[int, int, int]:
-    """Finds the co-occurrences, obs_A, and obs_B for two species in a specific season."""
+    """Finds the co-occurrences, obs_A, and obs_B for two species in a specific season.
+
+    >>> l_a = [('2026-05-10', 0.0, 0.0), ('2026-05-11', 1.0, 1.0)]
+    >>> l_b = [('2026-06-12', 0.0, 0.5)]
+    >>> get_interaction_parameters(l_a, l_b, 100.0)
+    (1, 2, 1)
+    >>> get_interaction_parameters([], [('2026-01-01', 0.0, 0.0)], 50.0)
+    (0, 0, 1)
+    """
     obs_a_count = len(locs_a)
     obs_b_count = len(locs_b)
 
@@ -74,6 +89,15 @@ def _has_nearby_sighting(target_loc: tuple[str, float, float],
                          max_distance_km: float) -> bool:
     """Return whether target_loc is within max_distance_km of any location
     in comparison_locs during the same year.
+
+    >>> target = ('2026-05-10', 0.0, 0.0)
+    >>> comps = [('2026-06-12', 0.0, 0.5)]
+    >>> _has_nearby_sighting(target, comps, 100.0)
+    True
+    >>> _has_nearby_sighting(target, comps, 10.0)
+    False
+    >>> _has_nearby_sighting(('2025-05-10', 0.0, 0.0), comps, 100.0)
+    False
     """
     target_date, target_lat, target_lon = target_loc
 
@@ -91,6 +115,11 @@ def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) 
 
     Preconditions:
         - loc1 and loc2 are floats representing (latitude, longitude)
+
+    >>> haversine_distance_km((43.66, -79.39), (43.66, -79.39))
+    0.0
+    >>> round(haversine_distance_km((0.0, 0.0), (0.0, 1.0)), 2)
+    111.19
     """
     # create latitude and longtidue coordinates from the tuples
     lat1, lon1 = loc1
@@ -117,8 +146,7 @@ def haversine_distance_km(loc1: tuple[float, float], loc2: tuple[float, float]) 
 
 
 def make_circular(img: np.ndarray) -> np.ndarray:
-    """
-    Return a circular image
+    """Return a circular image
 
     Preconditions:
         - img is a np.ndarray which is an array that holds all the pixels
@@ -170,7 +198,9 @@ def get_all_species(data_file: str) -> list[str]:
     return list(df['common_name'].unique())
 
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
 #     import python_ta
 #
 #     python_ta.check_all(config={
