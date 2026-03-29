@@ -324,14 +324,14 @@ class SpeciesSearchDropdown():
         # close the window
         self._new_win.destroy()
         
-    # Code generally based on:
-    # https://coderslegacy.com/searchable-combobox-in-tkinter
-    # https://www.pythontutorial.net/tkinter/tkinter-listbox
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod(verbose=True)
 
+    import python_ta
+    python_ta.check_all(config={
+    'extra-imports': ['pandas', 'networkx', 'tkinter', 'math', 'matplotlib', 'urllib.request', 'numpy', 'Pillow', 'io', 'math', 'mplcursors'],  # the names (strs) of imported modules
+    'allowed-io': [],     # the names (strs) of functions that call print/open/input
+    'max-line-length': 120
+    })
 
-# import python_ta
-# python_ta.check_all(config={
-# 'extra-imports': ['pandas', 'networkx', 'tkinter', 'math', 'matplotlib', 'urllib.request', 'numpy', 'PIL', 'io', 'math', 'mplcursors'],  # the names (strs) of imported modules
-# 'allowed-io': [],     # the names (strs) of functions that call print/open/input
-# 'max-line-length': 120
-# })
