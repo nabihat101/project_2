@@ -144,14 +144,15 @@ The program also uses the built-in \texttt{tkinter} and \texttt{math} library fo
 
 
 \subsubsection{Datasets}
-The dataset used in this project is a CSV file (from iNaturalist) with 6000 observations. The dataset - named \texttt{data.csv} - is included as part of our submission in a compressed (zip) folder, so no external downloads are required. Thus, to run the program, it is just necessary to have this dataset in the same folder as the other files. \\ \\
+The dataset used in this project is a CSV file (from iNaturalist) with 6000 observations. The dataset - named \texttt{data.csv} - is included as part of our submission in a compressed (zip) folder, so no external downloads are required. Thus, to run the program, it is just necessary to extract the folder from the zip file, and \textbf{have the dataset in the same folder as the other files}. \\ \\
 \textit{\textbf{Note}}: Our program only uses a subset of the dataset. However, no work is required from the user's end, because our code already cleans the dataset and produces a new processed file (\texttt{new\_file.csv}) that is used throughout. Again, all work is automatically handled by the program, so no work is required from the user. Just adding this note in case, because while the program is running, the user might see the new file appear in the folder. 
 
 \subsubsection{Main.py}
 To run the program, the user must:
 \begin{enumerate}
-\item Download all libraries in requirements.txt
-\item Run the file \texttt{main.py} (this imports all necessary modules, so no other steps required)
+\item \textbf{Download all libraries} in requirements.txt
+\item \textbf{Unzip} the folder \texttt{data}, \textbf{extract the data file} (\texttt{data.csv}) and \textbf{put it in the same directory} as the rest of the files.
+\item \textbf{Run the file \texttt{main.py}} (this imports all necessary modules, so no other steps required)
 \end{enumerate}
 After a few seconds, the user will be prompted with a window to select their species name and a season. Clicking 'Species' will open a new window. Both season and species are chosen through \textbf{drop down menu style}; species also comes with a \textbf{'search' function} so the user can find their desired species faster: 
 \begin{figure}[h!]
@@ -237,8 +238,7 @@ Based on the limitations identified, there are several ways for extending and im
 \subsection*{Conclusion}
 In conclusion, our project demonstrates how graph-based modelling can be used to explore complex ecological relationships using real-world data. By transforming raw observations into a structured graph representation, we were able to approximate and visualize patterns of interaction between bird species across different seasons. Although our model relies on simplifying assumptions (i.e. the notion of “interaction” in our model is an approximation), it still provides valuable insights into how species relationships vary over seasons. With further refinement, this program has the potential to become an even more concrete tool for exploring biodiversity and understanding ecosystems. \\ \\ \\ 
 \section{References}
-
-‌[1] Antony Lee, “Mplcursors - Interactive Data Selection Cursors for Matplotlib: Mplcursors 0.6 Documentation.”  
+‌[1] Antony Lee, “Mplcursors – Interactive Data Selection Cursors for Matplotlib: Mplcursors 0.6 Documentation.”  
 \textit{Readthedocs.io}, 2016.
 https://mplcursors.readthedocs.io/en/stable/ [accessed March 2026]. \\ \\
 ‌[2] iNaturalist, "Connect with Nature" \textit{iNaturalist}. https://www.inaturalist.org/ [accessed March 2026]. \\ \\
