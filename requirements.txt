@@ -10,7 +10,4 @@ networkx
 matplotlib
 numpy
 mplcursors
-tkinter
 PIL
-io
-os
