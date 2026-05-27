@@ -146,11 +146,9 @@ class Graph:
         v1 = self._vertices[s1]
         v2 = self._vertices[s2]
 
-        # Store the raw number of times they interacted
         v1.neighbours[s2] = co_occurrences
         v2.neighbours[s1] = co_occurrences
 
-        # Store the calculated statistical likelihood (0.0 to 1.0)
         v1.neighbours_probability[s2] = prob
         v2.neighbours_probability[s1] = prob
 
@@ -170,7 +168,6 @@ class Graph:
         """
         species_data = {}
 
-        # Gather all data and build vertices first
         for obs in observations:
             if season in obs.season_to_loc:
                 self._record_species_data(obs, season, species_data)
@@ -187,10 +184,8 @@ class Graph:
     def _record_species_data(self, obs: Observation, season: int, species_data: dict) -> None:
         """Helper method to extract image data and locations to avoid deep nesting."""
         if obs.species not in species_data:
-            # Fallback duck image
             img_val = 'https://static.inaturalist.org/photos/604719843/large.jpg'
 
-            # Safely extract the image string
             if hasattr(obs.image, 'dropna') and not obs.image.dropna().empty:
                 img_val = str(obs.image.dropna().iloc[0])
             elif isinstance(obs.image, str) and obs.image.strip():
@@ -199,7 +194,6 @@ class Graph:
             species_data[obs.species] = {'locs': [], 'image': img_val}
             self.add_vertex(obs.species, img_val)
 
-        # Append all locations for this observation
         species_data[obs.species]['locs'].extend(obs.season_to_loc[season])
 
     def _process_species_pair(self, s1: str, s2: str, species_data: dict) -> None:
@@ -283,11 +277,9 @@ class SpeciesSearchDropdown:
         y = self.window.winfo_screenheight()
         self._new_win.geometry(f"+{x // 3}+{y // 3}")
 
-        # Text at the top of the window
         label = ttk.Label(self._new_win, text="Select a species from the list below")
         label.pack(side=tk.TOP)
 
-        # Initialize the input area for users to type text
         self._input_area = ttk.Entry(self._new_win)
         self._input_area.pack()
 
