@@ -75,26 +75,22 @@ class Runner:
         """
         species_graph = nx.Graph()
 
-        # Inlined the image lookup to save a local variable
         img = current_graph.get_vertex(target_species).image
         species_graph.add_node(target_species, image=img, name=target_species, level=0)
 
         queue = [(target_species, 0)]
         visited = {target_species}
 
-        # Inlined max_nodes (50) here to save local variables
         while queue and len(visited) < 50:
             current, level = queue.pop(0)
             current_v = current_graph.get_vertex(current)
 
             neighbours = current_graph.get_neighbours(current)
-            # Inlined top_k (4) to save a local variable
             neighbours = sorted(neighbours, key=current_v.get_prob, reverse=True)[:4]
 
             for neighbour in neighbours:
                 prob = current_v.get_prob(neighbour)
 
-                # Inlined min_prob (0.02) to save a local variable
                 if prob < 0.02:
                     continue
 
@@ -140,7 +136,6 @@ class Runner:
             except (FileNotFoundError, OSError):
                 pass
 
-        # Fallback if both tries fail
         return np.full((100, 100, 4), [150, 150, 150, 255], dtype=np.uint8)
 
     @staticmethod
@@ -220,7 +215,7 @@ class Runner:
         """
         Display the window that lets you create a graph using tkinter and adding the use input spaces and buttons.
         """
-        root = tk.Tk()  # Fixed the Tk() call!
+        root = tk.Tk()
         root.title('Species Interaction Visualizer')
 
         # center window in middle of screen
@@ -235,8 +230,7 @@ class Runner:
         ttk.Label(frm, text="Welcome to the species interaction visualizer!",
                   font=("TkDefaultFont", 14)).grid(column=0, row=0, pady=10, columnspan=2)
 
-        # Using type ignore to suppress PyCharm's outdated internal Tkinter typing
-        self.species_input = entities.SpeciesSearchDropdown(c=1, r=1, window=frm)  # type: ignore
+        self.species_input = entities.SpeciesSearchDropdown(c=1, r=1, window=frm)
 
         ttk.Label(frm, text="Input season: ").grid(column=0, row=2, padx=5, sticky="E")
         self.season_input = ttk.Combobox(frm, values=['Spring', 'Summer', 'Fall', 'Winter'])
@@ -258,7 +252,6 @@ class Runner:
         if self.season_input is None or self.species_input is None or self.status_label is None:
             return
 
-        # Grab values as local variables
         season_input_text = self.season_input.get()
         target_species = self.species_input.species
 
